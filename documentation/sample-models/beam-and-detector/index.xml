@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Beam and detector on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/</link>
+    <description>Recent content in Beam and detector on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Beam divergence</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/beam-divergence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/beam-divergence/</guid>
+      <description>Beam divergence Scattering from a random distribution of monodisperse cylinders impinged by an input beam presenting divergences in wavelength and incident angles $\alpha_i$ and $\phi_i$.
+ The sample is composed of cylinders deposited on a substrate. There is no interference between the scattered waves. The simulation is run using the Distorted Wave Born Approximation (DWBA). The wavelength follows a log-normal distribution around the mean value of $1$ $\unicode{x212B}$ with a scale parameter equal to $0.</description>
+    </item>
+    
+    <item>
+      <title>Detector resolution function</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/detector-resolution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/detector-resolution/</guid>
+      <description>Detector resolution function Scattering from a monodisperse distribution of cylindrical particles with a Gaussian resolution function of the detectors.
+ The sample is made of cylindrical particles randomly deposited on a substrate. It is similar to Cylinders in DWBA with the additional resolution function of the detectors. The radii and heights of the cylinders are equal to $5$ nm. There is no interference between the scattered waves. The detector resolution function is a two-dimensional Gaussian with the same width for the $x$ and $y$ axes: $\sigma_x = \sigma_y = 0.</description>
+    </item>
+    
+    <item>
+      <title>Off-Specular</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/offspecular-simulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/offspecular-simulation/</guid>
+      <description>Off-Specular Off-specular scattering from a monodisperse distribution of long boxes.
+ The sample is made of very long boxes with length equal to $1000$ nm, width $20$ nm and height $10$ nm. The particles are distributed along a one-dimensional lattice with a lattice spacing of $100$ nm in the $x$-direction. The particles are rotated around the $z$-axis by $90^{\circ}$ so that their &amp;ldquo;infinite&amp;rdquo; dimension is parallel to the $y$-direction. The incident wavelength is equal to $1$ $\unicode{x212B}$.</description>
+    </item>
+    
+    <item>
+      <title>Rectangular detector</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/rectangular-detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/rectangular-detector/</guid>
+      <description>Rectangular detector In this example we demonstrate the difference between GISAS simulation using default spherical detector and using special rectangular detector. The later provides more accurate representation of real experimental detectors.
+ See the Detector types tutorial for detailed explanations about various detector types in BornAgain.
+  As an example we take typical PILATUS detector ($981\times1043$ pixels) placed at the distance $2000$ mm from sample origin. The detector is perpendicular to the $x$-axis of sample reference frame, as shown on the plot.</description>
+    </item>
+    
+    <item>
+      <title>Specular scattering</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/basic-specular-simulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/basic-specular-simulation/</guid>
+      <description>Specular scattering Specular scattering from a multilayered sample with surface roughness.
+ The sample is composed of a substrate on which is sitting a stack of layers (similar to Correlated Roughness). These layers consist in a repetition of $10$ times two different superimposed layers (from bottom to top):  layer A: $5$ nm thick with a real refractive index $n = 5\cdot10^{-6}$ layer B: $10$ nm thick with a real refractive index $n = 10\cdot10^{-6}$  There is no added particle.</description>
+    </item>
+    
+  </channel>
+</rss>

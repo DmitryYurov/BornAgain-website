@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on BornAgain</title>
+    <link>https://www.bornagainproject.org/</link>
+    <description>Recent content in Home on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Jun 2018 08:30:10 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.bornagainproject.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Accessing simulation results</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/miscellaneous/accessing-simulation-results/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/miscellaneous/accessing-simulation-results/</guid>
+      <description>Accessing simulation results This is an extended example for the further treatment of simulation results: accessing the results, plotting, cropping, slicing and exporting. This serves as a supporting example to the Accessing simulation results  tutorial.
+ The standard &amp;ldquo;Cylinders in DWBA&amp;rdquo; sample (see this example) is used for running the simulation. The simulation results are retrieved as a Histogram2D object and then processed in various functions to achieve a resulting image.</description>
+    </item>
+    
+    <item>
+      <title>Beam divergence</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/beam-divergence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/beam-divergence/</guid>
+      <description>Beam divergence Scattering from a random distribution of monodisperse cylinders impinged by an input beam presenting divergences in wavelength and incident angles $\alpha_i$ and $\phi_i$.
+ The sample is composed of cylinders deposited on a substrate. There is no interference between the scattered waves. The simulation is run using the Distorted Wave Born Approximation (DWBA). The wavelength follows a log-normal distribution around the mean value of $1$ $\unicode{x212B}$ with a scale parameter equal to $0.</description>
+    </item>
+    
+    <item>
+      <title>Buried particles</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/layered-structures/buried-particles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/layered-structures/buried-particles/</guid>
+      <description>Buried particles Scattering from a sample containing spherical embedded particles.
+ From top to bottom, the sample is composed of the air layer, an intermediate material layer, and the substrate. The particles are spheres with radius $10.2$ nm. They are placed vertically in the middle of the intermediate layer. The depth to place the spheres is measured between the top of the layer and the bottom of the particles. There is no interference between the scattered waves.</description>
+    </item>
+    
+    <item>
+      <title>Contribute to documentation</title>
+      <link>https://www.bornagainproject.org/documentation/developers-corner/contribute-to-documentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/developers-corner/contribute-to-documentation/</guid>
+      <description>Contribute to documentation Here we explain how to make change in the documentation and make it available online.
+General information Our web site repository contains two branches. Master branch contains markdown content of the site, gh-pages branch contains static html of the site. Hugo static site generator is used to produce html content from markdown pages.
+GitHub is configured to host content of gh-pages branch at this address.
+Users are modifying site content by providing pull requests to master branch.</description>
+    </item>
+    
+    <item>
+      <title>Core shell nanoparticles</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/core-shell-nanoparticles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/core-shell-nanoparticles/</guid>
+      <description>Core shell nanoparticles Scattering from cuboidal core-shell particles.
+ The sample is made of core-shell particles whose outer and inner shells are boxes with dimensions $L_1 = W_1 = 16$ nm, $H_1 = 8$ nm and $L_2 = W_2 = 12$ nm, $H_2 = 7$ nm, respectively, where $L_i$, $W_i$ and $H_i$ are the length, width and height of box $i$. The smaller box is positioned so that the centres of the bottom faces of both particles coincide.</description>
+    </item>
+    
+    <item>
+      <title>Cylinders in Born Approximation</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-ba/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-ba/</guid>
+      <description>Cylinders in Born Approximation Scattering from a monodisperse distribution of cylinders using the Born approximation.
+ The cylinders are all identical with radii and heights equal to $5$ nanometers. The wavelength is equal to $1$ $\unicode{x212B}$. The incident angles are equal to $\alpha_i = 0.2 ^{\circ}$ and $\phi_i = 0^{\circ}$. There is no substrate (particles are embedded in the air layer), hence no refraction, hence no distorted waves, hence DWBA boils down to regular Born approximation.</description>
+    </item>
+    
+    <item>
+      <title>Functionality overview</title>
+      <link>https://www.bornagainproject.org/documentation/introduction/functionality/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/introduction/functionality/</guid>
+      <description>Functionality overview This section provides a bird&amp;rsquo;s-eye view of the functionality provided by BornAgain.
+Multilayers  Multilayers with arbitrary number of layers Optional roughness of layer interfaces Correlation between different interface roughness profiles Magnetic materials    Multilayered structure with roughness
+  Particles  Library of basic shapes of particles (form factors) Particles with inner structures Possibility to assemble complex particle shapes from the basic ones Size distribution of particles (polydispersity)    Selection of available shapes: basic shapes, combinations of particles, core-shell particles and polydisperse particles</description>
+    </item>
+    
+    <item>
+      <title>Install the third party software</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/third-party/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/third-party/</guid>
+      <description>Install the third party software Required software:
+ Compiler with C++-14 support (i.e. gcc&amp;gt;= 4.9) cmake (&amp;gt;= 3.1) boost library (&amp;gt;= 1.48) fftw3 library (&amp;gt;= 3.3.1) gsl (GNU scientific library, &amp;gt;= 1.15) libtiff library (&amp;gt;=4.0.2) python3, python3-devel, python3-numpy, python3-matplotlib Qt5 (&amp;gt;=5.4)  All required packages can be easily installed on most Linux distributions using the system&amp;rsquo;s package manager. Below are a few examples for several selected operating systems. Please note, that other distributions (Fedora, Mint, etc) may have different commands for invoking the package manager and slightly different names of packages (like boost instead of libboost etc).</description>
+    </item>
+    
+    <item>
+      <title>Installation on Windows</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/windows/</guid>
+      <description>Installation on Windows We provide 64-bit installer package which can be installed into 64-bit Windows 7, 8 and 10 systems.
+The BornAgain graphical user interface doesn&amp;rsquo;t require any additional libraries to be installed on the system. You can start using the BornAgain application right after the installation. However, to use the framework via scripting you have to have a Python framework installed. To install and run BornAgain for the first time proceed with the following steps:</description>
+    </item>
+    
+    <item>
+      <title>Interference 1D lattice</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-lattice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-lattice/</guid>
+      <description>Interference 1D lattice In this example we simulate the scattering from infinite 1D repetition of rectangular patches (rectangular grating). This is done by using the interference function of a 1D lattice together with very long boxes.
+ By-default, the axis of the one-dimensional lattice coincides with the $x$-axis of the reference cartesian frame, so it coinsides with the beam direction. Long boxes are placed along a one-dimensional lattice on top of substrate, the lattice_length parameter corresponds to the grating period.</description>
+    </item>
+    
+    <item>
+      <title>Interference function of one-dimensional lattice</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/interference/lattice1d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/interference/lattice1d/</guid>
+      <description>Interference function of one-dimensional lattice A one dimensional lattice can be viewed as a chain of particles placed at regular intervals on a single axis. The plot below represents one possible use case, where infinitely long (or very long) boxes are placed at nodes of a 1d lattice to form a grating.
+  
+  See the BornAgain user manual (Chapter 3.4.1, One Dimensional Lattice) for details about the theory.</description>
+    </item>
+    
+    <item>
+      <title>Setup of a PyCharm project</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/setup-pycharm-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/setup-pycharm-project/</guid>
+      <description>How to setup a PyCharm project In this tutorial we explain how to setup a Python development environment to be able to create, modify and run BornAgain simulations using Python scripts. The tutorial is oriented towards Windows users who are making their first steps in scientific computing with Python.
+At this point we assume that the user has already installed BornAgain and a Python distribution as explained in the Installation section.</description>
+    </item>
+    
+    <item>
+      <title>Spherical detector</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/detector-types/spherical-detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/detector-types/spherical-detector/</guid>
+      <description>Spherical detector This shape of detector represents a portion of a sphere, defined by the range of $\phi$ and $\alpha$ angles as shown in the plot below. The sphere has its center located at the origin of the sample coordinate system.
+  
+  A GISAS or off-specular simulation creates a spherical detector by default. To set its parameters the method setDetectorParameters should be used
+setDetectorParameters(n_phi, phi_min, phi_max, n_alpha, alpha_min, alpha_max) &amp;#34;&amp;#34;&amp;#34; Sets detector parameters using angle ranges n_phi : number of phi-axis bins phi_min : low edge of first phi-bin phi_max : upper edge of last phi-bin n_alpha : number of alpha-axis bins alpha_min : low edge of first alpha-bin alpha_max : upper edge of last alpha-bin &amp;#34;&amp;#34;&amp;#34; All angles are expressed in radians.</description>
+    </item>
+    
+    <item>
+      <title>Working with sample parameters</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/fitting/sample-parameters-intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/fitting/sample-parameters-intro/</guid>
+      <description>Working with sample parameters This example shows how to create a sample with fixed parameters and then change these parameters on the fly during runtime. The example doesn&amp;rsquo;t contain any fitting and serves as a gentle introduction to other fitting examples.
+ Lines 14-42: the sample representing cylinders and prisms on top of substrate without interference is created. Lines 45-53: beam and detector parameters are defined. Line 63: the tree structure of the sample is printed.</description>
+    </item>
+    
+    <item>
+      <title>Basic simulation tutorial</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/basic-simulation-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/basic-simulation-tutorial/</guid>
+      <description>Basic simulation tutorial A simulation of GISAS using BornAgain consists of following steps:
+ define materials by specifying name and refractive index define layers by specifying thickness, roughness, material define embedded particles by specifying shape, size, constituting material, interference function include particles in layers, specifying density, position, orientation assemble a multilayered sample specify input beam and detector characteristics run the simulation save the simulated detector image  In this example, we simulate the scattering from a mixture of cylinder and prism nanoparticles without any interference between them.</description>
+    </item>
+    
+    <item>
+      <title>Architectural overview</title>
+      <link>https://www.bornagainproject.org/documentation/introduction/architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/introduction/architecture/</guid>
+      <description>Architectural overview BornAgain is an open source and a multi-platform framework available in Windows, MacOS and Linux. It is developed in C++ and provided with Python bindings. The overall size of the project is about 180k lines of code.
+The Big Picture BornAgain is designed to be immediately useful for users with little experience in GISAS simulations while being flexible enough to fulfill requests of advanced users. The figure below represents the set of requirements and practices that have informed our architectural choices.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain GUI overview</title>
+      <link>https://www.bornagainproject.org/documentation/running-gui/gui-overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/running-gui/gui-overview/</guid>
+      <description>BornAgain GUI overview The basic features of the interface are explained below.
+ Welcome view Instrument View Sample View Simulation View Jobs View  Welcome view When you start BornAgain GUI, you will be presented with the Welcome View, where you can
+ Create new projects Open recent projects    
+  You can use the view selector located on the left vertical panel (1) to change to one of the following views.</description>
+    </item>
+    
+    <item>
+      <title>Correlated roughness</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/layered-structures/correlated-roughness/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/layered-structures/correlated-roughness/</guid>
+      <description>Correlated roughness Scattering from a multilayered sample with correlated roughness.
+ The sample is composed of a substrate on which is sitting a stack of layers. These layers consist in a repetition of 5 times two different superimposed layers (from bottom to top):  layer A: $2.5$ nm thick with a real refractive index $n = 5 \cdot 10^{-6}$. layer B: $5$ nm thick with a real refractive index $n = 10 \cdot 10^{-6}$.</description>
+    </item>
+    
+    <item>
+      <title>Cylinders in Distorted Wave Born Approximation</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-dwba/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-dwba/</guid>
+      <description>Cylinders in Distorted Wave Born Approximation Scattering from a monodisperse distribution of cylindrical particles using the Distorted Wave Born Approxiamtion (DWBA).
+This example is similar to the simulation Cylinders in Born Approximation, but now the particles sit on top of a substrate. Therefore incoming and scattered waves are distorted by reflections from the substrate surface, as described by the DWBA.
+ The distribution of cylinders is monodisperse with heights and radii of $5$ nm.</description>
+    </item>
+    
+    <item>
+      <title>Detector resolution function</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/detector-resolution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/detector-resolution/</guid>
+      <description>Detector resolution function Scattering from a monodisperse distribution of cylindrical particles with a Gaussian resolution function of the detectors.
+ The sample is made of cylindrical particles randomly deposited on a substrate. It is similar to Cylinders in DWBA with the additional resolution function of the detectors. The radii and heights of the cylinders are equal to $5$ nm. There is no interference between the scattered waves. The detector resolution function is a two-dimensional Gaussian with the same width for the $x$ and $y$ axes: $\sigma_x = \sigma_y = 0.</description>
+    </item>
+    
+    <item>
+      <title>Fit cylinders and prisms</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-cylinders-and-prisms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-cylinders-and-prisms/</guid>
+      <description>Fit cylinders and prisms In this example we use a simple geometry: cylinders and prisms in air layer, deposited on a substrate layer, with no interference. There are 4 fitting parameters:
+ radius of cylinders height of cylinders side length of prisms height of prisms  Our reference data are a “noisy” two-dimensional intensity map obtained from the simulation of the same geometry with a fixed value of $5$ nm for the height and radius of cylinders and for the height of prisms which have a $10$-nanometer-long side length.</description>
+    </item>
+    
+    <item>
+      <title>Gallery</title>
+      <link>https://www.bornagainproject.org/gallery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/gallery/</guid>
+      <description>Gallery This page contains a collection of screenshots demonstrating BornAgain graphical user interface.
+   Welcome view
+      Instrument view
+      Sample view
+      Sample view
+      Material editor
+      Simulation view
+      Job view
+      Projections view</description>
+    </item>
+    
+    <item>
+      <title>Get the source</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/get-source/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/get-source/</guid>
+      <description>Get the source Source tarball Download the BornAgain source tarball and unpack it:
+$ cd &amp;lt;some_directory&amp;gt; $ tar xfz BornAgain-1.11.1.tar.gz Github You can also get access to the source code by cloning our public Git repository:
+$ cd &amp;lt;some_directory&amp;gt; $ git clone --recursive https://github.com/scgmlz/BornAgain.git Why Git? Our Git repository holds two main branches called master and develop. We consider the master branch to be the main branch where the source code of HEAD always reflects the latest stable release.</description>
+    </item>
+    
+    <item>
+      <title>Hexagonal lattices with basis</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/hexagonal-lattice-with-basis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/hexagonal-lattice-with-basis/</guid>
+      <description>Hexagonal lattices with basis Scattering from two layers of spheres distributed along a hexagonal close packed structure.
+ The sample is made of spherical particles deposited on a substrate. These $10$-nanometer-radius particles are distributed along a hexagonal close packed structure:  each layer is generated using a two-dimensional hexagonal lattice with a lattice length of $20$ nm and its $a$-axis parallel to the $x$-axis of the reference Cartesian frame. the vertical stacking is done by specifying the position of a &amp;ldquo;seeding&amp;rdquo; particle for each layer: $(0,0,0)$ for the first layer and $(R,R,\sqrt{3}R)$ for the second layer, $R$ being the radius of the spherical particle.</description>
+    </item>
+    
+    <item>
+      <title>Interference 2D square lattice</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-square-lattice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-square-lattice/</guid>
+      <description>Interference 2D square lattice Scattering from cylindrical particles distributed along a square lattice.
+ Cylinders with radii and heights of $3$ nm are deposited on a substrate. Because of the presence of the substrate layer the simulation is run using the DWBA. The particles are distributed along a square lattice with a lattice length of $25$ nm. The main axes are parallel to the $x$-axis and $y$-axis of the reference Cartesian frame, respectively.</description>
+    </item>
+    
+    <item>
+      <title>Interference function of two-dimensional lattice</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/interference/lattice2d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/interference/lattice2d/</guid>
+      <description>Interference function of two-dimensional lattice The interference function of a 2D lattice is used to model the scattering from particles positioned at some regular intervals.
+  
+  The generated layout, the lattice, is characterised by its base vectors $a$ and $b$ (in real space) and the angle between these two vectors. The finite size effects and/or divergence of the lattice from an ideal crystal are modelled with the help of two dimensional decay functions.</description>
+    </item>
+    
+    <item>
+      <title>Material types</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/material-types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/material-types/</guid>
+      <description>Material types Overview Currently two material types are available in BornAgain: HomogeneousMaterial and MaterialBySLD.
+First of them is created with the following syntax:
+magnetization = ba.kvector_t(1.0, 0.0, 0.0) &amp;lt;material&amp;gt; = ba.HomogeneousMaterial(&amp;#34;name&amp;#34;, delta, beta, magnetization) where name is the arbitrary name of the material associated with its complex refractive index $n = 1 - delta + i \cdot beta$. magnetization defines a 3D magnetization vector (in A/m). Variable &amp;lt;material&amp;gt; is later used when referring to this particular material.</description>
+    </item>
+    
+    <item>
+      <title>Plotting with axes in different units</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/miscellaneous/axes-in-different-units/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/miscellaneous/axes-in-different-units/</guid>
+      <description>Plotting with axes in different units In this example we demonstrate how to plot intensity data with detector axes expressed in different units. It serves as a supporting example to the Accessing simulation results  tutorial.
+ The standard &amp;ldquo;Cylinders in DWBA&amp;rdquo; sample (see this example) is used to setup the simulation. When the simulation is completed, the Simulation::result() method is used to get a SimulationResult object. Depending on an additional parameter IDetector2D.</description>
+    </item>
+    
+    <item>
+      <title>Quick Start</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/quick-start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/quick-start/</guid>
+      <description>Quick Start This tutorial demonstrates how to run the simulation and get the simulated intensity data image in a few mouse clicks.
+1. Run BornAgain Graphical User Interface   
+  Use the BornAgain icon located on the desktop (Windows) or on Launchpad (MacOS) to start the GUI.
+For Linux users: run an executable located in BornAgain installation directory from the command line:
+$ &amp;lt;install_dir&amp;gt;/bin/BornAgain 2. Switch to the Sample View When you start the BornAgain GUI, you will be presented with the Welcome View as shown on the plot.</description>
+    </item>
+    
+    <item>
+      <title>Rectangular detector</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/detector-types/rectangular-detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/detector-types/rectangular-detector/</guid>
+      <description>Rectangular detector A RectangularDetector object in BornAgain is used to represent a two dimensional neutron/x-ray detector. The following sections provide details on this type of detector:
+ General description Rectangular detector definition Positioning the rectangular detector The detector is perpendicular to the sample plane The detector is perpendicular to the direct beam The detector is perpendicular to the reflected beam Additional convenience methods  General description A RectangularDetector has a plane rectangular shape, a total given width and height and a given amount of pixels.</description>
+    </item>
+    
+    <item>
+      <title>Advanced tips</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/macos/advanced-tips/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/macos/advanced-tips/</guid>
+      <description>MacOS advanced tips If your prefer to install the BornAgain python libraries not to the site-packages folder of your Python interpreter, but to some custom folder, you can do this in a following way.
+ Run the bornagain_install_python.py script from application bundle:  $ python /Applications/BornAgain.app/Contents/libexec/BornAgain-1.12/bornagain_python_install.py   Choose the option &amp;lsquo;[0]&amp;rsquo; - Generate bundle with BornAgain libraries, do not install it. You will get a message:  ... BornAgain Python bundle is successfully created in temporary directory &#39;/var/folders/zt/0l4f_l_d46v5rkx668jqx0b4000lw7/T/bornagain_bundle&#39; .</description>
+    </item>
+    
+    <item>
+      <title>Accessing simulation results</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/accessing-simulation-results/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/accessing-simulation-results/</guid>
+      <description>Accessing simulation results In this tutorial we explain how to access GISAS simulation results, how to plot the simulated detector 2D intensity map as a color map and how to export the result into various formats.
+SimulationResult object The detector intensity in BornAgain can be retrieved via special object of SimulationResult type.
+simulation = GISASSimulation() simulation.setDetectorParameters(20, -1.0*deg, 1.0*deg, 10, 0.0*deg, 1.0*deg) simulation.setSample(sample) simulation.runSimulation() result = simulation.result() SimulationResult object allows</description>
+    </item>
+    
+    <item>
+      <title>Build and install BornAgain</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/build-and-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/build-and-install/</guid>
+      <description>Build and install BornAgain BornAgain comes with configuration files for the cross-platform build system CMake. Using CMake, it takes the following commands to build and install BornAgain:
+$ mkdir &amp;lt;build_dir&amp;gt; $ cd &amp;lt;build_dir&amp;gt; $ cmake [&amp;lt;options&amp;gt;] &amp;lt;source_dir&amp;gt; $ make -j4 $ ctest -j4 $ sudo make install These steps shall now be explained in more detail.
+Dedicated build directory $ mkdir &amp;lt;build_dir&amp;gt; $ cd &amp;lt;build_dir&amp;gt; The build process must take place in a dedicated directory .</description>
+    </item>
+    
+    <item>
+      <title>Cylinders with size distribution</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution/</guid>
+      <description>Cylinders with size distribution Scattering from a polydisperse distribution of cylinders in Born Approximation.
+ The average radii and heights of the cylinders are equal to $5$ nm. The radii of the cylinders vary according to a normal distribution with a standard deviation $\sigma$ equal to $0.2$ times the average radius. The wavelength is equal to $1$ $\unicode{x212B}$. The incident angles are equal to $\alpha_i = 0.2 ^{\circ}$ and $\phi_i = 0^{\circ}$.</description>
+    </item>
+    
+    <item>
+      <title>Download</title>
+      <link>https://www.bornagainproject.org/download/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/download/</guid>
+      <description>Current release 1.12.1  View changes made in this release   BornAgain is supported under Windows, Mac OS X and Linux operating systems. For Windows and MacOS we provide binary installer packages, both for Python2 and Python3. For Unix-like operating systems (including Linux and Mac OS X) we support installation from source. Use links below to download the appropriate package. Previous versions are available here.
+  Windows  MacOS  Linux  Manual   Windows, 64-bit (x86) Windows, Python3 Recommended</description>
+    </item>
+    
+    <item>
+      <title>Fitting in the GUI</title>
+      <link>https://www.bornagainproject.org/documentation/running-gui/gui-fitting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/running-gui/gui-fitting/</guid>
+      <description>Fitting in the GUI This tutorial gives a brief overview of the fitting functionality in the GUI, introduced in Release-1.6 (June, 2016).
+In the future the following tutorial will be revised to reflect the actual status of the fitting in the GUI.
+As a first example, this tutorial will focus on fitting data simulated with BornAgain itself. More complex fitting examples will be considered in coming releases. This tutorial is organized as follows:</description>
+    </item>
+    
+    <item>
+      <title>Fitting with masks</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-with-masks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-with-masks/</guid>
+      <description>Fitting with masks In this example we demonstrate how to mask certain areas on the detector image to exclude their influence on the fitting procedure. This can be done by invoking the method addMask on a simulation object.
+simulation = GISASSimulation() simulation.addMask(Rectangle(x1, y1, x2, y2), mask_value)  where Rectangle is related to the shape of the mask in detector coordinates, mask_value can be either True (area is excluded from the simulation and fit) or False (area will stay in the simulation and will be taken into account in $\chi^2$ calculations during the fit).</description>
+    </item>
+    
+    <item>
+      <title>Interference 2D rotated square lattice</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/intereference-2d-rotated-square-lattice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/intereference-2d-rotated-square-lattice/</guid>
+      <description>Interference 2D rotated square lattice Scattering from cylinders distributed along a square lattice, whose main axes are rotated with respect to the reference cartesian frame.
+This example is similar to Interference 2D square lattice with the additional rotation.
+  Real-space model
+    Intensity image
+     1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768 &amp;#34;&amp;#34;&amp;#34; Cylinders on a rotated 2D lattice &amp;#34;&amp;#34;&amp;#34; import numpy import bornagain as ba from bornagain import deg, angstrom, nm def get_sample(): &amp;#34;&amp;#34;&amp;#34; Returns a sample with cylinders on a substrate, forming a rotated 2D lattice &amp;#34;&amp;#34;&amp;#34; # defining materials m_ambience = ba.</description>
+    </item>
+    
+    <item>
+      <title>Interference function of radial paracrystal</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/interference/para_radial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/interference/para_radial/</guid>
+      <description>Interference function of radial paracrystal The interference function of a radial paracrystal is used to model cumulative disorder of interparticle distances. It is called radial to stress the fact that it only takes into account the radial component of the scattering vector.
+  
+  Each circle on the plot above represents the area where the probability to find a particle, given a particle at the origin, is above some arbitrary threshold.</description>
+    </item>
+    
+    <item>
+      <title>Large particle formfactor</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/large-particles-formfactor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/large-particles-formfactor/</guid>
+      <description>Large particle formfactor This example demonstrates, that for large particles (~$1000$ nm) the contribution to the scattered intensity from the form factor oscillates rapidly within one detector bin and analytical calculations (performed for the bin center) give completely a wrong intensity pattern. In this case Monte-Carlo integrations over detector bin should be used.
+The simulation generates four plots using different sizes of the particles, (radius $=10$ nm, height $=20$ nm) or (radius $=1$ $\mu$m, height $=2$ $\mu$m), and different calculation methods: analytical calculations or Monte-Carlo integration.</description>
+    </item>
+    
+    <item>
+      <title>Off-Specular</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/offspecular-simulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/offspecular-simulation/</guid>
+      <description>Off-Specular Off-specular scattering from a monodisperse distribution of long boxes.
+ The sample is made of very long boxes with length equal to $1000$ nm, width $20$ nm and height $10$ nm. The particles are distributed along a one-dimensional lattice with a lattice spacing of $100$ nm in the $x$-direction. The particles are rotated around the $z$-axis by $90^{\circ}$ so that their &amp;ldquo;infinite&amp;rdquo; dimension is parallel to the $y$-direction. The incident wavelength is equal to $1$ $\unicode{x212B}$.</description>
+    </item>
+    
+    <item>
+      <title>Installation on Linux (short version)</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/linux-short/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/linux-short/</guid>
+      <description>Installation on Linux (short version) This page shortly explains how to build and install BornAgain from source on Linux systems.
+Install third party software  Compiler with C++-14 support (i.e. gcc&amp;gt;= 4.9) cmake (&amp;gt;= 3.1) boost library (&amp;gt;= 1.48) fftw3 library (&amp;gt;= 3.3.1) gsl (GNU scientific library, &amp;gt;= 1.15) libtiff library (&amp;gt;=4.0.2) python3, python3-devel, python3-numpy-devel, python3-matplotlib Qt5 (&amp;gt;=5.4)  Get the source Download the BornAgain source tarball or use the following git repository</description>
+    </item>
+    
+    <item>
+      <title>Particle positioning</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/particle-positioning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/particle-positioning/</guid>
+      <description>Particle positioning This tutorial demonstrates how to include particles in various layers of a multi-layer system.
+As an example we are going to use simple spherical particles and a 3-layer system consisting of a semi-infinite air layer, a middle layer with finite thickness and a semi-infinite substrate layer.
+Creating particles All particles implemented in BornAgain are defined by their form factors, their sizes and the materials they are made of.</description>
+    </item>
+    
+    <item>
+      <title>Custom formfactor</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/custom-formfactor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/custom-formfactor/</guid>
+      <description>Custom formfactor Scattering from a monodisperse distribution of particles, whose form factor is defined by the user.
+ This example shows how users can simulate their own particle shape by implementing the analytical expression of its form factor. The particular shape used here is a polyhedron, whose planar cross section is a &amp;ldquo;plus&amp;rdquo; shape with a side length of $20$ nm and a height of $15$ nm. These particles are distributed on a substrate.</description>
+    </item>
+    
+    <item>
+      <title>Fitting along slices</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-along-slices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-along-slices/</guid>
+      <description>Fitting along slices Here we demonstrate how to fit along slices. The idea is that the user defines positions of vertical and horizontal lines crossing the detector plane in regions of most interest (Yoneda wings, Bragg peaks, etc.) and then finds sample parameters which fits those regions best.
+Such approach uses much less CPU while still giving a chance to find optimal sample parameters. In general, however, it is arguable, whether fitting along slices makes more sense than fitting using the whole detector image.</description>
+    </item>
+    
+    <item>
+      <title>Interference 2D centered square lattice</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-centered-square-lattice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-centered-square-lattice/</guid>
+      <description>Interference 2D centered square lattice Scattering from cylinders distributed along a squared centered lattice.
+ The particles are cylinders with radii and heights of $3$ nm. Their spatial distribution is composed of two square lattices (lattice length $l$), shifted by half a lattice length in both directions: The first square lattice is centered at the origin, with a lattice length of $25$ nm. The second one, with the same lattice spacing and the same type of particles at its nodes is initialized at $x = y = l/2 = 12.</description>
+    </item>
+    
+    <item>
+      <title>Interference function of 2D paracrystal</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/interference/para2d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/interference/para2d/</guid>
+      <description>Interference function of 2D paracrystal Similarly to the 2D interference function, the 2D paracrystal is used to model the scattering from particles positioned at some regular intervals on a plane. However, the 2D paracrystal model posesses only short range order. The disorder is cumulative at further distance.
+  
+  The plot above represents a schematic view of the 2D paracrystal. Each circle on the plot represents an area where the probability to find a particle, given a particle at the origin, is above some arbitrary threshold.</description>
+    </item>
+    
+    <item>
+      <title>Particle rotation</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/particle-rotation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/particle-rotation/</guid>
+      <description>Particle rotation This tutorial gives an overview on how to rotate a particle in different ways.
+Initial orientation The rotation of particles starts from a known standard orientation. This orientation is represented by the motionless reference coordinate system of the particle and it is defined in the User Manual. In this tutorial we are going to use a box shaped particle with defined length, width and height. The picture below represents the initial orientation of the box shape.</description>
+    </item>
+    
+    <item>
+      <title>Rectangular detector</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/rectangular-detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/rectangular-detector/</guid>
+      <description>Rectangular detector In this example we demonstrate the difference between GISAS simulation using default spherical detector and using special rectangular detector. The later provides more accurate representation of real experimental detectors.
+ See the Detector types tutorial for detailed explanations about various detector types in BornAgain.
+  As an example we take typical PILATUS detector ($981\times1043$ pixels) placed at the distance $2000$ mm from sample origin. The detector is perpendicular to the $x$-axis of sample reference frame, as shown on the plot.</description>
+    </item>
+    
+    <item>
+      <title>Run a first simulation</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/first-simulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/first-simulation/</guid>
+      <description>Run a first simulation This section explains how to run a first simulation.
+ Post installation steps Running the first Python simulation Running the BornAgain GUI  Post installation steps After the installation is complete, the location of the BornAgain libraries needs to be included into the LD_LIBRARY_PATH (or DYLD_LIBRARY_PATH for MacOS) and PYTHONPATH environment variables. This can be done by running the BornAgain setup script in a terminal:</description>
+    </item>
+    
+    <item>
+      <title>Two types of cylinders with size distribution</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution2/</guid>
+      <description>Two types of cylinders with size distribution Scattering of a polydisperse distribution of two types of cylinders.
+ The simulation is performed using the Born approximation, i.e. there is no &amp;ldquo;substrate&amp;rdquo; layer. The sample is made of polydisperse cylinders of two different sizes: $R_1 = H_1$ and $R_2 = H_2$, where $R_i$ and $H_i$ are the radius and width of cylinder of type $i$. There are 95% of cylinders of type $1$ and 5% of cylinders of type $2$.</description>
+    </item>
+    
+    <item>
+      <title>Particle composition</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/particle-composition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/particle-composition/</guid>
+      <description>Particle composition This tutorial demonstrates how to construct complex shape particles.
+All particles implemented in BornAgain are defined by their form factors, their sizes and the materials they are made of. The form factor library provides access to a list of about 20 elementary shapes. A special ParticleComposition object allows to compose elementary particles into complex shapes and treat the resulting object as a single particle: it can be rotated, translated and included in the layer via a particle layout.</description>
+    </item>
+    
+    <item>
+      <title>Rotated Pyramids</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/rotated-pyramids/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/rotated-pyramids/</guid>
+      <description>Rotated Pyramids Scattering from a monodisperse distribution of rotated pyramids.
+This example illustrates how the in-plane rotation of non-radially symmetric particles influences the scattering pattern.
+ The sample is made of pyramids deposited on a substrate. Each pyramid is characterized by a squared-base side length of $10$ nm, a height of $5$ nm, and a base angle $\alpha$ equal to $54.73^{\circ}$. These particles are rotated in the $(x, y)$ plane by $45^{\circ}$.</description>
+    </item>
+    
+    <item>
+      <title>Simultaneous fit of two datasets</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/fitting/simultaneous-fit-of-two-datasets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/fitting/simultaneous-fit-of-two-datasets/</guid>
+      <description>Simultaneous fit of two datasets In this example we demonstrate how to fit two datasets simultaneously.
+Suppose that we have a sample measured twice for two different incident angles. We are going to fit both datasets simultaneously to find the unknown sample parameters.
+To do this, we define one dataset (a pair of real data and corresponding simulation model) for the first incidence angle and another pair of (real data, simulation model) for the second incidence angle.</description>
+    </item>
+    
+    <item>
+      <title>Specular scattering</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/basic-specular-simulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/basic-specular-simulation/</guid>
+      <description>Specular scattering Specular scattering from a multilayered sample with surface roughness.
+ The sample is composed of a substrate on which is sitting a stack of layers (similar to Correlated Roughness). These layers consist in a repetition of $10$ times two different superimposed layers (from bottom to top):  layer A: $5$ nm thick with a real refractive index $n = 5\cdot10^{-6}$ layer B: $10$ nm thick with a real refractive index $n = 10\cdot10^{-6}$  There is no added particle.</description>
+    </item>
+    
+    <item>
+      <title>Spheres on Hexagonal Lattice</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/spheres-at-hex-lattice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/spheres-at-hex-lattice/</guid>
+      <description>Spheres on Hexagonal Lattice Scattering from spheres distributed along a hexagonal lattice.
+ The sample is made of spherical particles with radii of $10$ nm deposited on a substrate along a hexagonal lattice. This two-dimensional lattice is characterized by a lattice length of $20$ nm. Its a-axis coincides with the x-axis of the reference Cartesian frame. The wavelength is equal to $1$ $\unicode{x212B}$. The incident angles are $\alpha_i = 0.</description>
+    </item>
+    
+    <item>
+      <title>Magnetic particles</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/magnetic-particles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/magnetic-particles/</guid>
+      <description>Magnetic particles This tutorial demonstrates how to include particles with non-zero magnetization.
+As an example we are going to use magnetic spherical particles embedded in the substrate of a simple 2-layer system. We will simulate this sample with a polarized beam and use polarization analysis to focus on the spin-flip channel.
+Creating materials with magnetization density Magnetic materials in BornAgain are defined by their refractive index, as for non-mangetic materials, and the magnetization density vector, given in units of A/m.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://www.bornagainproject.org/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cosine ripples on rectangular lattice</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/cosine-ripples-at-rect-lattice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/cosine-ripples-at-rect-lattice/</guid>
+      <description>Cosine ripples on rectangular lattice Scattering from elongated particles distributed along a two-dimensional rectangular lattice.
+ Each particle has a sinusoidal profile (&amp;ldquo;Ripple1&amp;rdquo; form factor) with a length of $100$ nm, a width of $20$ nm and a height of $4$ nm. They are placed along a rectangular lattice on top of a substrate. This lattice is characterized by a lattice length of $200$ nm in the direction of the long axis of the particles and of $50$ nm in the perpendicular direction.</description>
+    </item>
+    
+    <item>
+      <title>Cylinders and Prisms</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-and-prisms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-and-prisms/</guid>
+      <description>Cylinders and Prisms Scattering from a mixture of cylinders and prisms without interference.
+ The sample comprises a substrate on which are deposited, in equal proportion, cylinders and prisms. All particles are made of the same material. Each type of particle has the same orientation. The cylinders are $5$ nm high and $5$ nm in radius. Each prism is $5$ nm high with an equilateral triangular base, whose side length is equal to $10$ nm.</description>
+    </item>
+    
+    <item>
+      <title>Real life fit example: Experiment at GALAXI</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-galaxi-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-galaxi-data/</guid>
+      <description>Real life fit example: Experiment at GALAXI This is an example of real data fit. We use our own measurements performed at the laboratory diffractometer GALAXI in Forschungszentrum Jülich. The example supports Importing experimental data tutorial.
+  Real-space model
+    Fit window
+     The file SampleBuilder.py contains a sample description. Sample represents a 4 layer system (substrate, teflon, hmdso and air) with Ag nanoparticles placed inside the hmdso layer on top of the teflon layer.</description>
+    </item>
+    
+    <item>
+      <title>Troubleshooting</title>
+      <link>https://www.bornagainproject.org/documentation/getting-help/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-help/troubleshooting/</guid>
+      <description>Troubleshooting To report bugs or request help with problems in building or running BornAgain, please create an issue on github or send us an e-mail. Provide all relevant information that may help us to analyse the issue. In particular, submit the full output of the last, unsuccessful command (screen copy, or redirection [command] &amp;gt;&amp;amp; [logfile]).
+ Windows specific  Missing api-ms-win-crt-runtime-l1-1-0.dll  MacOS specific  Incompatible library version of libgsl.</description>
+    </item>
+    
+    <item>
+      <title>Working with sample parameters</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/working-with-sample-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/working-with-sample-parameters/</guid>
+      <description>Working with sample parameters This section gives additional details about the manipulation of sample parameters during run time, after the sample has already been constructed. For a single simulation this is normally not necessary. However, it might be useful during interactive work when the user tries to find optimal sample parameters by running a series of simulations. A similar task also arises when the theoretical model, composed of the description of the sample and of the simulation, is used for fitting real data.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://www.bornagainproject.org/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/about/</guid>
+      <description>BornAgain is an open-source software project to simulate and fit grazing-incidence small-angle scattering (GISAS), using distorted-wave Born approximation (DWBA).
+Developed and suported by the Scientific Computing Group at MLZ, Garching.
+  This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 654000 (SINE2020).    Citing BornAgain</description>
+    </item>
+    
+    <item>
+      <title>About this website</title>
+      <link>https://www.bornagainproject.org/about-website/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/about-website/</guid>
+      <description> About this website Website is created using Hugo static site generator and documentation theme developed by our group.
+Credits to icon authors  Mouse by Magicon from the Noun Project Fork Branch by Nick Bluth from the Noun Project Console by Atif Arshad from the Noun Project  </description>
+    </item>
+    
+    <item>
+      <title>All available form factors</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/all-formfactors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/all-formfactors/</guid>
+      <description>All available form factors Scattering from all individual particle&amp;rsquo;s shapes implemented in BornAgain. For each figure, one particular shape is used.
+The dimensions of the object are chosen only in order to get a characteristic signature of the form factor in the same range of values for the output angles.
+ The simulation is run using the Born approximation. There is no substrate and also no interference between the scattered waves.</description>
+    </item>
+    
+    <item>
+      <title>Frequently asked questions</title>
+      <link>https://www.bornagainproject.org/documentation/getting-help/frequently-asked-questions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-help/frequently-asked-questions/</guid>
+      <description>Do you have a mailing list? If you wish to receive e-mail notifications as soon as a new BornAgain release becomes available, please register on the entry page of this site.
+How do I get help? If you encounter a problem during the installation or while using BornAgain, please send us an e-mail. Provide all relevant information that may help us to quickly spot the problem.
+How do I request a new feature?</description>
+    </item>
+    
+    <item>
+      <title>Interference 2D Paracrystal</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-paracrystal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-paracrystal/</guid>
+      <description>Interference 2D Paracrystal Scattering from monodisperse cylinders distributed along a two-dimensional square paracrystal.
+ The particles are cylinders with constant radii and heights equal to $5$ nm. They are deposited on a substrate, following a two-dimensional square paracrystalline pattern. This 2D paracrystal is characterized by:  a lattice length of $20$ nm along both axes of the reference Cartesian frame, a damping length equal to $0$, &amp;ldquo;coherent&amp;rsquo; domains with a size of $20$ $\mu$m along the axes of the reference Cartesian frame.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to fitting</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/introduction-to-fitting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/introduction-to-fitting/</guid>
+      <description>Introduction to fitting In addition to the simulation of grazing incidence X-ray and neutron scattering by multilayered samples, BornAgain also offers the option to fit the numerical model to reference data by modifying a selection of sample parameters from the numerical model.
+ Implementation in BornAgain Stages to run fitting procedure How to get the right answer from fitting  Implementation in BornAgain Fitting in BornAgain deals with estimating the optimum parameters in the numerical model by minimizing the difference between numerical and reference data.</description>
+    </item>
+    
+    <item>
+      <title>Basic fitting tutorial</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/basic-fitting-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/basic-fitting-tutorial/</guid>
+      <description>Basic fitting tutorial In this section we are going to go through a complete example of fitting using BornAgain. Each step will be associated with a detailed piece of code written in Python. The script can also be found in the Fit Cylinders and Prisms example.
+This example uses the same sample geometry as in Basic simulation tutorial. Cylindrical and prismatic particles in equal proportion are deposited on a substrate layer, with no interference between the particles.</description>
+    </item>
+    
+    <item>
+      <title>Importing experimental data</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/importing-experimental-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/importing-experimental-data/</guid>
+      <description>Importing experimental data This tutorial covers some practical aspects of importing experimental data in BornAgain for further fitting using Python interface. Fitting from GUI is covered in this tutorial.
+BornAgain i/o module supports only very few file formats: ascii, tiff and our own internal format. This might be not enough when it comes to the fitting the data obtained from some particular instrument. However, we fully support fitting of the data presented in the form of numpy arrays.</description>
+    </item>
+    
+    <item>
+      <title>Interference 1D radial paracrystal</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-radial-paracrystal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-radial-paracrystal/</guid>
+      <description>Interference 1D radial paracrystal Scattering from a monodisperse distribution of cylinders positioned following a one-dimensional radial paracrystal.
+ The sample is made of cylinders with radii and heights equal to $5$ nm, deposited on a substrate. The distribution of particles follows a radial paracrystal, characterized by a peak distance of $20$ nm and a damping length of $1$ $\mu$m. The wavelength is equal to $1$ $\unicode{x212B}$. The incident angles are $\alpha_i = 0.</description>
+    </item>
+    
+    <item>
+      <title>Size-distribution model: decoupling approximation</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-da/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-da/</guid>
+      <description>Size-distribution model: decoupling approximation Scattering from a distribution of cylinders of two different sizes using the Decoupling Approximation.
+ The sample is made of cylinders deposited on a substrate. The distribution of particles is made of:  80% of cylinders with radii and heights equal to $5$ nm 20% of cylinders with radii and heights equal to $8$ nm.  The interference function is Radial Paracrystal with a peak distance of $18$ nm and a damping length of $1$ $\mu$m.</description>
+    </item>
+    
+    <item>
+      <title>Size-distribution model: local monodisperse approximation</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-lma/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-lma/</guid>
+      <description>Size-distribution model: local monodisperse approximation Scattering from cylinders of two different sizes using the Local Monodisperse Approximation (LMA).
+ The sample is made of cylinders deposited on a substrate. The cylinders are of two different sizes:  80% of Type $1$: radius $R_1 = 5$ nm, height $H_1 = 5$ nm. The interference function is a radial paracrystal with a peak distance equal to $16.8$ nm and a damping length of $1$ $\mu$m.</description>
+    </item>
+    
+    <item>
+      <title>Size-distribution model: size-spacing coupling approximation</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-ssca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-ssca/</guid>
+      <description>Size-distribution model: size-spacing coupling approximation Scattering from cylinders of two different sizes using the Size-Spacing Coupling Approximation.
+ The sample is made of cylinders deposited on a substrate. The distribution of particles is made of:  80% of cylinders with radii and heights equal to $5$ nm 20% of cylinders with radii and heights equal to $8$ nm.  The interference function is Radial Paracrystal with a peak distance of $18$ nm and a damping length of $1$ $\mu$m.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain hotfix: 1.12.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.12.1/</link>
+      <pubDate>Tue, 12 Jun 2018 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.12.1/</guid>
+      <description>A bugfix release for BornAgain is now available  This is a hotfix release that fixes the following issues:
+ Bug #2068: Missing analyzer direction in GUI Bug #2069: Loading GUI first time takes 30 minutes (MacOS)  As always, we very much welcome your comments and feedback!</description>
+    </item>
+    
+    <item>
+      <title>Website and mailing list migration.</title>
+      <link>https://www.bornagainproject.org/post/ba-website-migration/</link>
+      <pubDate>Wed, 30 May 2018 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/ba-website-migration/</guid>
+      <description>Website and mailing list migration  Dear BornAgain users,
+We are migrating our BornAgain documentation to a new website. Our current Drupal based version, as you know it, will go to the other world. But no need for sadness - the new version will be better and will be available under the same address www.bornagainproject.org. The side effect of this migration is that we have to discontinue our current mailing list.</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.12</title>
+      <link>https://www.bornagainproject.org/post/release-1.12.0/</link>
+      <pubDate>Tue, 29 May 2018 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.12.0/</guid>
+      <description>New release of BornAgain: version 1.12  Much of this release was devoted to migrating our website to Hugo, allowing better automation and checking of online examples. The GUI has been extended with the possibility to perform specular simulations and in the sample view, a prototype 3D view of the sample is implemented.
+This release has the following highlights:
+ First implementation of specular simulation in GUI. DepthProbeSimulation for experiment preparation.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain hotfix: 1.11.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.11.1/</link>
+      <pubDate>Thu, 22 Mar 2018 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.11.1/</guid>
+      <description>A bugfix release for BornAgain is now available  This is a hotfix release that fixes the following issues:
+ Plot ticks are not updated in real time activity. Entering floating point numbers in GUI behaves weird. ROI in experimental data causes NaN fitting parameters.  As always, we very much welcome your comments and feedback!</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.11</title>
+      <link>https://www.bornagainproject.org/post/release-1.11.0/</link>
+      <pubDate>Fri, 02 Mar 2018 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.11.0/</guid>
+      <description>BornAgain 1.11 has been released  Starting from this release, we are using Python3 as the default scripting platform in BornAgain. Users can however choose between downloading a Python2 or Python3 based installer. In the future, Python2 support will be discontinued. We recommend all users to update their Python installation to version 3.x, if they haven&amp;rsquo;t done so already.
+ This release has the following highlights:
+ Off-specular simulation is now supported in the GUI.</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.10</title>
+      <link>https://www.bornagainproject.org/post/release-1.10.0/</link>
+      <pubDate>Mon, 09 Oct 2017 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.10.0/</guid>
+      <description>BornAgain 1.10 has been released  This release has the following highlights:
+ Integration over rotation angle for square and hexagonal lattices. Possibility to rotate imported data in GUI. GUI support for mesocrystals. Import of Python scripts as sample description in GUI (experimental)  API changes:
+ FormFactorTrivial renamed to FormFactorDot. IParticle: applyTranslation -&amp;gt; translate; applyRotation -&amp;gt; rotate.  Other changes:
+ Trapezoid resolution function to describe instruments with neutron velocity selector.</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.9</title>
+      <link>https://www.bornagainproject.org/post/release-1.9.0/</link>
+      <pubDate>Tue, 04 Jul 2017 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.9.0/</guid>
+      <description>BornAgain 1.9 has been released  This release includes a new formalism for polarized neutron scattering, where the materials are defined by their magnetization instead of a homogeneous B-field. The loading and saving of project files in the GUI has also been improved in terms of responsiveness and performance.
+API changes:
+None
+Summary of other changes:
+ Magnetic scattering: New formalism that uses the magnetization of the different materials instead of the B-field GUI: Project saving now done in seperate thread.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain hotfix: 1.8.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.8.1/</link>
+      <pubDate>Fri, 12 May 2017 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.8.1/</guid>
+      <description>A bugfix release for BornAgain is now available.  This is a hotfix release that fixes the following issues:
+ Bug #1799: Average layer material doesn&amp;rsquo;t work with ParticleComposition Bug #1800: GUI: missing sigma factor in gate distribution causes problem Bug #1801: GUI crashes on welcome screen Bug #1802: GUI: hexagonal lattice becomes square during simulation  As always, we very much welcome your comments and feedback!</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.8</title>
+      <link>https://www.bornagainproject.org/post/release-1.8.0/</link>
+      <pubDate>Fri, 07 Apr 2017 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.8.0/</guid>
+      <description>BornAgain 1.8 has been released  This release improves support for fitting: all reasonable parameters can now be used for fitting, both in Python and the GUI.
+BornAgain now also supports the graded layer approximation. The user can choose to subdivide layers into a number of slices. For each slice, the Fresnel coefficients will be calculated from the averaged materials that take into account the particle content in the slice. Related to this approximation, particles can now also be defined to cross layer interfaces.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain hotfix: 1.7.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.7.1/</link>
+      <pubDate>Mon, 05 Dec 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.7.1/</guid>
+      <description>A bugfix release for BornAgain is now available  This is a hotfix to the Release-1.7.
+Change summary:
+ Bug #1679: Remove leading U+FEFF from FindYamlCpp05.cmake Bug #1682: hotfix: rm local version of FindBoost.cmake Bug #1658: add qt5-svg as a dependency Bug #1662: CMake: require Qt version 5.4 Bug #1687: LMA is incorrectly normalized Bug #1692: GUI and Py: simulation crash when sample contains undefined material Bug #1681: Fitting GUI: free parameter error Bug #1661: FitSuite doesn&amp;rsquo;t know about TestMinimizer Bug #1639: GUI: crash if fitting parameter removed  </description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.7</title>
+      <link>https://www.bornagainproject.org/post/release-1.7.0/</link>
+      <pubDate>Tue, 15 Nov 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.7.0/</guid>
+      <description>BornAgain 1.7 has been released  This release improves GUI support for fitting: The GUI allows now to import data, set region of interest, adjust detector settings, select fit parameters and run the fitting engine.
+API changes:
+ Constructors of FormFactorGauss and FormFactorLorentz now take a length instead of a volume. GUI project back-compatibility broken.  Summary of other changes:
+ GUI support for fitting experimental data extended: masking, region of interest, linking dataset to instrument, control parameters of fit engines.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain hotfix: 1.6.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.6.1/</link>
+      <pubDate>Sun, 17 Jul 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.6.1/</guid>
+      <description>A bugfix release for BornAgain is now available  This is a hotfix to the Release-1.6.
+Change summary:
+ Bug: GUI Segmentation fault if layer is too thick Bug: GUI crashes when simulating for a lognormal distribution of wavelength with scale parameter zero  </description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.6</title>
+      <link>https://www.bornagainproject.org/post/release-1.6.0/</link>
+      <pubDate>Thu, 30 Jun 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.6.0/</guid>
+      <description>BornAgain 1.6 has been released  During this release we have mainly worked on providing a beta version for the fitting in the GUI. Additionally, our software now supports Python 3 for Linux users.
+Summary of changes in the code:
+ Support for Python 3 GUI: Beta version of fitting. Core: new roughness calculation that is more stable for large roughness. Core: new formfactors dodecahedron and icosahedron Windows: switched to 64-bits Compatibility issues: back compatibility with GUI&amp;rsquo;s old project files is broken.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain School and User Meeting 2016</title>
+      <link>https://www.bornagainproject.org/post/ba-school/</link>
+      <pubDate>Wed, 11 May 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/ba-school/</guid>
+      <description>BornAgain School and User Meeting 2016  The first BornAgain School and User Meeting, organized by the MLZ Scientific Computing Group, will take place on 21-22 November 2016 at Heinz Maier-Leibnitz-Zentrum Garching, Germany. The program will be available at https://webapps.frm2.tum.de/indico/event/34.
+As per October 28, the school is overbooked, and registration is closed.
+BornAgain is a novel software package to simulate and fit small-angle neutron and x-ray scattering at grazing incidence. It provides a generic framework for modeling multilayer samples with smooth or rough interfaces and with various types of embedded nanoparticles.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain hotfix: 1.5.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.5.1/</link>
+      <pubDate>Thu, 18 Feb 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.5.1/</guid>
+      <description>A bugfix release for BornAgain is now available  This is a hotfix to the Release-1.5.
+Change summary:
+ Bug: GUI crashes if simulating with 1D lattice interference function Bug: Crash while saving certain project file  </description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.5</title>
+      <link>https://www.bornagainproject.org/post/release-1.5.0/</link>
+      <pubDate>Mon, 15 Feb 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.5.0/</guid>
+      <description>BornAgain 1.5 has been released  During this release we have worked on preparing the implementation of fitting in the GUI, and even if the fitting is not there yet, we are getting close.
+Summary of changes in the code:
+ Core: interference function calculates particle densities automatically, when possible. GUI: 1D interference function is now available. GUI: new rectangular detector providing more accurate simulation of real life setup. GUI: new mask editor allows to draw various shapes on top of intensity map to exclude it from the analysis.</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.4</title>
+      <link>https://www.bornagainproject.org/post/release-1.4.0/</link>
+      <pubDate>Tue, 03 Nov 2015 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.4.0/</guid>
+      <description>BornAgain 1.4 has been released  This release provides an easier way to use IntensityData objects from Python and added new export formats for simulation data. Accompanied by a big refactoring, the new version also provides for better integration of new detector geometries. As a first application of this, a rectangular detector geometry has been defined in the core library.
+Summary of changes in the code:
+ Improved usability of IntensityData objects (slicing, histogram filling, &amp;hellip;) GUI: export of simulation results into tiff or ascii file Core: rectangular detector added (not yet in GUI) Core: simulation and fit with masks applied to the detector plane Core: genetic algorithm implemented, no need to install ROOT framework anymore Automatic normalization of detector pixel intensity when beam intensity &amp;gt; 0 Various bugfixes  New examples:</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.3</title>
+      <link>https://www.bornagainproject.org/post/release-1.3.0/</link>
+      <pubDate>Fri, 31 Jul 2015 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.3.0/</guid>
+      <description>BornAgain 1.3 has been released  This time we have been working on a deep refactoring of the machinery related to the positioning and rotation of particles. As a result Particle, CoreShellParticle and ParticleComposition can be rotated and translated inside layers in a similar way. We wrote a few tutorials explaining the latest changes.
+Summary of changes in the code:
+ New functional test machinery to test all three domains simultaneously (C++, Pyton and GUI), covering more test cases in a more consistent way.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain release 1.2 with physics-centered manual</title>
+      <link>https://www.bornagainproject.org/post/release-1.2.0/</link>
+      <pubDate>Wed, 10 Jun 2015 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.2.0/</guid>
+      <description>BornAgain 1.2 has been released  The main change this time is the recast user manual, available at link.
+The manual now fully concentrates on the theoretical background of BornAgain, on the physical models and their implementation whereas the more mundane questions of software usage are exclusively covered by the online documentation.
+The manual is still incomplete. Additional chapters will be published along with the next couple of software releases.</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.1.0/</link>
+      <pubDate>Wed, 22 Apr 2015 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.1.0/</guid>
+      <description>BornAgain 1.1 has been released  BornAgain 1.1 is now available for download.
+Most of the efforts in this sprint have been devoted to porting more features from the core library to the GUI.
+Summary of changes in the code:
+ New form factor: truncated cube New features in Graphical User Interface:  Beam divergence, detector resolution function ParticleComposition (particles composed from other particles) ParticleDistribution (particles with size distribution) Export of GUI simulation into a Python script   API changes:</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.0</title>
+      <link>https://www.bornagainproject.org/post/release-1.0.0/</link>
+      <pubDate>Fri, 30 Jan 2015 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.0.0/</guid>
+      <description>BornAgain 1.0 has been released  BornAgain 1.0 is now available for download.
+Summary of changes in the code:
+ Graphical User Interface officially included into the Release Refactoring and extension in the collection of user Python examples R,T coefficients exposed to Python within new SpecularSimulation class Minor changes in PythonAPI (particles with size distribution, LatticeBasis construction, InterferenceFunction1DParacrystal)  New website www.bornagainproject.org is online
+More details on our issue tracker.</description>
+    </item>
+    
+    <item>
+      <title>New website is online</title>
+      <link>https://www.bornagainproject.org/post/ba-website/</link>
+      <pubDate>Fri, 30 Jan 2015 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/ba-website/</guid>
+      <description>New web site is online  We are happy to announce that our brand new site is finally online. People interested in BornAgain will be able to find all relevant information, including BornAgain Online Documentation, news system and a discussion forum.</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 0.9.9</title>
+      <link>https://www.bornagainproject.org/post/release-0.9.9/</link>
+      <pubDate>Wed, 29 Oct 2014 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-0.9.9/</guid>
+      <description>BornAgain 0.9.9 has been released  Summary of changes in the code:
+ GUI: QuickSimulationView improvements GUI: added exception catching GUI: added limits for properties Support for multiple layout objects per layer First implementation of Python script generation Minor refactoring in user API: lattice interference functions and elimination of confusing simulation parameters User manual: new appendix with python examples Bugfixes  More details on our issue tracker.</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 0.9.8</title>
+      <link>https://www.bornagainproject.org/post/release-0.9.8/</link>
+      <pubDate>Thu, 28 Aug 2014 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-0.9.8/</guid>
+      <description>BornAgain 0.9.8 has been released  Summary of changes in the code:
+ Implemented rotation of particles in GUI, real time simulation window. Few bugfixes, minor refactoring in UserAPI.  Further GUI development toward first beta scheduled for October, 2014.
+More details on our issue tracker.</description>
+    </item>
+    
+  </channel>
+</rss>

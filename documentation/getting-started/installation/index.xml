@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installation instructions on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/getting-started/installation/</link>
+    <description>Recent content in Installation instructions on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/getting-started/installation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installation on Windows</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/windows/</guid>
+      <description>Installation on Windows We provide 64-bit installer package which can be installed into 64-bit Windows 7, 8 and 10 systems.
+The BornAgain graphical user interface doesn&amp;rsquo;t require any additional libraries to be installed on the system. You can start using the BornAgain application right after the installation. However, to use the framework via scripting you have to have a Python framework installed. To install and run BornAgain for the first time proceed with the following steps:</description>
+    </item>
+    
+    <item>
+      <title>Installation on Linux (short version)</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/linux-short/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/linux-short/</guid>
+      <description>Installation on Linux (short version) This page shortly explains how to build and install BornAgain from source on Linux systems.
+Install third party software  Compiler with C++-14 support (i.e. gcc&amp;gt;= 4.9) cmake (&amp;gt;= 3.1) boost library (&amp;gt;= 1.48) fftw3 library (&amp;gt;= 3.3.1) gsl (GNU scientific library, &amp;gt;= 1.15) libtiff library (&amp;gt;=4.0.2) python3, python3-devel, python3-numpy-devel, python3-matplotlib Qt5 (&amp;gt;=5.4)  Get the source Download the BornAgain source tarball or use the following git repository</description>
+    </item>
+    
+  </channel>
+</rss>

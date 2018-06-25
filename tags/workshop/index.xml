@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workshop on BornAgain</title>
+    <link>https://www.bornagainproject.org/tags/workshop/</link>
+    <description>Recent content in Workshop on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 May 2016 08:30:10 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.bornagainproject.org/tags/workshop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BornAgain School and User Meeting 2016</title>
+      <link>https://www.bornagainproject.org/post/ba-school/</link>
+      <pubDate>Wed, 11 May 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/ba-school/</guid>
+      <description>BornAgain School and User Meeting 2016  The first BornAgain School and User Meeting, organized by the MLZ Scientific Computing Group, will take place on 21-22 November 2016 at Heinz Maier-Leibnitz-Zentrum Garching, Germany. The program will be available at https://webapps.frm2.tum.de/indico/event/34.
+As per October 28, the school is overbooked, and registration is closed.
+BornAgain is a novel software package to simulate and fit small-angle neutron and x-ray scattering at grazing incidence. It provides a generic framework for modeling multilayer samples with smooth or rough interfaces and with various types of embedded nanoparticles.</description>
+    </item>
+    
+  </channel>
+</rss>

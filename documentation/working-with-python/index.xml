@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Working with Python scripts on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/working-with-python/</link>
+    <description>Recent content in Working with Python scripts on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/working-with-python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setup of a PyCharm project</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/setup-pycharm-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/setup-pycharm-project/</guid>
+      <description>How to setup a PyCharm project In this tutorial we explain how to setup a Python development environment to be able to create, modify and run BornAgain simulations using Python scripts. The tutorial is oriented towards Windows users who are making their first steps in scientific computing with Python.
+At this point we assume that the user has already installed BornAgain and a Python distribution as explained in the Installation section.</description>
+    </item>
+    
+    <item>
+      <title>Basic simulation tutorial</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/basic-simulation-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/basic-simulation-tutorial/</guid>
+      <description>Basic simulation tutorial A simulation of GISAS using BornAgain consists of following steps:
+ define materials by specifying name and refractive index define layers by specifying thickness, roughness, material define embedded particles by specifying shape, size, constituting material, interference function include particles in layers, specifying density, position, orientation assemble a multilayered sample specify input beam and detector characteristics run the simulation save the simulated detector image  In this example, we simulate the scattering from a mixture of cylinder and prism nanoparticles without any interference between them.</description>
+    </item>
+    
+    <item>
+      <title>Material types</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/material-types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/material-types/</guid>
+      <description>Material types Overview Currently two material types are available in BornAgain: HomogeneousMaterial and MaterialBySLD.
+First of them is created with the following syntax:
+magnetization = ba.kvector_t(1.0, 0.0, 0.0) &amp;lt;material&amp;gt; = ba.HomogeneousMaterial(&amp;#34;name&amp;#34;, delta, beta, magnetization) where name is the arbitrary name of the material associated with its complex refractive index $n = 1 - delta + i \cdot beta$. magnetization defines a 3D magnetization vector (in A/m). Variable &amp;lt;material&amp;gt; is later used when referring to this particular material.</description>
+    </item>
+    
+    <item>
+      <title>Accessing simulation results</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/accessing-simulation-results/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/accessing-simulation-results/</guid>
+      <description>Accessing simulation results In this tutorial we explain how to access GISAS simulation results, how to plot the simulated detector 2D intensity map as a color map and how to export the result into various formats.
+SimulationResult object The detector intensity in BornAgain can be retrieved via special object of SimulationResult type.
+simulation = GISASSimulation() simulation.setDetectorParameters(20, -1.0*deg, 1.0*deg, 10, 0.0*deg, 1.0*deg) simulation.setSample(sample) simulation.runSimulation() result = simulation.result() SimulationResult object allows</description>
+    </item>
+    
+    <item>
+      <title>Particle positioning</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/particle-positioning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/particle-positioning/</guid>
+      <description>Particle positioning This tutorial demonstrates how to include particles in various layers of a multi-layer system.
+As an example we are going to use simple spherical particles and a 3-layer system consisting of a semi-infinite air layer, a middle layer with finite thickness and a semi-infinite substrate layer.
+Creating particles All particles implemented in BornAgain are defined by their form factors, their sizes and the materials they are made of.</description>
+    </item>
+    
+    <item>
+      <title>Particle rotation</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/particle-rotation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/particle-rotation/</guid>
+      <description>Particle rotation This tutorial gives an overview on how to rotate a particle in different ways.
+Initial orientation The rotation of particles starts from a known standard orientation. This orientation is represented by the motionless reference coordinate system of the particle and it is defined in the User Manual. In this tutorial we are going to use a box shaped particle with defined length, width and height. The picture below represents the initial orientation of the box shape.</description>
+    </item>
+    
+    <item>
+      <title>Particle composition</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/particle-composition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/particle-composition/</guid>
+      <description>Particle composition This tutorial demonstrates how to construct complex shape particles.
+All particles implemented in BornAgain are defined by their form factors, their sizes and the materials they are made of. The form factor library provides access to a list of about 20 elementary shapes. A special ParticleComposition object allows to compose elementary particles into complex shapes and treat the resulting object as a single particle: it can be rotated, translated and included in the layer via a particle layout.</description>
+    </item>
+    
+    <item>
+      <title>Magnetic particles</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/magnetic-particles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/magnetic-particles/</guid>
+      <description>Magnetic particles This tutorial demonstrates how to include particles with non-zero magnetization.
+As an example we are going to use magnetic spherical particles embedded in the substrate of a simple 2-layer system. We will simulate this sample with a polarized beam and use polarization analysis to focus on the spin-flip channel.
+Creating materials with magnetization density Magnetic materials in BornAgain are defined by their refractive index, as for non-mangetic materials, and the magnetization density vector, given in units of A/m.</description>
+    </item>
+    
+    <item>
+      <title>Working with sample parameters</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/working-with-sample-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/working-with-sample-parameters/</guid>
+      <description>Working with sample parameters This section gives additional details about the manipulation of sample parameters during run time, after the sample has already been constructed. For a single simulation this is normally not necessary. However, it might be useful during interactive work when the user tries to find optimal sample parameters by running a series of simulations. A similar task also arises when the theoretical model, composed of the description of the sample and of the simulation, is used for fitting real data.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to fitting</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/introduction-to-fitting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/introduction-to-fitting/</guid>
+      <description>Introduction to fitting In addition to the simulation of grazing incidence X-ray and neutron scattering by multilayered samples, BornAgain also offers the option to fit the numerical model to reference data by modifying a selection of sample parameters from the numerical model.
+ Implementation in BornAgain Stages to run fitting procedure How to get the right answer from fitting  Implementation in BornAgain Fitting in BornAgain deals with estimating the optimum parameters in the numerical model by minimizing the difference between numerical and reference data.</description>
+    </item>
+    
+    <item>
+      <title>Basic fitting tutorial</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/basic-fitting-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/basic-fitting-tutorial/</guid>
+      <description>Basic fitting tutorial In this section we are going to go through a complete example of fitting using BornAgain. Each step will be associated with a detailed piece of code written in Python. The script can also be found in the Fit Cylinders and Prisms example.
+This example uses the same sample geometry as in Basic simulation tutorial. Cylindrical and prismatic particles in equal proportion are deposited on a substrate layer, with no interference between the particles.</description>
+    </item>
+    
+    <item>
+      <title>Importing experimental data</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/importing-experimental-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/importing-experimental-data/</guid>
+      <description>Importing experimental data This tutorial covers some practical aspects of importing experimental data in BornAgain for further fitting using Python interface. Fitting from GUI is covered in this tutorial.
+BornAgain i/o module supports only very few file formats: ascii, tiff and our own internal format. This might be not enough when it comes to the fitting the data obtained from some particular instrument. However, we fully support fitting of the data presented in the form of numpy arrays.</description>
+    </item>
+    
+  </channel>
+</rss>

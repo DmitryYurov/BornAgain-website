@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Basic simulation tutorial -- BornAgain</title>
+
+
+<link href="https://www.bornagainproject.org/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/theme.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/mathjax-style.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/vs.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/baguetteBox.min.css" rel="stylesheet">
+<link href="https://www.bornagainproject.org/css/gallery-grid.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/assets/css/bornagain.css" rel="stylesheet">
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel='stylesheet'  type='text/css'> 
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    var TEX = MathJax.InputJax.TeX;
+    var PREFILTER = TEX.prefilterMath;
+    TEX.Augment({
+      prefilterMath: function (math,displaymode,script) {
+        if (!displaymode) {math = "\\small{"+math+"}"}
+        return PREFILTER.call(TEX,math,displaymode,script);
+      }
+    });
+  });
+  </script>
+
+</head>
+
+
+  <body>
+    <header class="hero overlay"><div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-primary">
+    <a class="navbar-brand" href="https://www.bornagainproject.org">
+        <img src="https://www.bornagainproject.org/assets/img/bornagain-logo.png" class="d-inline-block align-top" alt="">
+        BornAgain
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/">Home</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/gallery/">Gallery</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/download/">Download</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/post/">News</a></li>
+        
+          <li class="nav-item active"> <a class="nav-link" href="https://www.bornagainproject.org/documentation/">Documentation</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/contact/">Contact</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/about/">About</a></li>
+          
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/scgmlz/BornAgain" target="_blank" rel="noopener" aria-label="GitHub">
+              <span class="fa fa-github fa-2x"></span>
+            </a>
+          </li>        
+        
+      </ul>
+    </div>
+  </nav>
+</div>
+  
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12"> <br></div>
+        </div>
+      </div>
+    </header>
+
+    
+  <div class="breadcrumb">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+
+
+
+
+
+
+ <a href='https://www.bornagainproject.org/'>Home</a> > <a href='https://www.bornagainproject.org/documentation/'>Documentation</a> > <a href='https://www.bornagainproject.org/documentation/working-with-python/'>Working with Python scripts</a> > Basic simulation tutorial
+
+ 
+
+ 
+
+ 
+
+   
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+    
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      
+      
+  
+  
+
+<h2 id="basic-simulation-tutorial">Basic simulation tutorial</h2>
+
+<p>A simulation of GISAS using BornAgain consists of following steps:</p>
+
+<ul>
+<li>define materials by specifying name and refractive index</li>
+<li>define layers by specifying thickness, roughness, material</li>
+<li>define embedded particles by specifying shape, size, constituting material, interference function</li>
+<li>include particles in layers, specifying density, position, orientation</li>
+<li>assemble a multilayered sample</li>
+<li>specify input beam and detector characteristics</li>
+<li>run the simulation</li>
+<li>save the simulated detector image</li>
+</ul>
+
+<p>In this example, we simulate the scattering from a mixture of cylinder and prism nanoparticles without any interference between them.</p>
+
+<figure class="center">
+ 	  <a href="cylinders-prisms.jpg">
+ 	  	<img src="cylinders-prisms.jpg" width="400">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<p>These particles are placed in air, on top of a substrate. We will go through each step of the simulation. Each section starts with a short Python code snippet, followed by a discussion. The full code can be found at the end of this page.</p>
+
+<h3 id="importing-the-python-modules">Importing the Python modules</h3>
+
+<p>We start by importing the BornAgain Python API and alias it as <code>ba</code>. Then we import some often used unit designations from BornAgain.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">bornagain</span> <span class="kn">as</span> <span class="nn">ba</span>
+<span class="kn">from</span> <span class="nn">bornagain</span> <span class="kn">import</span> <span class="n">deg</span><span class="p">,</span> <span class="n">nm</span></code></pre></div>
+
+<h3 id="defining-materials">Defining materials</h3>
+
+<p>The different materials that will be used in the sample description will now be defined.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_sample</span><span class="p">():</span>
+    <span class="sa"></span><span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Returns a sample with uncorrelated cylinders and prisms on a substrate.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="c1"># defining materials</span>
+    <span class="n">m_air</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">HomogeneousMaterial</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;Air&#34;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">m_substrate</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">HomogeneousMaterial</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;Substrate&#34;</span><span class="p">,</span> <span class="mf">6e-6</span><span class="p">,</span> <span class="mf">2e-8</span><span class="p">)</span>
+    <span class="n">m_particle</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">HomogeneousMaterial</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;Particle&#34;</span><span class="p">,</span> <span class="mf">6e-4</span><span class="p">,</span> <span class="mf">2e-8</span><span class="p">)</span></code></pre></div>
+
+<p>The first line marks the beginning of the function to define our sample. We then define different materials using the class HomogeneousMaterial. The general syntax is as follows</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&lt;</span><span class="n">material</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">HomogeneousMaterial</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;name&#34;</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span></code></pre></div>
+<p>where <code>name</code> is the arbitrary name of the material associated with its complex refractive index $n = 1 - delta + i \cdot beta$. Variable <code>&lt;material&gt;</code> is later used when referring to this particular material. The three materials defined in this example are <code>Air</code> with a refractive index of 1 (delta = beta = 0), a <code>Substrate</code> associated with a complex refractive index equal to $1 - 6\cdot 10^{-6} + i2\cdot 10^{-8}$, and the material of the particles, whose refractive index is $n = 1 - 6\cdot 10^{-4} + i2\cdot 10^{-8}$.</p>
+
+<h3 id="defining-particles">Defining particles</h3>
+
+<p>We define two different shapes of particles: cylinders and prisms (elongated particles with a constant equilateral triangular cross section):</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">    <span class="c1"># collection of particles</span>
+    <span class="n">cylinder_ff</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">FormFactorCylinder</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">nm</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">nm</span><span class="p">)</span>
+    <span class="n">cylinder</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">Particle</span><span class="p">(</span><span class="n">m_particle</span><span class="p">,</span> <span class="n">cylinder_ff</span><span class="p">)</span>
+    <span class="n">prism_ff</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">FormFactorPrism3</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">nm</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">nm</span><span class="p">)</span>
+    <span class="n">prism</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">Particle</span><span class="p">(</span><span class="n">m_particle</span><span class="p">,</span> <span class="n">prism_ff</span><span class="p">)</span></code></pre></div>
+
+<p>All particles implemented in BornAgain are defined by their form factors, their sizes and the material they are made of. Here, for the cylindrical particle, we input its radius and height.  For the prism, the possible inputs are the length of one side of its equilateral triangular base and its height.</p>
+
+<p>In order to define a particle, we proceed in two steps. For example, for the cylindrical particle, we first specify the form factor of a cylinder with its radius and height, both equal to 5 nanometers in this particular case. Then we associate this shape with the correct material. The same procedure is been used for the prism in the following two lines.</p>
+
+<h3 id="characterizing-a-particle-assembly">Characterizing a particle assembly</h3>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">    <span class="n">particle_layout</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">ParticleLayout</span><span class="p">()</span>
+    <span class="n">particle_layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">cylinder</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">particle_layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">prism</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">interference</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">InterferenceFunctionNone</span><span class="p">()</span>
+    <span class="n">particle_layout</span><span class="o">.</span><span class="n">setInterferenceFunction</span><span class="p">(</span><span class="n">interference</span><span class="p">)</span></code></pre></div>
+
+<p>The object which holds the information about the positions and densities of particles in our sample is called a <code>ParticleLayout</code>. We use the associated function <code>addParticle</code> for each particle shape. Its general syntax is</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">addParticle</span><span class="p">(</span><span class="o">&lt;</span><span class="n">particle</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">abundance</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">kvector_t</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">rotation</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></code></pre></div>
+<p>Here <code>&lt;particle&gt;</code> is the name of the variable used to define the particles. <code>abundance</code> is the proportion of the given type of particles, normalized to the total number of particles. Here we have 50% of cylinders and 50% of prisms. The parameter <code>position</code> represents coordinates of particle&rsquo;s reference point (expressed in nanometers) in the coordinate system of a given layer (the association with a particular layer will be done during the next step). In this example the position is set to the default value $(0,0,0)$ which means particles sitting on top of the interface.</p>
+
+<div class="notices note" ><p>See tutorials <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-positioning/">Particles positioning</a> and
+<a href="https://www.bornagainproject.org/documentation/working-with-python/particle-rotation/">Particles rotation</a> for more detailed explanations.</p>
+</div>
+
+
+<p>Finally, the last two lines specify that there is no coherent interference between the waves scattered by particles at different locations. In this case, the intensity is calculated by the incoherent sum of the scattered waves. By default, the <code>ParticleLayout</code> object has no interference function, so these lines could be omitted. Other examples will present more complex cases of interference by the particles&rsquo; position.</p>
+
+<h3 id="define-a-multilayer">Define a multilayer</h3>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">    <span class="c1"># air layer with particles and substrate form multi layer</span>
+    <span class="n">air_layer</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span><span class="n">m_air</span><span class="p">)</span>
+    <span class="n">air_layer</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">particle_layout</span><span class="p">)</span>
+    <span class="n">substrate_layer</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span><span class="n">m_substrate</span><span class="p">)</span>
+    <span class="n">multi_layer</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">MultiLayer</span><span class="p">()</span>
+    <span class="n">multi_layer</span><span class="o">.</span><span class="n">addLayer</span><span class="p">(</span><span class="n">air_layer</span><span class="p">)</span>
+    <span class="n">multi_layer</span><span class="o">.</span><span class="n">addLayer</span><span class="p">(</span><span class="n">substrate_layer</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">multi_layer</span><span class="o">.</span><span class="n">treeToString</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">multi_layer</span></code></pre></div>
+
+<p>We now have to configure our sample. The particles, cylinders and prisms, are on top of the substrate in an air layer. Both layers are considered to be semi-infinite. The air layer is constructed first using the previously defined air material as a constructor parameter. With the next line, the air layer is populated with particles using the previously defined particle layout object. The substrate layer is constructed afterwards using the substrate material as a constructor parameter.</p>
+
+<p>In the general case, if the user constructs a multilayer with more than 2 layers (taking the air and substrate layers into account), the thickness of intermediate layers has to be specified using the constructor below. The <code>thickness</code> parameter is expressed in nanometers.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&lt;</span><span class="n">layer</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">Layer</span><span class="p">(</span><span class="o">&lt;</span><span class="n">material</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)</span></code></pre></div>
+<p>Our two layers are now fully characterized. The whole sample is represented by a <code>MultiLayer</code> object. We assemble the sample by adding the top air layer, containing the particles, and the bottom substrate layer. The order in which layers are added to the multilayer is important: we start from the top layer down to the bottom one.</p>
+
+<p>The last line of the function returns the fully constructed sample.</p>
+
+<h3 id="define-the-beam-and-detector">Define the beam and detector</h3>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_simulation</span><span class="p">():</span>
+    <span class="sa"></span><span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Returns a GISAXS simulation with beam and detector defined.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">simulation</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">GISASSimulation</span><span class="p">()</span>
+    <span class="n">simulation</span><span class="o">.</span><span class="n">setDetectorParameters</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">deg</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">deg</span><span class="p">,</span>
+                                     <span class="mi">100</span><span class="p">,</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">deg</span><span class="p">,</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">deg</span><span class="p">)</span>
+    <span class="n">simulation</span><span class="o">.</span><span class="n">setBeamParameters</span><span class="p">(</span><span class="mf">1.0</span><span class="o">*</span><span class="n">angstrom</span><span class="p">,</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">deg</span><span class="p">,</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">deg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">simulation</span></code></pre></div>
+
+<p>The function <code>get_simulation</code> creates and returns a simulation object. The first step is to create a simulation object of type GISASSimulation. Then we define the detector and the beam parameters using the corresponding class methods.</p>
+
+<figure class="center">
+ 	  <a href="beam-detector.png">
+ 	  	<img src="beam-detector.png" width="400">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<p>The GISAS setup and the coordinate system used in <code>BornAgain</code>. The incoming beam propagates with the incidence angles $\alpha_i$ and $\phi_i$ with respect to the sample axes as shown. A scattered (outgoing) beam, characterized by $\alpha_f$ and $\phi_f$ propagates toward the area detector. The angles $\alpha_i$ and $\alpha_f$ are defined in such a way that those shown in the figure are positive.</p>
+
+<p>The detector parameters are set using ranges of angles via the method:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">setDetectorParameters</span><span class="p">(</span><span class="n">n_phi</span><span class="p">,</span> <span class="n">phi_f_min</span><span class="p">,</span> <span class="n">phi_f_max</span><span class="p">,</span> <span class="n">n_alpha</span><span class="p">,</span> <span class="n">alpha_f_min</span><span class="p">,</span> <span class="n">alpha_f_max</span><span class="p">)</span></code></pre></div>
+<p>where the number of bins <code>n_phi</code>, the low edge of first bin <code>phi_f_min</code> and the upper edge of last bin <code>phi_f_max</code> define the <code>phi_f</code> detector axis, while <code>n_alpha</code>, <code>alpha_f_min</code> and <code>alpha_f_max</code> are related to the <code>alpha_f</code> detector axis.</p>
+
+<div class="notices note" ><p>See  <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/">Detector types</a> tutorial for more details.</p>
+</div>
+
+
+<p>To characterize the beam we use the following method</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">setBeamParameters</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">alpha_i</span><span class="p">,</span> <span class="n">phi_i</span><span class="p">)</span></code></pre></div>
+<p>where <code>wavelength</code> is the incident beam wavelength, <code>alpha_i</code> is the incident grazing angle on the surface of the sample and <code>phi_i</code> is the in-plane direction of the incident beam (measured with respect to the x-axis).</p>
+
+<div class="notices note" ><p>In BornAgain, the scattering vector $q$ is defined as $k_i - k_f$, where $k_i$ and $k_f$ are the initial (incident) and final (scattered) wave vector, respectively.</p>
+</div>
+
+
+<h3 id="running-the-simulation-and-plotting-the-results">Running the simulation and plotting the results</h3>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">run_simulation</span><span class="p">():</span>
+    <span class="sa"></span><span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Runs simulation and returns resulting intensity map.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">simulation</span> <span class="o">=</span> <span class="n">get_simulation</span><span class="p">()</span>
+    <span class="n">simulation</span><span class="o">.</span><span class="n">setSample</span><span class="p">(</span><span class="n">get_sample</span><span class="p">())</span>
+    <span class="n">simulation</span><span class="o">.</span><span class="n">runSimulation</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">simulation</span><span class="o">.</span><span class="n">result</span><span class="p">()</span></code></pre></div>
+
+<p>The function <code>run_simulation</code> gathers together all previously defined items. We first create the sample and simulation objects using calls to the previously defined functions. We then assign the sample to the simulation and finally launch the simulation with <code>runSimulation</code>. In the last line, we obtain the result of the simulation as a SimulationResult object, which contains the axes definition and the simulated intensity as a function of outgoing angles <code>phi_f</code> and <code>alpha_f</code>.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="sa"></span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">run_simulation</span><span class="p">()</span>
+    <span class="n">ba</span><span class="o">.</span><span class="n">plot_simulation_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></code></pre></div>
+
+<p>To plot the data using matplotlib routines, we use a convenience function, defined in the BornAgain namespace: <code>plot_simulation_result()</code>.</p>
+
+<p>As a result of executing the whole script in the python interpreter</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ python CylindersAndPrisms.py</code></pre></div>
+<p>The following image should be displayed on the screen</p>
+
+<figure class="center">
+ 	  <a href="CylindersAndPrisms.png">
+ 	  	<img src="CylindersAndPrisms.png" width="500">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<h3 id="complete-script">Complete script</h3>
+
+
+  <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span><span class="lnt">21</span><span class="lnt">22</span><span class="lnt">23</span><span class="lnt">24</span><span class="lnt">25</span><span class="lnt">26</span><span class="lnt">27</span><span class="lnt">28</span><span class="lnt">29</span><span class="lnt">30</span><span class="lnt">31</span><span class="lnt">32</span><span class="lnt">33</span><span class="lnt">34</span><span class="lnt">35</span><span class="lnt">36</span><span class="lnt">37</span><span class="lnt">38</span><span class="lnt">39</span><span class="lnt">40</span><span class="lnt">41</span><span class="lnt">42</span><span class="lnt">43</span><span class="lnt">44</span><span class="lnt">45</span><span class="lnt">46</span><span class="lnt">47</span><span class="lnt">48</span><span class="lnt">49</span><span class="lnt">50</span><span class="lnt">51</span><span class="lnt">52</span><span class="lnt">53</span><span class="lnt">54</span><span class="lnt">55</span><span class="lnt">56</span><span class="lnt">57</span><span class="lnt">58</span><span class="lnt">59</span><span class="lnt">60</span><span class="lnt">61</span><span class="lnt">62</span><span class="lnt">63</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="sa"></span><span class="s2">&#34;&#34;&#34;
+</span><span class="s2">Mixture of cylinders and prisms without interference
+</span><span class="s2">&#34;&#34;&#34;</span>
+<span class="kn">import</span> <span class="nn">bornagain</span> <span class="kn">as</span> <span class="nn">ba</span>
+<span class="kn">from</span> <span class="nn">bornagain</span> <span class="kn">import</span> <span class="n">deg</span><span class="p">,</span> <span class="n">angstrom</span><span class="p">,</span> <span class="n">nm</span>
+
+
+<span class="k">def</span> <span class="nf">get_sample</span><span class="p">():</span>
+    <span class="sa"></span><span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Returns a sample with uncorrelated cylinders and prisms on a substrate.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="c1"># defining materials</span>
+    <span class="n">m_air</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">HomogeneousMaterial</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;Air&#34;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">m_substrate</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">HomogeneousMaterial</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;Substrate&#34;</span><span class="p">,</span> <span class="mf">6e-6</span><span class="p">,</span> <span class="mf">2e-8</span><span class="p">)</span>
+    <span class="n">m_particle</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">HomogeneousMaterial</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;Particle&#34;</span><span class="p">,</span> <span class="mf">6e-4</span><span class="p">,</span> <span class="mf">2e-8</span><span class="p">)</span>
+
+    <span class="c1"># collection of particles</span>
+    <span class="n">cylinder_ff</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">FormFactorCylinder</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">nm</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">nm</span><span class="p">)</span>
+    <span class="n">cylinder</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">Particle</span><span class="p">(</span><span class="n">m_particle</span><span class="p">,</span> <span class="n">cylinder_ff</span><span class="p">)</span>
+    <span class="n">prism_ff</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">FormFactorPrism3</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">nm</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">nm</span><span class="p">)</span>
+    <span class="n">prism</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">Particle</span><span class="p">(</span><span class="n">m_particle</span><span class="p">,</span> <span class="n">prism_ff</span><span class="p">)</span>
+    <span class="n">particle_layout</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">ParticleLayout</span><span class="p">()</span>
+    <span class="n">particle_layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">cylinder</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">particle_layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">prism</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">interference</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">InterferenceFunctionNone</span><span class="p">()</span>
+    <span class="n">particle_layout</span><span class="o">.</span><span class="n">setInterferenceFunction</span><span class="p">(</span><span class="n">interference</span><span class="p">)</span>
+
+    <span class="c1"># air layer with particles and substrate form multi layer</span>
+    <span class="n">air_layer</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span><span class="n">m_air</span><span class="p">)</span>
+    <span class="n">air_layer</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">particle_layout</span><span class="p">)</span>
+    <span class="n">substrate_layer</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span><span class="n">m_substrate</span><span class="p">)</span>
+    <span class="n">multi_layer</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">MultiLayer</span><span class="p">()</span>
+    <span class="n">multi_layer</span><span class="o">.</span><span class="n">addLayer</span><span class="p">(</span><span class="n">air_layer</span><span class="p">)</span>
+    <span class="n">multi_layer</span><span class="o">.</span><span class="n">addLayer</span><span class="p">(</span><span class="n">substrate_layer</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">multi_layer</span><span class="o">.</span><span class="n">treeToString</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">multi_layer</span>
+
+
+<span class="k">def</span> <span class="nf">get_simulation</span><span class="p">():</span>
+    <span class="sa"></span><span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Returns a GISAXS simulation with beam and detector defined.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">simulation</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">GISASSimulation</span><span class="p">()</span>
+    <span class="n">simulation</span><span class="o">.</span><span class="n">setDetectorParameters</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">deg</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">deg</span><span class="p">,</span>
+                                     <span class="mi">100</span><span class="p">,</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">deg</span><span class="p">,</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">deg</span><span class="p">)</span>
+    <span class="n">simulation</span><span class="o">.</span><span class="n">setBeamParameters</span><span class="p">(</span><span class="mf">1.0</span><span class="o">*</span><span class="n">angstrom</span><span class="p">,</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">deg</span><span class="p">,</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">deg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">simulation</span>
+
+
+<span class="k">def</span> <span class="nf">run_simulation</span><span class="p">():</span>
+    <span class="sa"></span><span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Runs simulation and returns resulting intensity map.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">simulation</span> <span class="o">=</span> <span class="n">get_simulation</span><span class="p">()</span>
+    <span class="n">simulation</span><span class="o">.</span><span class="n">setSample</span><span class="p">(</span><span class="n">get_sample</span><span class="p">())</span>
+    <span class="n">simulation</span><span class="o">.</span><span class="n">runSimulation</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">simulation</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="sa"></span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">run_simulation</span><span class="p">()</span>
+    <span class="n">ba</span><span class="o">.</span><span class="n">plot_simulation_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+  
+  
+  
+
+<a class="linktofile" href="https://www.bornagainproject.orgdocumentation/working-with-python/basic-simulation-tutorial/CylindersAndPrisms.py"/>
+    CylindersAndPrisms.py
+</a>
+
+
+
+
+
+      <div class="container next-prev">
+<nav>
+  <ul class="pagination pagination-sm justify-content-end"><li class="page-item ">
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/setup-pycharm-project/" class="page-link"><i class="fa fa-chevron-left fa-1g "></i>
+      </a>
+    </li>  
+
+    <li class="page-item ">
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/material-types/" class="page-link"><i class="fa fa-chevron-right fa-1g "></i>
+      </a>
+    </li></ul>
+</nav>
+</div>
+
+    </div>
+    <div class="col-md-4">
+    <ul class="doctree">
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/"><span>Documentation</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/"><span>Introduction</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/functionality/"><span>Functionality overview</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/architecture/"><span>Architectural overview</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/"><span>Getting started</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/"><span>Installation instructions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/windows/"><span>Installation on Windows</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/macos/"><span>Installation on MacOS</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/macos/advanced-tips/"><span>Advanced tips</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-short/"><span>Installation on Linux (short version)</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/"><span>Installation on Linux (detailed version)</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/third-party/"><span>Install the third party software</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/get-source/"><span>Get the source</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/build-and-install/"><span>Build and install BornAgain</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/first-simulation/"><span>Run a first simulation</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/quick-start/"><span>Quick Start</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/"><span>Using Graphical User Interface</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/gui-overview/"><span>BornAgain GUI overview</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/gui-fitting/"><span>Fitting in the GUI</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/"><span>Working with Python scripts</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/setup-pycharm-project/"><span>Setup of a PyCharm project</span> </a>
+    </li>
+    <li class="dd-item active">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/basic-simulation-tutorial/"><span>Basic simulation tutorial</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/material-types/"><span>Material types</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/"><span>Detector types</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/spherical-detector/"><span>Spherical detector</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/rectangular-detector/"><span>Rectangular detector</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/accessing-simulation-results/"><span>Accessing simulation results</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-positioning/"><span>Particle positioning</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-rotation/"><span>Particle rotation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-composition/"><span>Particle composition</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/"><span>Interference functions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/lattice1d/"><span>Interference function of one-dimensional lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/lattice2d/"><span>Interference function of two-dimensional lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/para_radial/"><span>Interference function of radial paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/para2d/"><span>Interference function of 2D paracrystal</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/magnetic-particles/"><span>Magnetic particles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/working-with-sample-parameters/"><span>Working with sample parameters</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/introduction-to-fitting/"><span>Introduction to fitting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/basic-fitting-tutorial/"><span>Basic fitting tutorial</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/importing-experimental-data/"><span>Importing experimental data</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/"><span>Sample model reference</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/"><span>Embedded particles</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-ba/"><span>Cylinders in Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-dwba/"><span>Cylinders in Distorted Wave Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution/"><span>Cylinders with size distribution</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution2/"><span>Two types of cylinders with size distribution</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/rotated-pyramids/"><span>Rotated Pyramids</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-and-prisms/"><span>Cylinders and Prisms</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/all-formfactors/"><span>All available form factors</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/"><span>Layered structures</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/buried-particles/"><span>Buried particles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/correlated-roughness/"><span>Correlated roughness</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/"><span>Interference functions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-lattice/"><span>Interference 1D lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-square-lattice/"><span>Interference 2D square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/intereference-2d-rotated-square-lattice/"><span>Interference 2D rotated square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-centered-square-lattice/"><span>Interference 2D centered square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/spheres-at-hex-lattice/"><span>Spheres on Hexagonal Lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/cosine-ripples-at-rect-lattice/"><span>Cosine ripples on rectangular lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-paracrystal/"><span>Interference 2D Paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-radial-paracrystal/"><span>Interference 1D radial paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-da/"><span>Size-distribution model: decoupling approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-lma/"><span>Size-distribution model: local monodisperse approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-ssca/"><span>Size-distribution model: size-spacing coupling approximation</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/"><span>Complex shapes</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/core-shell-nanoparticles/"><span>Core shell nanoparticles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/hexagonal-lattice-with-basis/"><span>Hexagonal lattices with basis</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/large-particles-formfactor/"><span>Large particle formfactor</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/custom-formfactor/"><span>Custom formfactor</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/"><span>Beam and detector</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/beam-divergence/"><span>Beam divergence</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/detector-resolution/"><span>Detector resolution function</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/offspecular-simulation/"><span>Off-Specular</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/rectangular-detector/"><span>Rectangular detector</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/basic-specular-simulation/"><span>Specular scattering</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/"><span>Fitting</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/sample-parameters-intro/"><span>Working with sample parameters</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-cylinders-and-prisms/"><span>Fit cylinders and prisms</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-with-masks/"><span>Fitting with masks</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-along-slices/"><span>Fitting along slices</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/simultaneous-fit-of-two-datasets/"><span>Simultaneous fit of two datasets</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-galaxi-data/"><span>Real life fit example: Experiment at GALAXI</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/"><span>Miscellaneous</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/accessing-simulation-results/"><span>Accessing simulation results</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/axes-in-different-units/"><span>Plotting with axes in different units</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/"><span>Getting help</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/troubleshooting/"><span>Troubleshooting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/frequently-asked-questions/"><span>Frequently asked questions</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/developers-corner/"><span>Developer&#39;s corner</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/developers-corner/contribute-to-documentation/"><span>Contribute to documentation</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+    </div>
+  </div>
+</div>    <hr>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                  <ul class="list-inline text-center">
+                    
+                      <li class="list-inline-item social">
+                        <a href="mailto:contact@bornagainproject.org">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                      </li>
+                    
+                    
+                    <li class="list-inline-item social">
+                      <a href="https://github.com/scgmlz/BornAgain">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <p class="copyright text-muted"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://www.bornagainproject.org/js/bootstrap.min.js"></script>
+    
+    <script src="https://www.bornagainproject.org/js/baguetteBox.min.js"></script>
+    <script>
+      baguetteBox.run('.galleryscg');
+    </script>    
+    
+    <script src="https://www.bornagainproject.org/js/theme.js"></script>
+    <script src="https://www.bornagainproject.org/assets/js/bornagain.js"></script>
+    
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-120020802-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
+

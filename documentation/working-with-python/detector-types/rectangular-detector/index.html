@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Rectangular detector -- BornAgain</title>
+
+
+<link href="https://www.bornagainproject.org/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/theme.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/mathjax-style.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/vs.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/baguetteBox.min.css" rel="stylesheet">
+<link href="https://www.bornagainproject.org/css/gallery-grid.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/assets/css/bornagain.css" rel="stylesheet">
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel='stylesheet'  type='text/css'> 
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    var TEX = MathJax.InputJax.TeX;
+    var PREFILTER = TEX.prefilterMath;
+    TEX.Augment({
+      prefilterMath: function (math,displaymode,script) {
+        if (!displaymode) {math = "\\small{"+math+"}"}
+        return PREFILTER.call(TEX,math,displaymode,script);
+      }
+    });
+  });
+  </script>
+
+</head>
+
+
+  <body>
+    <header class="hero overlay"><div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-primary">
+    <a class="navbar-brand" href="https://www.bornagainproject.org">
+        <img src="https://www.bornagainproject.org/assets/img/bornagain-logo.png" class="d-inline-block align-top" alt="">
+        BornAgain
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/">Home</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/gallery/">Gallery</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/download/">Download</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/post/">News</a></li>
+        
+          <li class="nav-item active"> <a class="nav-link" href="https://www.bornagainproject.org/documentation/">Documentation</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/contact/">Contact</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/about/">About</a></li>
+          
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/scgmlz/BornAgain" target="_blank" rel="noopener" aria-label="GitHub">
+              <span class="fa fa-github fa-2x"></span>
+            </a>
+          </li>        
+        
+      </ul>
+    </div>
+  </nav>
+</div>
+  
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12"> <br></div>
+        </div>
+      </div>
+    </header>
+
+    
+  <div class="breadcrumb">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+
+
+
+
+
+
+
+
+ <a href='https://www.bornagainproject.org/'>Home</a> > <a href='https://www.bornagainproject.org/documentation/'>Documentation</a> > <a href='https://www.bornagainproject.org/documentation/working-with-python/'>Working with Python scripts</a> > <a href='https://www.bornagainproject.org/documentation/working-with-python/detector-types/'>Detector types</a> > Rectangular detector
+
+ 
+
+ 
+
+ 
+
+ 
+
+   
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+    
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      
+      
+  
+  
+
+<h2 id="rectangular-detector">Rectangular detector</h2>
+
+<p>A <code>RectangularDetector</code> object in BornAgain is used to represent a two dimensional neutron/x-ray detector. The following sections provide details on this type of detector:</p>
+
+<ul>
+<li><a href="#general-description">General description</a></li>
+<li><a href="#rectangular-detector-definition">Rectangular detector definition</a></li>
+<li><a href="#positioning-the-rectangular-detector">Positioning the rectangular detector</a></li>
+<li><a href="#the-detector-is-perpendicular-to-the-sample-plane">The detector is perpendicular to the sample plane</a></li>
+<li><a href="#the-detector-is-perpendicular-to-the-direct-beam">The detector is perpendicular to the direct beam</a></li>
+<li><a href="#the-detector-is-perpendicular-to-the-reflected-beam">The detector is perpendicular to the reflected beam</a></li>
+<li><a href="#additional-convenience-methods">Additional convenience methods</a></li>
+</ul>
+
+<h3 id="general-description">General description</h3>
+
+<p>A <code>RectangularDetector</code> has a plane rectangular shape, a total given width and height and a given amount of pixels. The detector plane can placed in an arbitrary position and orientation with respect to the sample position.</p>
+
+<figure class="center">
+ 	  <a href="rectangular_detector.png">
+ 	  	<img src="rectangular_detector.png" width="600">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<div class="alert 
+alert-info"
+ 
+role="alert"><p><strong>Note</strong></p>
+
+<p>Real experimental setups vary significantly from one GISAS instrument to another. Different conventions for representing the space coordinates, a range of detector&rsquo;s positions/orientations and different detector&rsquo;s alignment techniques make the creation of a universal detector API quite challenging. The BornAgain detector API is generic enough to be able to cope with all the aforementioned differences and, hopefully, is simple enough to let the user quickly setup his specific case.</p>
+</div>
+
+
+<h3 id="rectangular-detector-definition">Rectangular detector definition</h3>
+
+<p>BornAgain&rsquo;s RectangularDetector is initialized using its constructor</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">RectangularDetector</span><span class="p">(</span><span class="n">nxbins</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">nybins</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="sa"></span><span class="s2">&#34;&#34;&#34;
+</span><span class="s2">Constructs rectangular planar detector
+</span><span class="s2"> 
+</span><span class="s2">nxbins : Number of bins (pixels) in x-direction
+</span><span class="s2">width  : Width of the detector in mm along x-direction
+</span><span class="s2">nybins : Number of bins (pixels) in y-direction
+</span><span class="s2">height : Height of the detector in mm along y-direction
+</span><span class="s2">&#34;&#34;&#34;</span></code></pre></div>
+<p>The local detector coordinate system is defined in such a way, that its origin coincides with the lower left corner of the rectangle. For example, the following code snippet will create a rectangular detector with a total number of pixels equal to $10 \cdot 9=90$ and with a pixel size equal to $200 mm \cdot 180 mm =36\cdot 10^3 mm^2$.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">detector</span> <span class="o">=</span> <span class="n">RectangularDetector</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">200.0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mf">180.0</span><span class="p">)</span></code></pre></div>
+<figure class="center">
+ 	  <a href="xy_plane_with_labels.png">
+ 	  	<img src="xy_plane_with_labels.png" width="600">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<p>Here, the vertical and horizontal lines denote the bin boundaries while the blue markers show the bin centers. During a simulation, the bin intensity will be calculated for values of $\phi_f$ and $\alpha_f$ corresponding to the bin centers and then normalized to the bin area.</p>
+
+<div class="alert 
+alert-info"
+ 
+role="alert"><p><strong>Note</strong></p>
+
+<p><code>GISASSimulation</code> has a special setting to calculate the intensity in a bin as the 2D integral along the detector bin area. This mode will be explained elsewhere.</p>
+</div>
+
+
+<h3 id="positioning-the-rectangular-detector">Positioning the rectangular detector</h3>
+
+<p>The position and the orientation of the detector can be defined in a generic way using the following parameters:</p>
+
+<ul>
+<li>the vector <strong>n</strong>, given in the sample coordinate system, which is the normal to the detector plane and has a length equal to the sample-detector distance</li>
+<li>the coordinate of the point <code>(u0, v0)</code> of intersection of the normal vector <strong>n</strong> and the detector plane, expressed in local detector coordinates</li>
+<li>the detector axis direction vector <strong>u</strong> which defines the orientation of the detector axes with respect to the sample coordinate system</li>
+</ul>
+
+<figure class="center">
+ 	  <a href="rectangular_detector_genpos.png">
+ 	  	<img src="rectangular_detector_genpos.png" width="600">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<p>In the plot above, the detector is inclined towards the sample by an angle of 20 degrees.</p>
+
+<p>The position is defined using the <code>RectangularDetector::setPosition</code> method  as follows</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">setPosition</span><span class="p">(</span><span class="n">normal</span><span class="p">,</span> <span class="n">u0</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="n">kvector_t</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="sa"></span><span class="s2">&#34;&#34;&#34;
+</span><span class="s2">Sets position of rectangular detector
+</span><span class="s2">normal   : Vector in sample coordinate system, normal to the detector plane, 
+</span><span class="s2">           pointing from the sample origin to the detector plane
+</span><span class="s2">u0       : x-coordinate of point of intersection of normal vector and detector plane, 
+</span><span class="s2">           expressed in local detector coordinates
+</span><span class="s2">v0       : y-coordinate of point of intersection of normal vector and detector plane, 
+</span><span class="s2">           expressed in local detector coordinates
+</span><span class="s2">direction: direction of detector u-axis with respect to the sample coordinate system
+</span><span class="s2">&#34;&#34;&#34;</span></code></pre></div>
+<p>Please note, that the direction vector <strong>u</strong> is set by default to <code>(0.0, -1.0, 0.0)</code> which corresponds to the detector u-axis pointing to the right, as shown in the plot above (green arrow on the detector plane). This value should not be changed, unless the user has to deal with a rotation of the detector around the normal vector <strong>n</strong>.</p>
+
+<p>In the following, we will show how to set the detector&rsquo;s parameters for the three most common cases in GISAS experimental setups:</p>
+
+<ul>
+<li>the detector plane is perpendicular to the sample plane</li>
+<li>the detector plane is perpendicular to the direct beam</li>
+<li>the detector plane is perpendicular to the reflected beam</li>
+</ul>
+
+<h3 id="the-detector-is-perpendicular-to-the-sample-plane">The detector is perpendicular to the sample plane</h3>
+
+<p>In this case the normal vector <strong>n</strong> coincides with the x-axis of the sample coordinate system and the length of the vector is equal to the detector distance. The detector&rsquo;s local coordinates <code>(u0, v0)</code> denote the point where the sample x-axis crosses the detector plane.</p>
+
+<figure class="center">
+ 	  <a href="rectangular_detector_samplepos.png">
+ 	  	<img src="rectangular_detector_samplepos.png" width="600">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<p>The following code demonstrates the creation of the detector shown in the plot. Please note, that the values of the parameters are given only as an example and do not reflect the relative proportions in the plot.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">nxbins</span><span class="p">,</span> <span class="n">nybins</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mf">200.0</span><span class="p">,</span> <span class="mf">180.0</span>
+<span class="n">distance</span> <span class="o">=</span> <span class="mf">2000.0</span>
+<span class="n">u0</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">20.0</span>
+ 
+<span class="n">detector</span> <span class="o">=</span> <span class="n">RectangularDetector</span><span class="p">(</span><span class="n">nxbins</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">nybins</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">detector</span><span class="o">.</span><span class="n">setPosition</span><span class="p">(</span><span class="n">kvector_t</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">u0</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span>
+ 
+<span class="n">simulation</span> <span class="o">=</span> <span class="n">GISASSimulation</span><span class="p">()</span>
+<span class="n">simulation</span><span class="o">.</span><span class="n">setDetector</span><span class="p">(</span><span class="n">detector</span><span class="p">)</span></code></pre></div>
+<p>The convenience method <code>RectangularDetector::setPerpendicularToSampleX</code> can be used to achieve the same setup:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">detector</span> <span class="o">=</span> <span class="n">RectangularDetector</span><span class="p">(</span><span class="n">nxbins</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">nybins</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">detector</span><span class="o">.</span><span class="n">setPerpendicularToSampleX</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">u0</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span></code></pre></div>
+<h3 id="the-detector-is-perpendicular-to-the-direct-beam">The detector is perpendicular to the direct beam</h3>
+
+<p>In this case the normal vector <strong>n</strong> coincides with the beam direction. The length of the vector is equal to the sample-detector distance. The detector local coordinates <code>(u0, v0)</code> again denote the point where the direct beam hits the detector plane.</p>
+
+<figure class="center">
+ 	  <a href="rectangular_detector_directbeam.png">
+ 	  	<img src="rectangular_detector_directbeam.png" width="600">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<p>The normal vector <strong>n</strong> can be easily calculated from the beam inclination angle $\alpha_i$.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mf">200.0</span><span class="p">,</span> <span class="mf">180.0</span>
+<span class="n">distance</span> <span class="o">=</span> <span class="mf">2000.0</span>
+<span class="n">u0</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">10.0</span>
+<span class="n">alpha_i</span> <span class="o">=</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">deg</span>
+ 
+<span class="n">detector</span> <span class="o">=</span> <span class="n">RectangularDetector</span><span class="p">(</span><span class="n">nxbins</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">nybins</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">normal</span> <span class="o">=</span> <span class="n">kvector_t</span><span class="p">(</span><span class="n">distance</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha_i</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">distance</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha_i</span><span class="p">)))</span>
+<span class="n">detector</span><span class="o">.</span><span class="n">setPosition</span><span class="p">(</span><span class="n">normal</span><span class="p">,</span> <span class="n">u0</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span>
+ 
+<span class="n">simulation</span> <span class="o">=</span> <span class="n">GISASSimulation</span><span class="p">()</span>
+<span class="n">simulation</span><span class="o">.</span><span class="n">setDetector</span><span class="p">(</span><span class="n">detector</span><span class="p">)</span></code></pre></div>
+<p>The convenience method <code>RectangularDetector::setPerpendicularToDirectBeam</code> can be used to simplify this setup:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">detector</span> <span class="o">=</span> <span class="n">RectangularDetector</span><span class="p">(</span><span class="n">nxbins</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">nybins</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">detector</span><span class="o">.</span><span class="n">setPerpendicularToDirectBeam</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">u0</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span></code></pre></div>
+<p>In this case, the GISASSimulation will calculate the normal vector <strong>n</strong> during runtime, depending from the beam angle settings.</p>
+
+<h3 id="the-detector-is-perpendicular-to-the-reflected-beam">The detector is perpendicular to the reflected beam</h3>
+
+<p>In this case the normal vector <strong>n</strong> coincides with the reflected beam direction. The length of the vector is equal to the sample-detector distance. The detector local coordinates <code>(u0, v0)</code> denote the point where the reflected beam hits the detector plane.</p>
+
+<figure class="center">
+ 	  <a href="rectangular_detector_reflectedbeam.png">
+ 	  	<img src="rectangular_detector_reflectedbeam.png" width="600">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<p>The normal vector <strong>n</strong> can be easily calculated from the beam inclination angle $\alpha_i$.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">distance</span> <span class="o">=</span> <span class="mf">2000.0</span>
+<span class="n">u0</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">60.0</span>
+<span class="n">alpha_i</span> <span class="o">=</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">deg</span>
+ 
+<span class="n">detector</span> <span class="o">=</span> <span class="n">RectangularDetector</span><span class="p">(</span><span class="n">nxbins</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">nybins</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">normal</span> <span class="o">=</span> <span class="n">kvector_t</span><span class="p">(</span><span class="n">distance</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha_i</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">distance</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha_i</span><span class="p">)))</span>
+<span class="n">detector</span><span class="o">.</span><span class="n">setPosition</span><span class="p">(</span><span class="n">normal</span><span class="p">,</span> <span class="n">u0</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span>
+ 
+<span class="n">simulation</span> <span class="o">=</span> <span class="n">GISASSimulation</span><span class="p">()</span>
+<span class="n">simulation</span><span class="o">.</span><span class="n">setDetector</span><span class="p">(</span><span class="n">detector</span><span class="p">)</span></code></pre></div>
+<p>The convenience method <code>RectangularDetector::setPerpendicularToReflectedBeam</code> can be used to simplify this setup:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">detector</span> <span class="o">=</span> <span class="n">RectangularDetector</span><span class="p">(</span><span class="n">nxbins</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">nybins</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">detector</span><span class="o">.</span><span class="n">setPerpendicularToReflectedBeam</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">u0</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span></code></pre></div>
+<p>In this case, the GISASSimulation will calculate the normal vector <strong>n</strong> during runtime, depending on the beam angle settings.</p>
+
+<h3 id="additional-convenience-methods">Additional convenience methods</h3>
+
+<p>All methods described above to initialize a detector, use the coordinates <code>(u0, v0)</code> - the coordinates of the point where the normal vector <strong>n</strong> hits the detector plane, expressed in the local detector coordinates.</p>
+
+<p>In the case of a detector perpendicular to the direct beam, these coordinates, naturally, coincide with the point where the direct beam hits the detector. For a detector perpendicular to the reflected beam, these coordinates coincide with the point where the reflected beam hits the detector.</p>
+
+<p>If the coordinates of the reflected beam in the detector plane are not known, a convenience method <code>RectangularDetector::setDirectBeamPosition</code> can be used. For example, the following combination is possible:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">detector</span> <span class="o">=</span> <span class="n">RectangularDetector</span><span class="p">(</span><span class="n">nxbins</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">nybins</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">detector</span><span class="o">.</span><span class="n">setPerpendicularToReflectedBeam</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>  <span class="c1"># note that (u0,v0) are omitted</span>
+<span class="n">direct_beam_xpos</span> <span class="o">=</span> <span class="mf">100.0</span>
+<span class="n">direct_beam_ypos</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">detector</span><span class="o">.</span><span class="n">setDirectBeamPosition</span><span class="p">(</span><span class="n">direct_beam_xpos</span><span class="p">,</span> <span class="n">direct_beam_ypos</span><span class="p">)</span></code></pre></div>
+
+      <div class="container next-prev">
+<nav>
+  <ul class="pagination pagination-sm justify-content-end"><li class="page-item ">
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/spherical-detector/" class="page-link"><i class="fa fa-chevron-left fa-1g "></i>
+      </a>
+    </li>  
+
+    <li class="page-item ">
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/accessing-simulation-results/" class="page-link"><i class="fa fa-chevron-right fa-1g "></i>
+      </a>
+    </li></ul>
+</nav>
+</div>
+
+    </div>
+    <div class="col-md-4">
+    <ul class="doctree">
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/"><span>Documentation</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/"><span>Introduction</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/functionality/"><span>Functionality overview</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/architecture/"><span>Architectural overview</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/"><span>Getting started</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/"><span>Installation instructions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/windows/"><span>Installation on Windows</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/macos/"><span>Installation on MacOS</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/macos/advanced-tips/"><span>Advanced tips</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-short/"><span>Installation on Linux (short version)</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/"><span>Installation on Linux (detailed version)</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/third-party/"><span>Install the third party software</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/get-source/"><span>Get the source</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/build-and-install/"><span>Build and install BornAgain</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/first-simulation/"><span>Run a first simulation</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/quick-start/"><span>Quick Start</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/"><span>Using Graphical User Interface</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/gui-overview/"><span>BornAgain GUI overview</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/gui-fitting/"><span>Fitting in the GUI</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/"><span>Working with Python scripts</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/setup-pycharm-project/"><span>Setup of a PyCharm project</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/basic-simulation-tutorial/"><span>Basic simulation tutorial</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/material-types/"><span>Material types</span> </a>
+    </li>
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/"><span>Detector types</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/spherical-detector/"><span>Spherical detector</span> </a>
+    </li>
+    <li class="dd-item active">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/rectangular-detector/"><span>Rectangular detector</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/accessing-simulation-results/"><span>Accessing simulation results</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-positioning/"><span>Particle positioning</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-rotation/"><span>Particle rotation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-composition/"><span>Particle composition</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/"><span>Interference functions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/lattice1d/"><span>Interference function of one-dimensional lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/lattice2d/"><span>Interference function of two-dimensional lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/para_radial/"><span>Interference function of radial paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/para2d/"><span>Interference function of 2D paracrystal</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/magnetic-particles/"><span>Magnetic particles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/working-with-sample-parameters/"><span>Working with sample parameters</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/introduction-to-fitting/"><span>Introduction to fitting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/basic-fitting-tutorial/"><span>Basic fitting tutorial</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/importing-experimental-data/"><span>Importing experimental data</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/"><span>Sample model reference</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/"><span>Embedded particles</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-ba/"><span>Cylinders in Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-dwba/"><span>Cylinders in Distorted Wave Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution/"><span>Cylinders with size distribution</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution2/"><span>Two types of cylinders with size distribution</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/rotated-pyramids/"><span>Rotated Pyramids</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-and-prisms/"><span>Cylinders and Prisms</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/all-formfactors/"><span>All available form factors</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/"><span>Layered structures</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/buried-particles/"><span>Buried particles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/correlated-roughness/"><span>Correlated roughness</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/"><span>Interference functions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-lattice/"><span>Interference 1D lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-square-lattice/"><span>Interference 2D square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/intereference-2d-rotated-square-lattice/"><span>Interference 2D rotated square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-centered-square-lattice/"><span>Interference 2D centered square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/spheres-at-hex-lattice/"><span>Spheres on Hexagonal Lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/cosine-ripples-at-rect-lattice/"><span>Cosine ripples on rectangular lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-paracrystal/"><span>Interference 2D Paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-radial-paracrystal/"><span>Interference 1D radial paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-da/"><span>Size-distribution model: decoupling approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-lma/"><span>Size-distribution model: local monodisperse approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-ssca/"><span>Size-distribution model: size-spacing coupling approximation</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/"><span>Complex shapes</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/core-shell-nanoparticles/"><span>Core shell nanoparticles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/hexagonal-lattice-with-basis/"><span>Hexagonal lattices with basis</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/large-particles-formfactor/"><span>Large particle formfactor</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/custom-formfactor/"><span>Custom formfactor</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/"><span>Beam and detector</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/beam-divergence/"><span>Beam divergence</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/detector-resolution/"><span>Detector resolution function</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/offspecular-simulation/"><span>Off-Specular</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/rectangular-detector/"><span>Rectangular detector</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/basic-specular-simulation/"><span>Specular scattering</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/"><span>Fitting</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/sample-parameters-intro/"><span>Working with sample parameters</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-cylinders-and-prisms/"><span>Fit cylinders and prisms</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-with-masks/"><span>Fitting with masks</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-along-slices/"><span>Fitting along slices</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/simultaneous-fit-of-two-datasets/"><span>Simultaneous fit of two datasets</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-galaxi-data/"><span>Real life fit example: Experiment at GALAXI</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/"><span>Miscellaneous</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/accessing-simulation-results/"><span>Accessing simulation results</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/axes-in-different-units/"><span>Plotting with axes in different units</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/"><span>Getting help</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/troubleshooting/"><span>Troubleshooting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/frequently-asked-questions/"><span>Frequently asked questions</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/developers-corner/"><span>Developer&#39;s corner</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/developers-corner/contribute-to-documentation/"><span>Contribute to documentation</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+    </div>
+  </div>
+</div>    <hr>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                  <ul class="list-inline text-center">
+                    
+                      <li class="list-inline-item social">
+                        <a href="mailto:contact@bornagainproject.org">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                      </li>
+                    
+                    
+                    <li class="list-inline-item social">
+                      <a href="https://github.com/scgmlz/BornAgain">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <p class="copyright text-muted"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://www.bornagainproject.org/js/bootstrap.min.js"></script>
+    
+    <script src="https://www.bornagainproject.org/js/baguetteBox.min.js"></script>
+    <script>
+      baguetteBox.run('.galleryscg');
+    </script>    
+    
+    <script src="https://www.bornagainproject.org/js/theme.js"></script>
+    <script src="https://www.bornagainproject.org/assets/js/bornagain.js"></script>
+    
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-120020802-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
+

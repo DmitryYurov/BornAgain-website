@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Embedded particles on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/</link>
+    <description>Recent content in Embedded particles on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cylinders in Born Approximation</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-ba/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-ba/</guid>
+      <description>Cylinders in Born Approximation Scattering from a monodisperse distribution of cylinders using the Born approximation.
+ The cylinders are all identical with radii and heights equal to $5$ nanometers. The wavelength is equal to $1$ $\unicode{x212B}$. The incident angles are equal to $\alpha_i = 0.2 ^{\circ}$ and $\phi_i = 0^{\circ}$. There is no substrate (particles are embedded in the air layer), hence no refraction, hence no distorted waves, hence DWBA boils down to regular Born approximation.</description>
+    </item>
+    
+    <item>
+      <title>Cylinders in Distorted Wave Born Approximation</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-dwba/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-dwba/</guid>
+      <description>Cylinders in Distorted Wave Born Approximation Scattering from a monodisperse distribution of cylindrical particles using the Distorted Wave Born Approxiamtion (DWBA).
+This example is similar to the simulation Cylinders in Born Approximation, but now the particles sit on top of a substrate. Therefore incoming and scattered waves are distorted by reflections from the substrate surface, as described by the DWBA.
+ The distribution of cylinders is monodisperse with heights and radii of $5$ nm.</description>
+    </item>
+    
+    <item>
+      <title>Cylinders with size distribution</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution/</guid>
+      <description>Cylinders with size distribution Scattering from a polydisperse distribution of cylinders in Born Approximation.
+ The average radii and heights of the cylinders are equal to $5$ nm. The radii of the cylinders vary according to a normal distribution with a standard deviation $\sigma$ equal to $0.2$ times the average radius. The wavelength is equal to $1$ $\unicode{x212B}$. The incident angles are equal to $\alpha_i = 0.2 ^{\circ}$ and $\phi_i = 0^{\circ}$.</description>
+    </item>
+    
+    <item>
+      <title>Two types of cylinders with size distribution</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution2/</guid>
+      <description>Two types of cylinders with size distribution Scattering of a polydisperse distribution of two types of cylinders.
+ The simulation is performed using the Born approximation, i.e. there is no &amp;ldquo;substrate&amp;rdquo; layer. The sample is made of polydisperse cylinders of two different sizes: $R_1 = H_1$ and $R_2 = H_2$, where $R_i$ and $H_i$ are the radius and width of cylinder of type $i$. There are 95% of cylinders of type $1$ and 5% of cylinders of type $2$.</description>
+    </item>
+    
+    <item>
+      <title>Rotated Pyramids</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/rotated-pyramids/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/rotated-pyramids/</guid>
+      <description>Rotated Pyramids Scattering from a monodisperse distribution of rotated pyramids.
+This example illustrates how the in-plane rotation of non-radially symmetric particles influences the scattering pattern.
+ The sample is made of pyramids deposited on a substrate. Each pyramid is characterized by a squared-base side length of $10$ nm, a height of $5$ nm, and a base angle $\alpha$ equal to $54.73^{\circ}$. These particles are rotated in the $(x, y)$ plane by $45^{\circ}$.</description>
+    </item>
+    
+    <item>
+      <title>Cylinders and Prisms</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-and-prisms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-and-prisms/</guid>
+      <description>Cylinders and Prisms Scattering from a mixture of cylinders and prisms without interference.
+ The sample comprises a substrate on which are deposited, in equal proportion, cylinders and prisms. All particles are made of the same material. Each type of particle has the same orientation. The cylinders are $5$ nm high and $5$ nm in radius. Each prism is $5$ nm high with an equilateral triangular base, whose side length is equal to $10$ nm.</description>
+    </item>
+    
+    <item>
+      <title>All available form factors</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/all-formfactors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/all-formfactors/</guid>
+      <description>All available form factors Scattering from all individual particle&amp;rsquo;s shapes implemented in BornAgain. For each figure, one particular shape is used.
+The dimensions of the object are chosen only in order to get a characteristic signature of the form factor in the same range of values for the output angles.
+ The simulation is run using the Born approximation. There is no substrate and also no interference between the scattered waves.</description>
+    </item>
+    
+  </channel>
+</rss>

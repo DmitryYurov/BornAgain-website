@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interference functions on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/</link>
+    <description>Recent content in Interference functions on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interference 1D lattice</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-lattice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-lattice/</guid>
+      <description>Interference 1D lattice In this example we simulate the scattering from infinite 1D repetition of rectangular patches (rectangular grating). This is done by using the interference function of a 1D lattice together with very long boxes.
+ By-default, the axis of the one-dimensional lattice coincides with the $x$-axis of the reference cartesian frame, so it coinsides with the beam direction. Long boxes are placed along a one-dimensional lattice on top of substrate, the lattice_length parameter corresponds to the grating period.</description>
+    </item>
+    
+    <item>
+      <title>Interference 2D square lattice</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-square-lattice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-square-lattice/</guid>
+      <description>Interference 2D square lattice Scattering from cylindrical particles distributed along a square lattice.
+ Cylinders with radii and heights of $3$ nm are deposited on a substrate. Because of the presence of the substrate layer the simulation is run using the DWBA. The particles are distributed along a square lattice with a lattice length of $25$ nm. The main axes are parallel to the $x$-axis and $y$-axis of the reference Cartesian frame, respectively.</description>
+    </item>
+    
+    <item>
+      <title>Interference 2D rotated square lattice</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/intereference-2d-rotated-square-lattice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/intereference-2d-rotated-square-lattice/</guid>
+      <description>Interference 2D rotated square lattice Scattering from cylinders distributed along a square lattice, whose main axes are rotated with respect to the reference cartesian frame.
+This example is similar to Interference 2D square lattice with the additional rotation.
+  Real-space model
+    Intensity image
+     1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768 &amp;#34;&amp;#34;&amp;#34; Cylinders on a rotated 2D lattice &amp;#34;&amp;#34;&amp;#34; import numpy import bornagain as ba from bornagain import deg, angstrom, nm def get_sample(): &amp;#34;&amp;#34;&amp;#34; Returns a sample with cylinders on a substrate, forming a rotated 2D lattice &amp;#34;&amp;#34;&amp;#34; # defining materials m_ambience = ba.</description>
+    </item>
+    
+    <item>
+      <title>Interference 2D centered square lattice</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-centered-square-lattice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-centered-square-lattice/</guid>
+      <description>Interference 2D centered square lattice Scattering from cylinders distributed along a squared centered lattice.
+ The particles are cylinders with radii and heights of $3$ nm. Their spatial distribution is composed of two square lattices (lattice length $l$), shifted by half a lattice length in both directions: The first square lattice is centered at the origin, with a lattice length of $25$ nm. The second one, with the same lattice spacing and the same type of particles at its nodes is initialized at $x = y = l/2 = 12.</description>
+    </item>
+    
+    <item>
+      <title>Spheres on Hexagonal Lattice</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/spheres-at-hex-lattice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/spheres-at-hex-lattice/</guid>
+      <description>Spheres on Hexagonal Lattice Scattering from spheres distributed along a hexagonal lattice.
+ The sample is made of spherical particles with radii of $10$ nm deposited on a substrate along a hexagonal lattice. This two-dimensional lattice is characterized by a lattice length of $20$ nm. Its a-axis coincides with the x-axis of the reference Cartesian frame. The wavelength is equal to $1$ $\unicode{x212B}$. The incident angles are $\alpha_i = 0.</description>
+    </item>
+    
+    <item>
+      <title>Cosine ripples on rectangular lattice</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/cosine-ripples-at-rect-lattice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/cosine-ripples-at-rect-lattice/</guid>
+      <description>Cosine ripples on rectangular lattice Scattering from elongated particles distributed along a two-dimensional rectangular lattice.
+ Each particle has a sinusoidal profile (&amp;ldquo;Ripple1&amp;rdquo; form factor) with a length of $100$ nm, a width of $20$ nm and a height of $4$ nm. They are placed along a rectangular lattice on top of a substrate. This lattice is characterized by a lattice length of $200$ nm in the direction of the long axis of the particles and of $50$ nm in the perpendicular direction.</description>
+    </item>
+    
+    <item>
+      <title>Interference 2D Paracrystal</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-paracrystal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-paracrystal/</guid>
+      <description>Interference 2D Paracrystal Scattering from monodisperse cylinders distributed along a two-dimensional square paracrystal.
+ The particles are cylinders with constant radii and heights equal to $5$ nm. They are deposited on a substrate, following a two-dimensional square paracrystalline pattern. This 2D paracrystal is characterized by:  a lattice length of $20$ nm along both axes of the reference Cartesian frame, a damping length equal to $0$, &amp;ldquo;coherent&amp;rsquo; domains with a size of $20$ $\mu$m along the axes of the reference Cartesian frame.</description>
+    </item>
+    
+    <item>
+      <title>Interference 1D radial paracrystal</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-radial-paracrystal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-radial-paracrystal/</guid>
+      <description>Interference 1D radial paracrystal Scattering from a monodisperse distribution of cylinders positioned following a one-dimensional radial paracrystal.
+ The sample is made of cylinders with radii and heights equal to $5$ nm, deposited on a substrate. The distribution of particles follows a radial paracrystal, characterized by a peak distance of $20$ nm and a damping length of $1$ $\mu$m. The wavelength is equal to $1$ $\unicode{x212B}$. The incident angles are $\alpha_i = 0.</description>
+    </item>
+    
+    <item>
+      <title>Size-distribution model: decoupling approximation</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-da/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-da/</guid>
+      <description>Size-distribution model: decoupling approximation Scattering from a distribution of cylinders of two different sizes using the Decoupling Approximation.
+ The sample is made of cylinders deposited on a substrate. The distribution of particles is made of:  80% of cylinders with radii and heights equal to $5$ nm 20% of cylinders with radii and heights equal to $8$ nm.  The interference function is Radial Paracrystal with a peak distance of $18$ nm and a damping length of $1$ $\mu$m.</description>
+    </item>
+    
+    <item>
+      <title>Size-distribution model: local monodisperse approximation</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-lma/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-lma/</guid>
+      <description>Size-distribution model: local monodisperse approximation Scattering from cylinders of two different sizes using the Local Monodisperse Approximation (LMA).
+ The sample is made of cylinders deposited on a substrate. The cylinders are of two different sizes:  80% of Type $1$: radius $R_1 = 5$ nm, height $H_1 = 5$ nm. The interference function is a radial paracrystal with a peak distance equal to $16.8$ nm and a damping length of $1$ $\mu$m.</description>
+    </item>
+    
+    <item>
+      <title>Size-distribution model: size-spacing coupling approximation</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-ssca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-ssca/</guid>
+      <description>Size-distribution model: size-spacing coupling approximation Scattering from cylinders of two different sizes using the Size-Spacing Coupling Approximation.
+ The sample is made of cylinders deposited on a substrate. The distribution of particles is made of:  80% of cylinders with radii and heights equal to $5$ nm 20% of cylinders with radii and heights equal to $8$ nm.  The interference function is Radial Paracrystal with a peak distance of $18$ nm and a damping length of $1$ $\mu$m.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Particle positioning -- BornAgain</title>
+
+
+<link href="https://www.bornagainproject.org/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/theme.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/mathjax-style.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/vs.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/baguetteBox.min.css" rel="stylesheet">
+<link href="https://www.bornagainproject.org/css/gallery-grid.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/assets/css/bornagain.css" rel="stylesheet">
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel='stylesheet'  type='text/css'> 
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    var TEX = MathJax.InputJax.TeX;
+    var PREFILTER = TEX.prefilterMath;
+    TEX.Augment({
+      prefilterMath: function (math,displaymode,script) {
+        if (!displaymode) {math = "\\small{"+math+"}"}
+        return PREFILTER.call(TEX,math,displaymode,script);
+      }
+    });
+  });
+  </script>
+
+</head>
+
+
+  <body>
+    <header class="hero overlay"><div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-primary">
+    <a class="navbar-brand" href="https://www.bornagainproject.org">
+        <img src="https://www.bornagainproject.org/assets/img/bornagain-logo.png" class="d-inline-block align-top" alt="">
+        BornAgain
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/">Home</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/gallery/">Gallery</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/download/">Download</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/post/">News</a></li>
+        
+          <li class="nav-item active"> <a class="nav-link" href="https://www.bornagainproject.org/documentation/">Documentation</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/contact/">Contact</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/about/">About</a></li>
+          
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/scgmlz/BornAgain" target="_blank" rel="noopener" aria-label="GitHub">
+              <span class="fa fa-github fa-2x"></span>
+            </a>
+          </li>        
+        
+      </ul>
+    </div>
+  </nav>
+</div>
+  
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12"> <br></div>
+        </div>
+      </div>
+    </header>
+
+    
+  <div class="breadcrumb">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+
+
+
+
+
+
+ <a href='https://www.bornagainproject.org/'>Home</a> > <a href='https://www.bornagainproject.org/documentation/'>Documentation</a> > <a href='https://www.bornagainproject.org/documentation/working-with-python/'>Working with Python scripts</a> > Particle positioning
+
+ 
+
+ 
+
+ 
+
+   
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+    
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      
+      
+  
+  
+
+<h2 id="particle-positioning">Particle positioning</h2>
+
+<p>This tutorial demonstrates how to include particles in various layers of a multi-layer system.</p>
+
+<p>As an example we are going to use simple spherical particles and a 3-layer system consisting
+of a semi-infinite air layer, a middle layer with finite thickness and a semi-infinite substrate layer.</p>
+
+<h3 id="creating-particles">Creating particles</h3>
+
+<p>All particles implemented in BornAgain are defined by their form factors,
+their sizes and the materials they are made of.
+While placing particles in layers it is important to know
+the reference point of the particle and how the coordinate system
+of  the surrounding layer is defined. The coordinate system
+for a full sphere is shown below. For all implemented shapes,
+please refer to the User Manual (section &ldquo;Particle form factors&rdquo;).</p>
+
+<figure class="center">
+ 	  <a href="tutorial_positioning_fullsphere.png">
+ 	  	<img src="tutorial_positioning_fullsphere.png" >
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<p>The following code will create a spherical particle of 10 nm radius, made of a material whose refractive index roughly corresponds to silver at 1 Angstrom wavelength.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">radius</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">material</span> <span class="o">=</span> <span class="n">HomogeneousMaterial</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;Ag&#34;</span><span class="p">,</span> <span class="mf">1.245e-5</span><span class="p">,</span> <span class="mf">5.419e-7</span><span class="p">)</span>
+<span class="n">particle</span> <span class="o">=</span> <span class="n">Particle</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="n">FormFactorFullSphere</span><span class="p">(</span><span class="n">radius</span><span class="p">))</span></code></pre></div>
+<h3 id="adding-particles-to-a-layer">Adding particles to a layer</h3>
+
+<p>To add particles in a layer, a special <code>ParticleLayout</code> object has to be defined.
+This object holds information about the particles populating the layer,
+their densities and their interference function. In the following code snippet we add
+spherical particles with all default parameters to the layout,
+create the air layer and then add the layout to this air layer.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">layout</span> <span class="o">=</span> <span class="n">ParticleLayout</span><span class="p">()</span>
+<span class="n">layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">)</span>
+ 
+<span class="n">air_layer</span> <span class="o">=</span> <span class="n">Layer</span><span class="p">(</span><span class="n">air_material</span><span class="p">)</span>
+<span class="n">air_layer</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span></code></pre></div>
+<p>The general syntax of the <code>ParticleLayout::addParticle</code> method is the following:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">addParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="n">abundance</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">kvector_t</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">rotation</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
+<span class="sa"></span><span class="s2">&#34;&#34;&#34;
+</span><span class="s2">Adds particle to the layout with abundance, position and rotation defined.
+</span><span class="s2"> 
+</span><span class="s2">particle  : A particle to add to the layout
+</span><span class="s2">abundance : Proportion of this type of particles normalized to the total number of particles contained in this layout
+</span><span class="s2">position  : Relative position of the particle&#39;s reference point in the coordinate system of parent layer
+</span><span class="s2">rotation  : Rotation of particle
+</span><span class="s2">&#34;&#34;&#34;</span></code></pre></div>
+<p>In this tutorial we are going to focus on the particle&rsquo;s positioning,
+leaving the rotation for the next tutorial.
+The parameter <code>position = kvector_t(x, y, z)</code> defines the relative position of the particle&rsquo;s
+reference point in the coordinate system of the parent object.
+Note that the <code>(x,y)</code> components of the vector are only relevant for defining the relative position(s)
+of two or more different particles in a layer, while <code>z</code>-component defines the vertical position of the particle inside the layer.</p>
+
+<p>The plot below represents a multi-layer with 3 layers: a semi-infinite air layer, a middle layer with a finite thickness and a semi-infinite substrate layer.</p>
+
+<figure class="center">
+ 	  <a href="tutorial_positioning_in_the_layer2.png">
+ 	  	<img src="tutorial_positioning_in_the_layer2.png" >
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<p>For each of these 3 layers the z-axis is pointing up. For the air layer,
+the <code>z=0.0</code> coordinate corresponds to the interface between air and middle layer.
+To place a particle in the air layer, normally positive values <code>z&gt;=0.0</code> should be used.
+For the middle layer (or every intermediate layer if the number of layers above 3)
+as well as for the substrate, <code>z=0.0</code> corresponds to the top interface.
+To place a particle in one of such layers, normally negative values <code>z&lt;=0.0</code> should be used.
+The following code snippet explains how to place particles in 7 different cases, as shown on the plot.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Particle (A) is flying in the air at 10nm distance.</span>
+<span class="n">air_layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">kvector_t</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">))</span>
+ 
+<span class="c1"># Particle (B) is in the air layer, sitting right on the interface.</span>
+<span class="n">air_layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">kvector_t</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+ 
+<span class="c1"># Particle (C) is in the middle layer, touching the interface</span>
+<span class="n">middle_layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">kvector_t</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">radius</span><span class="p">))</span>
+ 
+<span class="c1"># Particle (D) is in the middle layer, right in the center</span>
+<span class="n">middle_layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">kvector_t</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">thickness</span><span class="o">/</span><span class="mf">2.</span><span class="o">-</span><span class="n">radius</span><span class="p">))</span>
+ 
+<span class="c1"># Particle (E) is in the middle layer, touching the bottom interface.</span>
+<span class="n">middle_layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">kvector_t</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">thickness</span><span class="p">))</span>
+ 
+<span class="c1"># Particle (F) is in the substrate, touching the interface</span>
+<span class="n">substrate_layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">kvector_t</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">radius</span><span class="p">))</span>
+ 
+<span class="c1"># Particle (G) is in the substrate, the particle&#39;s reference point is at a depth of 20nm</span>
+<span class="n">substrate_layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">kvector_t</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">20.0</span><span class="p">))</span></code></pre></div>
+<h3 id="complete-example">Complete example</h3>
+
+<p>The following code defines a 3-layer system with a 100-nm-thick middle layer.
+Spherical particles of 10 nm radius are placed right in the center of the middle layer.
+This corresponds to Particle (D) from the snippet above.
+Note that in order to build the sample, we assume
+that there is no coherent interference between the waves scattered by these particles.</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">mAmbience</span> <span class="o">=</span> <span class="n">HomogeneousMaterial</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;Air&#34;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="n">mMiddle</span><span class="o">=</span> <span class="n">HomogeneousMaterial</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;Teflon&#34;</span><span class="p">,</span> <span class="mf">2.900e-6</span><span class="p">,</span> <span class="mf">6.019e-9</span><span class="p">)</span>
+<span class="n">mSubstrate</span> <span class="o">=</span> <span class="n">HomogeneousMaterial</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;Substrate&#34;</span><span class="p">,</span> <span class="mf">3.212e-6</span><span class="p">,</span> <span class="mf">3.244e-8</span><span class="p">)</span>
+<span class="n">mParticle</span> <span class="o">=</span> <span class="n">HomogeneousMaterial</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;Ag&#34;</span><span class="p">,</span> <span class="mf">1.245e-5</span><span class="p">,</span> <span class="mf">5.419e-7</span><span class="p">)</span>
+ 
+<span class="n">particle</span> <span class="o">=</span> <span class="n">Particle</span><span class="p">(</span><span class="n">mParticle</span><span class="p">,</span> <span class="n">FormFactorFullSphere</span><span class="p">(</span><span class="mf">10.0</span><span class="o">*</span><span class="n">nanometer</span><span class="p">))</span>
+ 
+<span class="n">layout</span> <span class="o">=</span> <span class="n">ParticleLayout</span><span class="p">()</span>
+<span class="n">layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">kvector_t</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">60.0</span><span class="o">*</span><span class="n">nanometer</span><span class="p">)</span>
+ 
+<span class="n">air_layer</span> <span class="o">=</span> <span class="n">Layer</span><span class="p">(</span><span class="n">mAmbience</span><span class="p">)</span>
+ 
+<span class="n">middle_layer</span> <span class="o">=</span> <span class="n">Layer</span><span class="p">(</span><span class="n">mMiddle</span><span class="p">,</span> <span class="mf">100.0</span><span class="o">*</span><span class="n">nanometer</span><span class="p">)</span>
+<span class="n">middle_layer</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+<span class="n">substrate</span> <span class="o">=</span> <span class="n">Layer</span><span class="p">(</span><span class="n">mSubstrate</span><span class="p">)</span>
+ 
+<span class="n">multi_layer</span> <span class="o">=</span> <span class="n">MultiLayer</span><span class="p">()</span>
+<span class="n">multi_layer</span><span class="o">.</span><span class="n">addLayer</span><span class="p">(</span><span class="n">air_layer</span><span class="p">)</span>
+<span class="n">multi_layer</span><span class="o">.</span><span class="n">addLayer</span><span class="p">(</span><span class="n">middle_layer</span><span class="p">)</span>
+<span class="n">multi_layer</span><span class="o">.</span><span class="n">addLayer</span><span class="p">(</span><span class="n">substrate</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<h3 id="alternative-ways-of-positioning-particles">Alternative ways of positioning particles</h3>
+
+<p>The position of a particle can be adjusted using the Particle&rsquo;s own <code>Particle::setPosition</code> method.
+The following three code blocks produce the same results.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># setting Particle position via layout</span>
+<span class="n">particle</span> <span class="o">=</span> <span class="n">Particle</span><span class="p">(</span><span class="n">mParticle</span><span class="p">,</span> <span class="n">FormFactorFullSphere</span><span class="p">(</span><span class="mf">10.0</span><span class="o">*</span><span class="n">nanometer</span><span class="p">))</span>
+<span class="n">layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">kvector_t</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">60.0</span><span class="o">*</span><span class="n">nanometer</span><span class="p">))</span>
+ 
+<span class="c1"># setting particle position via particle interface</span>
+<span class="n">particle</span> <span class="o">=</span> <span class="n">Particle</span><span class="p">(</span><span class="n">mParticle</span><span class="p">,</span> <span class="n">FormFactorFullSphere</span><span class="p">(</span><span class="mf">10.0</span><span class="o">*</span><span class="n">nanometer</span><span class="p">))</span>
+<span class="n">particle</span><span class="o">.</span><span class="n">setPosition</span><span class="p">(</span><span class="n">kvector_t</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">60.0</span><span class="o">*</span><span class="n">nanometer</span><span class="p">))</span>
+<span class="n">layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+ 
+<span class="c1"># setting particle position via particle interface, and then applying additional translation via layout</span>
+<span class="n">particle</span> <span class="o">=</span> <span class="n">Particle</span><span class="p">(</span><span class="n">mParticle</span><span class="p">,</span> <span class="n">FormFactorFullSphere</span><span class="p">(</span><span class="mf">10.0</span><span class="o">*</span><span class="n">nanometer</span><span class="p">))</span>
+<span class="n">particle</span><span class="o">.</span><span class="n">setPosition</span><span class="p">(</span><span class="n">kvector_t</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">30.0</span><span class="o">*</span><span class="n">nanometer</span><span class="p">))</span>
+<span class="n">layout</span><span class="o">.</span><span class="n">addParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">kvector_t</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">30.0</span><span class="o">*</span><span class="n">nanometer</span><span class="p">))</span></code></pre></div>
+
+      <div class="container next-prev">
+<nav>
+  <ul class="pagination pagination-sm justify-content-end"><li class="page-item ">
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/accessing-simulation-results/" class="page-link"><i class="fa fa-chevron-left fa-1g "></i>
+      </a>
+    </li>  
+
+    <li class="page-item ">
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-rotation/" class="page-link"><i class="fa fa-chevron-right fa-1g "></i>
+      </a>
+    </li></ul>
+</nav>
+</div>
+
+    </div>
+    <div class="col-md-4">
+    <ul class="doctree">
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/"><span>Documentation</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/"><span>Introduction</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/functionality/"><span>Functionality overview</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/architecture/"><span>Architectural overview</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/"><span>Getting started</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/"><span>Installation instructions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/windows/"><span>Installation on Windows</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/macos/"><span>Installation on MacOS</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/macos/advanced-tips/"><span>Advanced tips</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-short/"><span>Installation on Linux (short version)</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/"><span>Installation on Linux (detailed version)</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/third-party/"><span>Install the third party software</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/get-source/"><span>Get the source</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/build-and-install/"><span>Build and install BornAgain</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/first-simulation/"><span>Run a first simulation</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/quick-start/"><span>Quick Start</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/"><span>Using Graphical User Interface</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/gui-overview/"><span>BornAgain GUI overview</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/gui-fitting/"><span>Fitting in the GUI</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/"><span>Working with Python scripts</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/setup-pycharm-project/"><span>Setup of a PyCharm project</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/basic-simulation-tutorial/"><span>Basic simulation tutorial</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/material-types/"><span>Material types</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/"><span>Detector types</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/spherical-detector/"><span>Spherical detector</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/rectangular-detector/"><span>Rectangular detector</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/accessing-simulation-results/"><span>Accessing simulation results</span> </a>
+    </li>
+    <li class="dd-item active">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-positioning/"><span>Particle positioning</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-rotation/"><span>Particle rotation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-composition/"><span>Particle composition</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/"><span>Interference functions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/lattice1d/"><span>Interference function of one-dimensional lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/lattice2d/"><span>Interference function of two-dimensional lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/para_radial/"><span>Interference function of radial paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/para2d/"><span>Interference function of 2D paracrystal</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/magnetic-particles/"><span>Magnetic particles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/working-with-sample-parameters/"><span>Working with sample parameters</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/introduction-to-fitting/"><span>Introduction to fitting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/basic-fitting-tutorial/"><span>Basic fitting tutorial</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/importing-experimental-data/"><span>Importing experimental data</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/"><span>Sample model reference</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/"><span>Embedded particles</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-ba/"><span>Cylinders in Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-dwba/"><span>Cylinders in Distorted Wave Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution/"><span>Cylinders with size distribution</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution2/"><span>Two types of cylinders with size distribution</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/rotated-pyramids/"><span>Rotated Pyramids</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-and-prisms/"><span>Cylinders and Prisms</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/all-formfactors/"><span>All available form factors</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/"><span>Layered structures</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/buried-particles/"><span>Buried particles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/correlated-roughness/"><span>Correlated roughness</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/"><span>Interference functions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-lattice/"><span>Interference 1D lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-square-lattice/"><span>Interference 2D square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/intereference-2d-rotated-square-lattice/"><span>Interference 2D rotated square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-centered-square-lattice/"><span>Interference 2D centered square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/spheres-at-hex-lattice/"><span>Spheres on Hexagonal Lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/cosine-ripples-at-rect-lattice/"><span>Cosine ripples on rectangular lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-paracrystal/"><span>Interference 2D Paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-radial-paracrystal/"><span>Interference 1D radial paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-da/"><span>Size-distribution model: decoupling approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-lma/"><span>Size-distribution model: local monodisperse approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-ssca/"><span>Size-distribution model: size-spacing coupling approximation</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/"><span>Complex shapes</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/core-shell-nanoparticles/"><span>Core shell nanoparticles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/hexagonal-lattice-with-basis/"><span>Hexagonal lattices with basis</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/large-particles-formfactor/"><span>Large particle formfactor</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/custom-formfactor/"><span>Custom formfactor</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/"><span>Beam and detector</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/beam-divergence/"><span>Beam divergence</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/detector-resolution/"><span>Detector resolution function</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/offspecular-simulation/"><span>Off-Specular</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/rectangular-detector/"><span>Rectangular detector</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/basic-specular-simulation/"><span>Specular scattering</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/"><span>Fitting</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/sample-parameters-intro/"><span>Working with sample parameters</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-cylinders-and-prisms/"><span>Fit cylinders and prisms</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-with-masks/"><span>Fitting with masks</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-along-slices/"><span>Fitting along slices</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/simultaneous-fit-of-two-datasets/"><span>Simultaneous fit of two datasets</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-galaxi-data/"><span>Real life fit example: Experiment at GALAXI</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/"><span>Miscellaneous</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/accessing-simulation-results/"><span>Accessing simulation results</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/axes-in-different-units/"><span>Plotting with axes in different units</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/"><span>Getting help</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/troubleshooting/"><span>Troubleshooting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/frequently-asked-questions/"><span>Frequently asked questions</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/developers-corner/"><span>Developer&#39;s corner</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/developers-corner/contribute-to-documentation/"><span>Contribute to documentation</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+    </div>
+  </div>
+</div>    <hr>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                  <ul class="list-inline text-center">
+                    
+                      <li class="list-inline-item social">
+                        <a href="mailto:contact@bornagainproject.org">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                      </li>
+                    
+                    
+                    <li class="list-inline-item social">
+                      <a href="https://github.com/scgmlz/BornAgain">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <p class="copyright text-muted"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://www.bornagainproject.org/js/bootstrap.min.js"></script>
+    
+    <script src="https://www.bornagainproject.org/js/baguetteBox.min.js"></script>
+    <script>
+      baguetteBox.run('.galleryscg');
+    </script>    
+    
+    <script src="https://www.bornagainproject.org/js/theme.js"></script>
+    <script src="https://www.bornagainproject.org/assets/js/bornagain.js"></script>
+    
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-120020802-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
+

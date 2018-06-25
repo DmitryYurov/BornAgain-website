@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting help on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/getting-help/</link>
+    <description>Recent content in Getting help on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/getting-help/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Troubleshooting</title>
+      <link>https://www.bornagainproject.org/documentation/getting-help/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-help/troubleshooting/</guid>
+      <description>Troubleshooting To report bugs or request help with problems in building or running BornAgain, please create an issue on github or send us an e-mail. Provide all relevant information that may help us to analyse the issue. In particular, submit the full output of the last, unsuccessful command (screen copy, or redirection [command] &amp;gt;&amp;amp; [logfile]).
+ Windows specific  Missing api-ms-win-crt-runtime-l1-1-0.dll  MacOS specific  Incompatible library version of libgsl.</description>
+    </item>
+    
+    <item>
+      <title>Frequently asked questions</title>
+      <link>https://www.bornagainproject.org/documentation/getting-help/frequently-asked-questions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-help/frequently-asked-questions/</guid>
+      <description>Do you have a mailing list? If you wish to receive e-mail notifications as soon as a new BornAgain release becomes available, please register on the entry page of this site.
+How do I get help? If you encounter a problem during the installation or while using BornAgain, please send us an e-mail. Provide all relevant information that may help us to quickly spot the problem.
+How do I request a new feature?</description>
+    </item>
+    
+  </channel>
+</rss>

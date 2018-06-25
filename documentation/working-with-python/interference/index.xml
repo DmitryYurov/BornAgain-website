@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interference functions on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/working-with-python/interference/</link>
+    <description>Recent content in Interference functions on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/working-with-python/interference/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interference function of one-dimensional lattice</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/interference/lattice1d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/interference/lattice1d/</guid>
+      <description>Interference function of one-dimensional lattice A one dimensional lattice can be viewed as a chain of particles placed at regular intervals on a single axis. The plot below represents one possible use case, where infinitely long (or very long) boxes are placed at nodes of a 1d lattice to form a grating.
+  
+  See the BornAgain user manual (Chapter 3.4.1, One Dimensional Lattice) for details about the theory.</description>
+    </item>
+    
+    <item>
+      <title>Interference function of two-dimensional lattice</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/interference/lattice2d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/interference/lattice2d/</guid>
+      <description>Interference function of two-dimensional lattice The interference function of a 2D lattice is used to model the scattering from particles positioned at some regular intervals.
+  
+  The generated layout, the lattice, is characterised by its base vectors $a$ and $b$ (in real space) and the angle between these two vectors. The finite size effects and/or divergence of the lattice from an ideal crystal are modelled with the help of two dimensional decay functions.</description>
+    </item>
+    
+    <item>
+      <title>Interference function of radial paracrystal</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/interference/para_radial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/interference/para_radial/</guid>
+      <description>Interference function of radial paracrystal The interference function of a radial paracrystal is used to model cumulative disorder of interparticle distances. It is called radial to stress the fact that it only takes into account the radial component of the scattering vector.
+  
+  Each circle on the plot above represents the area where the probability to find a particle, given a particle at the origin, is above some arbitrary threshold.</description>
+    </item>
+    
+    <item>
+      <title>Interference function of 2D paracrystal</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/interference/para2d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/interference/para2d/</guid>
+      <description>Interference function of 2D paracrystal Similarly to the 2D interference function, the 2D paracrystal is used to model the scattering from particles positioned at some regular intervals on a plane. However, the 2D paracrystal model posesses only short range order. The disorder is cumulative at further distance.
+  
+  The plot above represents a schematic view of the 2D paracrystal. Each circle on the plot represents an area where the probability to find a particle, given a particle at the origin, is above some arbitrary threshold.</description>
+    </item>
+    
+  </channel>
+</rss>

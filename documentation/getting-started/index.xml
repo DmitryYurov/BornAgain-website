@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting started on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/getting-started/</link>
+    <description>Recent content in Getting started on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quick Start</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/quick-start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/quick-start/</guid>
+      <description>Quick Start This tutorial demonstrates how to run the simulation and get the simulated intensity data image in a few mouse clicks.
+1. Run BornAgain Graphical User Interface   
+  Use the BornAgain icon located on the desktop (Windows) or on Launchpad (MacOS) to start the GUI.
+For Linux users: run an executable located in BornAgain installation directory from the command line:
+$ &amp;lt;install_dir&amp;gt;/bin/BornAgain 2. Switch to the Sample View When you start the BornAgain GUI, you will be presented with the Welcome View as shown on the plot.</description>
+    </item>
+    
+  </channel>
+</rss>

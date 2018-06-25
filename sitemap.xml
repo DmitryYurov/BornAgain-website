@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/miscellaneous/accessing-simulation-results/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/beam-divergence/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/layered-structures/buried-particles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/developers-corner/contribute-to-documentation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/core-shell-nanoparticles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-ba/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/introduction/functionality/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/third-party/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-started/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-started/installation/windows/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-lattice/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/interference/lattice1d/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/setup-pycharm-project/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/detector-types/spherical-detector/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/fitting/sample-parameters-intro/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/basic-simulation-tutorial/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/introduction/architecture/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/running-gui/gui-overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/layered-structures/correlated-roughness/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-dwba/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/detector-resolution/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-cylinders-and-prisms/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/gallery/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/get-source/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-started/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/hexagonal-lattice-with-basis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-square-lattice/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/interference/lattice2d/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/layered-structures/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/material-types/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/miscellaneous/axes-in-different-units/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-started/quick-start/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/detector-types/rectangular-detector/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-started/installation/macos/advanced-tips/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-started/installation/macos/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/detector-types/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/accessing-simulation-results/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/build-and-install/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/download/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/running-gui/gui-fitting/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-with-masks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/interference-functions/intereference-2d-rotated-square-lattice/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/interference/para_radial/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/interference-functions/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/large-particles-formfactor/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/offspecular-simulation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/running-gui/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-started/installation/linux-short/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/particle-positioning/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/custom-formfactor/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-along-slices/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-centered-square-lattice/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/interference/para2d/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/</loc>
+    <lastmod>2018-06-12T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/particle-rotation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/rectangular-detector/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/first-simulation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/particle-composition/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/interference/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/rotated-pyramids/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/fitting/simultaneous-fit-of-two-datasets/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/basic-specular-simulation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/interference-functions/spheres-at-hex-lattice/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/magnetic-particles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/interference-functions/cosine-ripples-at-rect-lattice/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-and-prisms/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/fitting/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-help/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-galaxi-data/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-help/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/working-with-sample-parameters/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/about-website/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/embedded-particles/all-formfactors/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/developers-corner/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/getting-help/frequently-asked-questions/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-paracrystal/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/introduction-to-fitting/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/miscellaneous/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/basic-fitting-tutorial/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/working-with-python/importing-experimental-data/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-radial-paracrystal/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-da/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-lma/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-ssca/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.12.1/</loc>
+    <lastmod>2018-06-12T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/ba-website-migration/</loc>
+    <lastmod>2018-05-30T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.12.0/</loc>
+    <lastmod>2018-05-29T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.11.1/</loc>
+    <lastmod>2018-03-22T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.11.0/</loc>
+    <lastmod>2018-03-02T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.10.0/</loc>
+    <lastmod>2017-10-09T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.9.0/</loc>
+    <lastmod>2017-07-04T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.8.1/</loc>
+    <lastmod>2017-05-12T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.8.0/</loc>
+    <lastmod>2017-04-07T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.7.1/</loc>
+    <lastmod>2016-12-05T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.7.0/</loc>
+    <lastmod>2016-11-15T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.6.1/</loc>
+    <lastmod>2016-07-17T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.6.0/</loc>
+    <lastmod>2016-06-30T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/ba-school/</loc>
+    <lastmod>2016-05-11T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.5.1/</loc>
+    <lastmod>2016-02-18T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.5.0/</loc>
+    <lastmod>2016-02-15T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.4.0/</loc>
+    <lastmod>2015-11-03T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.3.0/</loc>
+    <lastmod>2015-07-31T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.2.0/</loc>
+    <lastmod>2015-06-10T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.1.0/</loc>
+    <lastmod>2015-04-22T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-1.0.0/</loc>
+    <lastmod>2015-01-30T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/ba-website/</loc>
+    <lastmod>2015-01-30T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-0.9.9/</loc>
+    <lastmod>2014-10-29T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/post/release-0.9.8/</loc>
+    <lastmod>2014-08-28T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/documentation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/</loc>
+    <lastmod>2018-06-12T08:30:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/categories/news/</loc>
+    <lastmod>2018-06-12T08:30:10+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/tags/release/</loc>
+    <lastmod>2018-06-12T08:30:10+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/tags/</loc>
+    <lastmod>2018-06-12T08:30:10+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/tags/website/</loc>
+    <lastmod>2018-05-30T08:30:10+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bornagainproject.org/tags/workshop/</loc>
+    <lastmod>2016-05-11T08:30:10+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

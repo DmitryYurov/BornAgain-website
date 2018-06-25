@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fitting on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/sample-models/fitting/</link>
+    <description>Recent content in Fitting on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/sample-models/fitting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Working with sample parameters</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/fitting/sample-parameters-intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/fitting/sample-parameters-intro/</guid>
+      <description>Working with sample parameters This example shows how to create a sample with fixed parameters and then change these parameters on the fly during runtime. The example doesn&amp;rsquo;t contain any fitting and serves as a gentle introduction to other fitting examples.
+ Lines 14-42: the sample representing cylinders and prisms on top of substrate without interference is created. Lines 45-53: beam and detector parameters are defined. Line 63: the tree structure of the sample is printed.</description>
+    </item>
+    
+    <item>
+      <title>Fit cylinders and prisms</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-cylinders-and-prisms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-cylinders-and-prisms/</guid>
+      <description>Fit cylinders and prisms In this example we use a simple geometry: cylinders and prisms in air layer, deposited on a substrate layer, with no interference. There are 4 fitting parameters:
+ radius of cylinders height of cylinders side length of prisms height of prisms  Our reference data are a “noisy” two-dimensional intensity map obtained from the simulation of the same geometry with a fixed value of $5$ nm for the height and radius of cylinders and for the height of prisms which have a $10$-nanometer-long side length.</description>
+    </item>
+    
+    <item>
+      <title>Fitting with masks</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-with-masks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-with-masks/</guid>
+      <description>Fitting with masks In this example we demonstrate how to mask certain areas on the detector image to exclude their influence on the fitting procedure. This can be done by invoking the method addMask on a simulation object.
+simulation = GISASSimulation() simulation.addMask(Rectangle(x1, y1, x2, y2), mask_value)  where Rectangle is related to the shape of the mask in detector coordinates, mask_value can be either True (area is excluded from the simulation and fit) or False (area will stay in the simulation and will be taken into account in $\chi^2$ calculations during the fit).</description>
+    </item>
+    
+    <item>
+      <title>Fitting along slices</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-along-slices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-along-slices/</guid>
+      <description>Fitting along slices Here we demonstrate how to fit along slices. The idea is that the user defines positions of vertical and horizontal lines crossing the detector plane in regions of most interest (Yoneda wings, Bragg peaks, etc.) and then finds sample parameters which fits those regions best.
+Such approach uses much less CPU while still giving a chance to find optimal sample parameters. In general, however, it is arguable, whether fitting along slices makes more sense than fitting using the whole detector image.</description>
+    </item>
+    
+    <item>
+      <title>Simultaneous fit of two datasets</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/fitting/simultaneous-fit-of-two-datasets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/fitting/simultaneous-fit-of-two-datasets/</guid>
+      <description>Simultaneous fit of two datasets In this example we demonstrate how to fit two datasets simultaneously.
+Suppose that we have a sample measured twice for two different incident angles. We are going to fit both datasets simultaneously to find the unknown sample parameters.
+To do this, we define one dataset (a pair of real data and corresponding simulation model) for the first incidence angle and another pair of (real data, simulation model) for the second incidence angle.</description>
+    </item>
+    
+    <item>
+      <title>Real life fit example: Experiment at GALAXI</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-galaxi-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/fitting/fit-galaxi-data/</guid>
+      <description>Real life fit example: Experiment at GALAXI This is an example of real data fit. We use our own measurements performed at the laboratory diffractometer GALAXI in Forschungszentrum Jülich. The example supports Importing experimental data tutorial.
+  Real-space model
+    Fit window
+     The file SampleBuilder.py contains a sample description. Sample represents a 4 layer system (substrate, teflon, hmdso and air) with Ag nanoparticles placed inside the hmdso layer on top of the teflon layer.</description>
+    </item>
+    
+  </channel>
+</rss>

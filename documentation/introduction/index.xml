@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/introduction/</link>
+    <description>Recent content in Introduction on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/introduction/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Functionality overview</title>
+      <link>https://www.bornagainproject.org/documentation/introduction/functionality/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/introduction/functionality/</guid>
+      <description>Functionality overview This section provides a bird&amp;rsquo;s-eye view of the functionality provided by BornAgain.
+Multilayers  Multilayers with arbitrary number of layers Optional roughness of layer interfaces Correlation between different interface roughness profiles Magnetic materials    Multilayered structure with roughness
+  Particles  Library of basic shapes of particles (form factors) Particles with inner structures Possibility to assemble complex particle shapes from the basic ones Size distribution of particles (polydispersity)    Selection of available shapes: basic shapes, combinations of particles, core-shell particles and polydisperse particles</description>
+    </item>
+    
+    <item>
+      <title>Architectural overview</title>
+      <link>https://www.bornagainproject.org/documentation/introduction/architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/introduction/architecture/</guid>
+      <description>Architectural overview BornAgain is an open source and a multi-platform framework available in Windows, MacOS and Linux. It is developed in C++ and provided with Python bindings. The overall size of the project is about 180k lines of code.
+The Big Picture BornAgain is designed to be immediately useful for users with little experience in GISAS simulations while being flexible enough to fulfill requests of advanced users. The figure below represents the set of requirements and practices that have informed our architectural choices.</description>
+    </item>
+    
+  </channel>
+</rss>

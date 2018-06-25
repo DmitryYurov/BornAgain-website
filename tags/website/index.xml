@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Website on BornAgain</title>
+    <link>https://www.bornagainproject.org/tags/website/</link>
+    <description>Recent content in Website on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 May 2018 08:30:10 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.bornagainproject.org/tags/website/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Website and mailing list migration.</title>
+      <link>https://www.bornagainproject.org/post/ba-website-migration/</link>
+      <pubDate>Wed, 30 May 2018 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/ba-website-migration/</guid>
+      <description>Website and mailing list migration  Dear BornAgain users,
+We are migrating our BornAgain documentation to a new website. Our current Drupal based version, as you know it, will go to the other world. But no need for sadness - the new version will be better and will be available under the same address www.bornagainproject.org. The side effect of this migration is that we have to discontinue our current mailing list.</description>
+    </item>
+    
+    <item>
+      <title>New website is online</title>
+      <link>https://www.bornagainproject.org/post/ba-website/</link>
+      <pubDate>Fri, 30 Jan 2015 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/ba-website/</guid>
+      <description>New web site is online  We are happy to announce that our brand new site is finally online. People interested in BornAgain will be able to find all relevant information, including BornAgain Online Documentation, news system and a discussion forum.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Sample model reference -- BornAgain</title>
+
+<link href="https://www.bornagainproject.org/documentation/sample-models/index.xml" rel="alternate" type="application/rss+xml" title="BornAgain" />
+<link href="https://www.bornagainproject.org/documentation/sample-models/index.xml" rel="feed" type="application/rss+xml" title="BornAgain" /> 
+
+<link href="https://www.bornagainproject.org/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/theme.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/mathjax-style.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/vs.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/baguetteBox.min.css" rel="stylesheet">
+<link href="https://www.bornagainproject.org/css/gallery-grid.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/assets/css/bornagain.css" rel="stylesheet">
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel='stylesheet'  type='text/css'> 
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    var TEX = MathJax.InputJax.TeX;
+    var PREFILTER = TEX.prefilterMath;
+    TEX.Augment({
+      prefilterMath: function (math,displaymode,script) {
+        if (!displaymode) {math = "\\small{"+math+"}"}
+        return PREFILTER.call(TEX,math,displaymode,script);
+      }
+    });
+  });
+  </script>
+
+</head>
+
+
+  <body>
+    <header class="hero overlay"><div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-primary">
+    <a class="navbar-brand" href="https://www.bornagainproject.org">
+        <img src="https://www.bornagainproject.org/assets/img/bornagain-logo.png" class="d-inline-block align-top" alt="">
+        BornAgain
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/">Home</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/gallery/">Gallery</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/download/">Download</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/post/">News</a></li>
+        
+          <li class="nav-item active"> <a class="nav-link" href="https://www.bornagainproject.org/documentation/">Documentation</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/contact/">Contact</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/about/">About</a></li>
+          
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/scgmlz/BornAgain" target="_blank" rel="noopener" aria-label="GitHub">
+              <span class="fa fa-github fa-2x"></span>
+            </a>
+          </li>        
+        
+      </ul>
+    </div>
+  </nav>
+</div>
+  
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12"> <br></div>
+        </div>
+      </div>
+    </header>
+
+    
+  <div class="breadcrumb">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+
+
+
+
+ <a href='https://www.bornagainproject.org/'>Home</a> > <a href='https://www.bornagainproject.org/documentation/'>Documentation</a> > Sample model reference
+
+ 
+
+ 
+
+   
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+    
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      
+      
+  
+  
+
+<h2 id="sample-model-reference">Sample model reference</h2>
+
+<p>This section presents BornAgain simulations of various model systems. All Python scripts are shipped with BornAgain. They can be found in the &ldquo;Examples&rdquo; directory:</p>
+
+<!-- Nav tabs -->
+
+<ul class="nav nav-tabs" id="OperationSystemTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#Windows" role="tab" aria-controls="windows" aria-selected="true">Windows</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#MacOS" role="tab" aria-controls="macos" aria-selected="false">MacOS</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="messages-tab" data-toggle="tab" href="#Linux" role="tab" aria-controls="linux" aria-selected="false">Linux</a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+
+<div class="tab-content id="OperationSystemTabContent">
+  <div class="tab-pane active" id="Windows" role="tabpanel" aria-labelledby="windows-tab">
+    <p><pre><code>C:\BornAgain-1.12.1\Examples\python</code></pre></p>
+  </div>
+  <div class="tab-pane" id="MacOS" role="tabpanel" aria-labelledby="macos-tab">
+    <p><pre><code>/Applications/BornAgain.app/Contents/share/BornAgain-1.12/Examples/python</code></pre></p>  
+  </div>
+  <div class="tab-pane" id="Linux" role="tabpanel" aria-labelledby="linux-tab">
+    <p><pre><code>install_dir/share/BornAgain-1.12/Examples/python</code></pre></p>  
+  </div>
+</div>
+
+<h6 id="the-examples-are-subdivided-into-the-following-categories">The examples are subdivided into the following categories:</h6>
+
+
+
+<ul class="children children-li">
+
+<span><li>
+		<a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/" >Embedded particles</a></li>
+</span>
+
+<span><li>
+		<a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/" >Layered structures</a></li>
+</span>
+
+<span><li>
+		<a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/" >Interference functions</a></li>
+</span>
+
+<span><li>
+		<a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/" >Complex shapes</a></li>
+</span>
+
+<span><li>
+		<a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/" >Beam and detector</a></li>
+</span>
+
+<span><li>
+		<a href="https://www.bornagainproject.org/documentation/sample-models/fitting/" >Fitting</a></li>
+</span>
+
+<span><li>
+		<a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/" >Miscellaneous</a></li>
+</span>
+</ul>
+
+<h4 id="embedded-particles">Embedded particles</h4>
+
+<div class="d-flex flex-column mt-2 mb-4">
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-ba/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-ba/CylindersInBA_hud39f54244f554524580aa99b08f43e27_203380_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-ba/CylindersInBA_setup_hu86c0c449ee92e092a7e32d77e809cb5d_15963_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Cylinders in Born Approximation </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-dwba/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-dwba/CylindersInDWBA_hudf51b39c63918de65211aa882993bba4_194099_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-dwba/CylindersInDWBA_setup_hub54da9764a9f25c41ef8350c96830866_17676_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Cylinders in Distorted Wave Born Approximation </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution/CylindersWithSizeDistribution_hu01e66bb758a21b1a43cfa0dd51fc9bea_155387_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution/CylindersWithSizeDistribution_setup_huac50d01622eab86741a5a29735af0c64_15838_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Cylinders with size distribution </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution2/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution2/TwoTypesOfCylindersWithSizeDistribution_hu7df878e0d27014477a9f4b5c826e4d4d_162289_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution2/TwoTypesOfCylindersWithSizeDistribution_setup_hud2e272c247fa9642cbe1bf4bc93a51b0_202759_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Two types of cylinders with size distribution </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/embedded-particles/rotated-pyramids/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/rotated-pyramids/RotatedPyramids_huf88e3ed8679f365c4661a40d41ea5587_169324_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/rotated-pyramids/RotatedPyramids_setup_hu395a521b8c6a056c7c6c11be0643d47a_263662_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Rotated Pyramids </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-and-prisms/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-and-prisms/CylindersAndPrisms_hub82a4b1d5a3ffc1aa6cf098f5b9592b9_159896_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-and-prisms/CylindersAndPrisms_setup_hu395a521b8c6a056c7c6c11be0643d47a_260506_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Cylinders and Prisms </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/embedded-particles/all-formfactors/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/all-formfactors/AllFormFactorsAvailable_hucbffe039612321e5099ceabc9a698547_650370_256x0_resize_box_2.png" width="256" height="211">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/all-formfactors/AllFormFactorsAvailable_setup_hua2acbdaae356ec8a6a430071d57facb5_318503_256x0_resize_q75_box.jpg" width="256" height="170">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >All available form factors </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+</div>
+
+<h4 id="layered-structures">Layered structures</h4>
+
+<div class="d-flex flex-column mt-2 mb-4">
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/layered-structures/buried-particles/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/layered-structures/buried-particles/BuriedParticles_huef6e39d59e37cd912cec48194ab819a9_185390_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/layered-structures/buried-particles/BuriedParticles_setup_hue7865b3f55815d209431f3e790adccd8_531611_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Buried particles </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/layered-structures/correlated-roughness/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/layered-structures/correlated-roughness/CorrelatedRoughness_hufd25f66ff7b1c2718053ce271594bfcf_141366_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/layered-structures/correlated-roughness/CorrelatedRoughness_setup_hu44a21955b5a42fec5477480dea3ca1b1_288250_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Correlated roughness </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+</div>
+
+<h4 id="interference-functions">Interference functions</h4>
+
+<div class="d-flex flex-column mt-2 mb-4">
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-lattice/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-lattice/Interference1DLattice_hu4f82417c2687b7adcf6547f265fd448e_97941_256x0_resize_box_2.png" width="256" height="192">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-lattice/Interference1DLattice_setup_hu15a6e6cf90f52f6cd4be65e81a32a4ed_274163_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Interference 1D lattice </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-square-lattice/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-square-lattice/Interference2DSquareLattice_huefde2671b230b2ff5c74d0a9da9ccfa3_199530_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-square-lattice/Interference2DSquareLattice_setup_hub41d5d9830261df5ba422c94db0e18a9_289108_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Interference 2D square lattice </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/interference-functions/intereference-2d-rotated-square-lattice/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/intereference-2d-rotated-square-lattice/Interference2DRotatedSquareLattice_huc16c9b3ae41eb9f96f995e39ea0e1d45_205971_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/intereference-2d-rotated-square-lattice/Interference2DRotatedSquareLattice_setup_hu65a2c4ba7384a8e352322476d2326337_279848_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Interference 2D rotated square lattice </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-centered-square-lattice/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-centered-square-lattice/Interference2DCenteredSquareLattice_hu291136c075d468d99162ba1c678db311_198984_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-centered-square-lattice/Interference2DCenteredSquareLattice_setup_hu25c78ec4becce0b3e70f29669cbacb6b_319480_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Interference 2D centered square lattice </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/interference-functions/spheres-at-hex-lattice/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/spheres-at-hex-lattice/SpheresAtHexLattice_huc37818958fba740ff82e9051acfdafec_268519_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/spheres-at-hex-lattice/SpheresAtHexLattice_setup_hu3547c882afdc20a38925b021051b77c9_279113_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Spheres on Hexagonal Lattice </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/interference-functions/cosine-ripples-at-rect-lattice/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/cosine-ripples-at-rect-lattice/CosineRipplesAtRectLattice_huc82212c701afab0f1cbca420fd54e541_175521_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/cosine-ripples-at-rect-lattice/CosineRipplesAtRectLattice_setup_huf98360c089b21ba46dd76907851168ce_308110_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Cosine ripples on rectangular lattice </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-paracrystal/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-paracrystal/Interference2DParaCrystal_hucca5651d9b553b144c5c23f2a2e90b1e_195093_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+              <div class="col"></div>            
+            <div class="col-8 text-center">
+              <h6 >Interference 2D Paracrystal </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-radial-paracrystal/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-radial-paracrystal/Interference1DRadialParaCrystal_hub0640c784bdf89789c42bb57c7657728_195175_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+              <div class="col"></div>            
+            <div class="col-8 text-center">
+              <h6 >Interference 1D radial paracrystal </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-da/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-da/ApproximationDA_hue0b2e855791acc6baab0b8ce94dd8e81_164117_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+              <div class="col"></div>            
+            <div class="col-8 text-center">
+              <h6 >Size-distribution model: decoupling approximation </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-lma/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-lma/ApproximationLMA_hu27a91bd1bc096081a9fae5264c04ff0e_160915_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+              <div class="col"></div>            
+            <div class="col-8 text-center">
+              <h6 >Size-distribution model: local monodisperse approximation </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-ssca/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-ssca/ApproximationSSCA_hu0ecda1066787606e76712411cacd3b66_162972_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+              <div class="col"></div>            
+            <div class="col-8 text-center">
+              <h6 >Size-distribution model: size-spacing coupling approximation </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+</div>
+
+<h4 id="complex-shapes">Complex shapes</h4>
+
+<div class="d-flex flex-column mt-2 mb-4">
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/complex-shapes/core-shell-nanoparticles/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/core-shell-nanoparticles/CoreShellNanoparticles_hu548e86f9cca3b5dbb0070b6e1e22bf7b_226656_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/core-shell-nanoparticles/CoreShellNanoparticles_setup_hud2e272c247fa9642cbe1bf4bc93a51b0_190393_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Core shell nanoparticles </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/complex-shapes/hexagonal-lattice-with-basis/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/hexagonal-lattice-with-basis/HexagonalLatticesWithBasis_huc673ffd43531cc38751a1b5366806250_266937_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/hexagonal-lattice-with-basis/HexagonalLatticesWithBasis_setup_hu5a53ffbc374427b04b533241f9763da2_283103_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Hexagonal lattices with basis </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/complex-shapes/large-particles-formfactor/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/large-particles-formfactor/LargeParticlesFormFactor_hufee6067492de82c4030943ff397dee4b_361448_256x0_resize_box_2.png" width="256" height="215">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/large-particles-formfactor/LargeParticlesFormFactor_setup_hu19287370fb7ffe62f22769e9c6d6d0ca_176585_256x0_resize_q75_box.jpg" width="256" height="96">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Large particle formfactor </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/complex-shapes/custom-formfactor/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/custom-formfactor/CustomFormFactor_hu5462d059dbb82cfb19195a3272c3e842_230160_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/custom-formfactor/CustomFormFactor_setup_hu48edfd82c282da7a7bf5beeabeb6660a_198900_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Custom formfactor </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+</div>
+
+<h4 id="beam-and-detector">Beam and detector</h4>
+
+<div class="d-flex flex-column mt-2 mb-4">
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/beam-divergence/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/beam-divergence/BeamDivergence_hu4ec8f99969ea9c47907756d87d5bee39_139956_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/beam-divergence/BeamDivergence_setup_hufde0337aac97eeea9400d872532ca2fd_238874_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Beam divergence </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/detector-resolution/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/detector-resolution/DetectorResolutionFunction_hu468896e045f40cb17837203f5a918a33_179103_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+              <div class="col"></div>            
+            <div class="col-8 text-center">
+              <h6 >Detector resolution function </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/offspecular-simulation/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/offspecular-simulation/OffSpecularSimulation_hu7a7ccc86ed4454a70d47b2a6f1b872b9_470461_256x0_resize_box_2.png" width="256" height="196">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/offspecular-simulation/OffSpecularSimulation_setup_hu732f6f0bd0be7489a61e890c3be895f0_246272_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Off-Specular </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/rectangular-detector/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/rectangular-detector/RectangularDetector_hu35cb528bf77406e03f4c0db37cd7519b_346553_256x0_resize_box_2.png" width="256" height="95">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/rectangular-detector/RectangularDetector_setup_hu95b9b8a915db6148e1f2329c8f240517_366869_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Rectangular detector </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/basic-specular-simulation/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/basic-specular-simulation/BasicSpecularSimulation_hu693730ce38145d636e2efefca0c01e8a_55322_256x0_resize_box_2.png" width="256" height="192">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/basic-specular-simulation/BasicSpecularSimulation_setup_hua3929b01897e74ea795da05367dc23cf_356247_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Specular scattering </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+</div>
+
+<h4 id="fitting">Fitting</h4>
+
+<div class="d-flex flex-column mt-2 mb-4">
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/fitting/sample-parameters-intro/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/fitting/sample-parameters-intro/SampleParametersIntro_hue48aaa6e158471a58c37cf545e7bf20e_167362_256x0_resize_box_2.png" width="256" height="192">
+                </div>
+              <div class="col"></div>            
+            <div class="col-8 text-center">
+              <h6 >Working with sample parameters </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/fitting/fit-cylinders-and-prisms/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-cylinders-and-prisms/FitCylindersPrisms_hu18179625bca178ac487f89ec15d84e76_129923_256x0_resize_box_2.png" width="256" height="192">
+                </div>
+              <div class="col"></div>            
+            <div class="col-8 text-center">
+              <h6 >Fit cylinders and prisms </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/fitting/fit-with-masks/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-with-masks/FitWithMasks_huca959e168279dad85997f83df8e5ae2c_147526_256x0_resize_box_2.png" width="256" height="192">
+                </div>
+              <div class="col"></div>            
+            <div class="col-8 text-center">
+              <h6 >Fitting with masks </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/fitting/fit-along-slices/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-along-slices/FitAlongSlices_hu8cf32868e6e268e4ecd9ccef21dcb5e0_155057_256x0_resize_box_2.png" width="256" height="192">
+                </div>
+              <div class="col"></div>            
+            <div class="col-8 text-center">
+              <h6 >Fitting along slices </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/fitting/simultaneous-fit-of-two-datasets/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/fitting/simultaneous-fit-of-two-datasets/SimultaneousFitOfTwoDatasets_hud91ad742e6004d75a4ee7de3160ef8cc_273155_256x0_resize_box_2.png" width="256" height="205">
+                </div>
+              <div class="col"></div>            
+            <div class="col-8 text-center">
+              <h6 >Simultaneous fit of two datasets </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/fitting/fit-galaxi-data/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-galaxi-data/FitGALAXIData_hu512f58604618603f9bbdebeb24667b7d_386965_256x0_resize_box_2.png" width="256" height="192">
+                </div>
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-galaxi-data/FitGALAXIData_setup_hue820bd9becdbb031db946184807e580b_858001_256x0_resize_q75_box.jpg" width="256" height="192">
+                </div>            
+            <div class="col-8 text-center">
+              <h6 >Real life fit example: Experiment at GALAXI </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+</div>
+
+<h4 id="miscellaneous">Miscellaneous</h4>
+
+<div class="d-flex flex-column mt-2 mb-4">
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/miscellaneous/accessing-simulation-results/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/accessing-simulation-results/AccessingSimulationResults_huac2f493bb3c958e6bab096a9e935f238_756076_256x0_resize_box_2.png" width="256" height="204">
+                </div>
+              <div class="col"></div>            
+            <div class="col-8 text-center">
+              <h6 >Accessing simulation results </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card h-100 my-1">
+      <a href = "https://www.bornagainproject.org/documentation/sample-models/miscellaneous/axes-in-different-units/" class="card-context">
+        <div class="card-body">
+          <div class="row">
+                <div class="col my-auto">
+                  <img class="img-fluid" src="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/axes-in-different-units/AxesInDifferentUnits_hu2d80810ad6e994b2479d97f88eae9f6f_307382_256x0_resize_box_2.png" width="256" height="190">
+                </div>
+              <div class="col"></div>            
+            <div class="col-8 text-center">
+              <h6 >Plotting with axes in different units </h6>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+</div>
+
+
+
+
+
+
+      <div class="container next-prev">
+<nav>
+  <ul class="pagination pagination-sm justify-content-end"><li class="page-item ">
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/importing-experimental-data/" class="page-link"><i class="fa fa-chevron-left fa-1g "></i>
+      </a>
+    </li>  
+
+    <li class="page-item ">
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/" class="page-link"><i class="fa fa-chevron-right fa-1g "></i>
+      </a>
+    </li></ul>
+</nav>
+</div>
+
+    </div>
+    <div class="col-md-4">
+    <ul class="doctree">
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/"><span>Documentation</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/"><span>Introduction</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/functionality/"><span>Functionality overview</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/architecture/"><span>Architectural overview</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/"><span>Getting started</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/"><span>Installation instructions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/windows/"><span>Installation on Windows</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/macos/"><span>Installation on MacOS</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/macos/advanced-tips/"><span>Advanced tips</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-short/"><span>Installation on Linux (short version)</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/"><span>Installation on Linux (detailed version)</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/third-party/"><span>Install the third party software</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/get-source/"><span>Get the source</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/build-and-install/"><span>Build and install BornAgain</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/first-simulation/"><span>Run a first simulation</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/quick-start/"><span>Quick Start</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/"><span>Using Graphical User Interface</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/gui-overview/"><span>BornAgain GUI overview</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/gui-fitting/"><span>Fitting in the GUI</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/"><span>Working with Python scripts</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/setup-pycharm-project/"><span>Setup of a PyCharm project</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/basic-simulation-tutorial/"><span>Basic simulation tutorial</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/material-types/"><span>Material types</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/"><span>Detector types</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/spherical-detector/"><span>Spherical detector</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/rectangular-detector/"><span>Rectangular detector</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/accessing-simulation-results/"><span>Accessing simulation results</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-positioning/"><span>Particle positioning</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-rotation/"><span>Particle rotation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-composition/"><span>Particle composition</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/"><span>Interference functions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/lattice1d/"><span>Interference function of one-dimensional lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/lattice2d/"><span>Interference function of two-dimensional lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/para_radial/"><span>Interference function of radial paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/para2d/"><span>Interference function of 2D paracrystal</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/magnetic-particles/"><span>Magnetic particles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/working-with-sample-parameters/"><span>Working with sample parameters</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/introduction-to-fitting/"><span>Introduction to fitting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/basic-fitting-tutorial/"><span>Basic fitting tutorial</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/importing-experimental-data/"><span>Importing experimental data</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item parent active">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/"><span>Sample model reference</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/"><span>Embedded particles</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-ba/"><span>Cylinders in Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-dwba/"><span>Cylinders in Distorted Wave Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution/"><span>Cylinders with size distribution</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution2/"><span>Two types of cylinders with size distribution</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/rotated-pyramids/"><span>Rotated Pyramids</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-and-prisms/"><span>Cylinders and Prisms</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/all-formfactors/"><span>All available form factors</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/"><span>Layered structures</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/buried-particles/"><span>Buried particles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/correlated-roughness/"><span>Correlated roughness</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/"><span>Interference functions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-lattice/"><span>Interference 1D lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-square-lattice/"><span>Interference 2D square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/intereference-2d-rotated-square-lattice/"><span>Interference 2D rotated square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-centered-square-lattice/"><span>Interference 2D centered square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/spheres-at-hex-lattice/"><span>Spheres on Hexagonal Lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/cosine-ripples-at-rect-lattice/"><span>Cosine ripples on rectangular lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-paracrystal/"><span>Interference 2D Paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-radial-paracrystal/"><span>Interference 1D radial paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-da/"><span>Size-distribution model: decoupling approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-lma/"><span>Size-distribution model: local monodisperse approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-ssca/"><span>Size-distribution model: size-spacing coupling approximation</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/"><span>Complex shapes</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/core-shell-nanoparticles/"><span>Core shell nanoparticles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/hexagonal-lattice-with-basis/"><span>Hexagonal lattices with basis</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/large-particles-formfactor/"><span>Large particle formfactor</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/custom-formfactor/"><span>Custom formfactor</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/"><span>Beam and detector</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/beam-divergence/"><span>Beam divergence</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/detector-resolution/"><span>Detector resolution function</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/offspecular-simulation/"><span>Off-Specular</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/rectangular-detector/"><span>Rectangular detector</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/basic-specular-simulation/"><span>Specular scattering</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/"><span>Fitting</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/sample-parameters-intro/"><span>Working with sample parameters</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-cylinders-and-prisms/"><span>Fit cylinders and prisms</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-with-masks/"><span>Fitting with masks</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-along-slices/"><span>Fitting along slices</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/simultaneous-fit-of-two-datasets/"><span>Simultaneous fit of two datasets</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-galaxi-data/"><span>Real life fit example: Experiment at GALAXI</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/"><span>Miscellaneous</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/accessing-simulation-results/"><span>Accessing simulation results</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/axes-in-different-units/"><span>Plotting with axes in different units</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/"><span>Getting help</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/troubleshooting/"><span>Troubleshooting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/frequently-asked-questions/"><span>Frequently asked questions</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/developers-corner/"><span>Developer&#39;s corner</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/developers-corner/contribute-to-documentation/"><span>Contribute to documentation</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+    </div>
+  </div>
+</div>    <hr>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                  <ul class="list-inline text-center">
+                    
+                      <li class="list-inline-item social">
+                        <a href="mailto:contact@bornagainproject.org">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                      </li>
+                    
+                    
+                    <li class="list-inline-item social">
+                      <a href="https://github.com/scgmlz/BornAgain">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <p class="copyright text-muted"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://www.bornagainproject.org/js/bootstrap.min.js"></script>
+    
+    <script src="https://www.bornagainproject.org/js/baguetteBox.min.js"></script>
+    <script>
+      baguetteBox.run('.galleryscg');
+    </script>    
+    
+    <script src="https://www.bornagainproject.org/js/theme.js"></script>
+    <script src="https://www.bornagainproject.org/assets/js/bornagain.js"></script>
+    
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-120020802-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
+

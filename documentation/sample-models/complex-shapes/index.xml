@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Complex shapes on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/</link>
+    <description>Recent content in Complex shapes on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Core shell nanoparticles</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/core-shell-nanoparticles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/core-shell-nanoparticles/</guid>
+      <description>Core shell nanoparticles Scattering from cuboidal core-shell particles.
+ The sample is made of core-shell particles whose outer and inner shells are boxes with dimensions $L_1 = W_1 = 16$ nm, $H_1 = 8$ nm and $L_2 = W_2 = 12$ nm, $H_2 = 7$ nm, respectively, where $L_i$, $W_i$ and $H_i$ are the length, width and height of box $i$. The smaller box is positioned so that the centres of the bottom faces of both particles coincide.</description>
+    </item>
+    
+    <item>
+      <title>Hexagonal lattices with basis</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/hexagonal-lattice-with-basis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/hexagonal-lattice-with-basis/</guid>
+      <description>Hexagonal lattices with basis Scattering from two layers of spheres distributed along a hexagonal close packed structure.
+ The sample is made of spherical particles deposited on a substrate. These $10$-nanometer-radius particles are distributed along a hexagonal close packed structure:  each layer is generated using a two-dimensional hexagonal lattice with a lattice length of $20$ nm and its $a$-axis parallel to the $x$-axis of the reference Cartesian frame. the vertical stacking is done by specifying the position of a &amp;ldquo;seeding&amp;rdquo; particle for each layer: $(0,0,0)$ for the first layer and $(R,R,\sqrt{3}R)$ for the second layer, $R$ being the radius of the spherical particle.</description>
+    </item>
+    
+    <item>
+      <title>Large particle formfactor</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/large-particles-formfactor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/large-particles-formfactor/</guid>
+      <description>Large particle formfactor This example demonstrates, that for large particles (~$1000$ nm) the contribution to the scattered intensity from the form factor oscillates rapidly within one detector bin and analytical calculations (performed for the bin center) give completely a wrong intensity pattern. In this case Monte-Carlo integrations over detector bin should be used.
+The simulation generates four plots using different sizes of the particles, (radius $=10$ nm, height $=20$ nm) or (radius $=1$ $\mu$m, height $=2$ $\mu$m), and different calculation methods: analytical calculations or Monte-Carlo integration.</description>
+    </item>
+    
+    <item>
+      <title>Custom formfactor</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/custom-formfactor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/complex-shapes/custom-formfactor/</guid>
+      <description>Custom formfactor Scattering from a monodisperse distribution of particles, whose form factor is defined by the user.
+ This example shows how users can simulate their own particle shape by implementing the analytical expression of its form factor. The particular shape used here is a polyhedron, whose planar cross section is a &amp;ldquo;plus&amp;rdquo; shape with a side length of $20$ nm and a height of $15$ nm. These particles are distributed on a substrate.</description>
+    </item>
+    
+  </channel>
+</rss>

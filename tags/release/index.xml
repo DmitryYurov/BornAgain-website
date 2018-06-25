@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Release on BornAgain</title>
+    <link>https://www.bornagainproject.org/tags/release/</link>
+    <description>Recent content in Release on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Jun 2018 08:30:10 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.bornagainproject.org/tags/release/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BornAgain hotfix: 1.12.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.12.1/</link>
+      <pubDate>Tue, 12 Jun 2018 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.12.1/</guid>
+      <description>A bugfix release for BornAgain is now available  This is a hotfix release that fixes the following issues:
+ Bug #2068: Missing analyzer direction in GUI Bug #2069: Loading GUI first time takes 30 minutes (MacOS)  As always, we very much welcome your comments and feedback!</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.12</title>
+      <link>https://www.bornagainproject.org/post/release-1.12.0/</link>
+      <pubDate>Tue, 29 May 2018 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.12.0/</guid>
+      <description>New release of BornAgain: version 1.12  Much of this release was devoted to migrating our website to Hugo, allowing better automation and checking of online examples. The GUI has been extended with the possibility to perform specular simulations and in the sample view, a prototype 3D view of the sample is implemented.
+This release has the following highlights:
+ First implementation of specular simulation in GUI. DepthProbeSimulation for experiment preparation.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain hotfix: 1.11.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.11.1/</link>
+      <pubDate>Thu, 22 Mar 2018 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.11.1/</guid>
+      <description>A bugfix release for BornAgain is now available  This is a hotfix release that fixes the following issues:
+ Plot ticks are not updated in real time activity. Entering floating point numbers in GUI behaves weird. ROI in experimental data causes NaN fitting parameters.  As always, we very much welcome your comments and feedback!</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.11</title>
+      <link>https://www.bornagainproject.org/post/release-1.11.0/</link>
+      <pubDate>Fri, 02 Mar 2018 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.11.0/</guid>
+      <description>BornAgain 1.11 has been released  Starting from this release, we are using Python3 as the default scripting platform in BornAgain. Users can however choose between downloading a Python2 or Python3 based installer. In the future, Python2 support will be discontinued. We recommend all users to update their Python installation to version 3.x, if they haven&amp;rsquo;t done so already.
+ This release has the following highlights:
+ Off-specular simulation is now supported in the GUI.</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.10</title>
+      <link>https://www.bornagainproject.org/post/release-1.10.0/</link>
+      <pubDate>Mon, 09 Oct 2017 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.10.0/</guid>
+      <description>BornAgain 1.10 has been released  This release has the following highlights:
+ Integration over rotation angle for square and hexagonal lattices. Possibility to rotate imported data in GUI. GUI support for mesocrystals. Import of Python scripts as sample description in GUI (experimental)  API changes:
+ FormFactorTrivial renamed to FormFactorDot. IParticle: applyTranslation -&amp;gt; translate; applyRotation -&amp;gt; rotate.  Other changes:
+ Trapezoid resolution function to describe instruments with neutron velocity selector.</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.9</title>
+      <link>https://www.bornagainproject.org/post/release-1.9.0/</link>
+      <pubDate>Tue, 04 Jul 2017 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.9.0/</guid>
+      <description>BornAgain 1.9 has been released  This release includes a new formalism for polarized neutron scattering, where the materials are defined by their magnetization instead of a homogeneous B-field. The loading and saving of project files in the GUI has also been improved in terms of responsiveness and performance.
+API changes:
+None
+Summary of other changes:
+ Magnetic scattering: New formalism that uses the magnetization of the different materials instead of the B-field GUI: Project saving now done in seperate thread.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain hotfix: 1.8.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.8.1/</link>
+      <pubDate>Fri, 12 May 2017 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.8.1/</guid>
+      <description>A bugfix release for BornAgain is now available.  This is a hotfix release that fixes the following issues:
+ Bug #1799: Average layer material doesn&amp;rsquo;t work with ParticleComposition Bug #1800: GUI: missing sigma factor in gate distribution causes problem Bug #1801: GUI crashes on welcome screen Bug #1802: GUI: hexagonal lattice becomes square during simulation  As always, we very much welcome your comments and feedback!</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.8</title>
+      <link>https://www.bornagainproject.org/post/release-1.8.0/</link>
+      <pubDate>Fri, 07 Apr 2017 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.8.0/</guid>
+      <description>BornAgain 1.8 has been released  This release improves support for fitting: all reasonable parameters can now be used for fitting, both in Python and the GUI.
+BornAgain now also supports the graded layer approximation. The user can choose to subdivide layers into a number of slices. For each slice, the Fresnel coefficients will be calculated from the averaged materials that take into account the particle content in the slice. Related to this approximation, particles can now also be defined to cross layer interfaces.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain hotfix: 1.7.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.7.1/</link>
+      <pubDate>Mon, 05 Dec 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.7.1/</guid>
+      <description>A bugfix release for BornAgain is now available  This is a hotfix to the Release-1.7.
+Change summary:
+ Bug #1679: Remove leading U+FEFF from FindYamlCpp05.cmake Bug #1682: hotfix: rm local version of FindBoost.cmake Bug #1658: add qt5-svg as a dependency Bug #1662: CMake: require Qt version 5.4 Bug #1687: LMA is incorrectly normalized Bug #1692: GUI and Py: simulation crash when sample contains undefined material Bug #1681: Fitting GUI: free parameter error Bug #1661: FitSuite doesn&amp;rsquo;t know about TestMinimizer Bug #1639: GUI: crash if fitting parameter removed  </description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.7</title>
+      <link>https://www.bornagainproject.org/post/release-1.7.0/</link>
+      <pubDate>Tue, 15 Nov 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.7.0/</guid>
+      <description>BornAgain 1.7 has been released  This release improves GUI support for fitting: The GUI allows now to import data, set region of interest, adjust detector settings, select fit parameters and run the fitting engine.
+API changes:
+ Constructors of FormFactorGauss and FormFactorLorentz now take a length instead of a volume. GUI project back-compatibility broken.  Summary of other changes:
+ GUI support for fitting experimental data extended: masking, region of interest, linking dataset to instrument, control parameters of fit engines.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain hotfix: 1.6.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.6.1/</link>
+      <pubDate>Sun, 17 Jul 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.6.1/</guid>
+      <description>A bugfix release for BornAgain is now available  This is a hotfix to the Release-1.6.
+Change summary:
+ Bug: GUI Segmentation fault if layer is too thick Bug: GUI crashes when simulating for a lognormal distribution of wavelength with scale parameter zero  </description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.6</title>
+      <link>https://www.bornagainproject.org/post/release-1.6.0/</link>
+      <pubDate>Thu, 30 Jun 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.6.0/</guid>
+      <description>BornAgain 1.6 has been released  During this release we have mainly worked on providing a beta version for the fitting in the GUI. Additionally, our software now supports Python 3 for Linux users.
+Summary of changes in the code:
+ Support for Python 3 GUI: Beta version of fitting. Core: new roughness calculation that is more stable for large roughness. Core: new formfactors dodecahedron and icosahedron Windows: switched to 64-bits Compatibility issues: back compatibility with GUI&amp;rsquo;s old project files is broken.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain hotfix: 1.5.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.5.1/</link>
+      <pubDate>Thu, 18 Feb 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.5.1/</guid>
+      <description>A bugfix release for BornAgain is now available  This is a hotfix to the Release-1.5.
+Change summary:
+ Bug: GUI crashes if simulating with 1D lattice interference function Bug: Crash while saving certain project file  </description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.5</title>
+      <link>https://www.bornagainproject.org/post/release-1.5.0/</link>
+      <pubDate>Mon, 15 Feb 2016 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.5.0/</guid>
+      <description>BornAgain 1.5 has been released  During this release we have worked on preparing the implementation of fitting in the GUI, and even if the fitting is not there yet, we are getting close.
+Summary of changes in the code:
+ Core: interference function calculates particle densities automatically, when possible. GUI: 1D interference function is now available. GUI: new rectangular detector providing more accurate simulation of real life setup. GUI: new mask editor allows to draw various shapes on top of intensity map to exclude it from the analysis.</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.4</title>
+      <link>https://www.bornagainproject.org/post/release-1.4.0/</link>
+      <pubDate>Tue, 03 Nov 2015 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.4.0/</guid>
+      <description>BornAgain 1.4 has been released  This release provides an easier way to use IntensityData objects from Python and added new export formats for simulation data. Accompanied by a big refactoring, the new version also provides for better integration of new detector geometries. As a first application of this, a rectangular detector geometry has been defined in the core library.
+Summary of changes in the code:
+ Improved usability of IntensityData objects (slicing, histogram filling, &amp;hellip;) GUI: export of simulation results into tiff or ascii file Core: rectangular detector added (not yet in GUI) Core: simulation and fit with masks applied to the detector plane Core: genetic algorithm implemented, no need to install ROOT framework anymore Automatic normalization of detector pixel intensity when beam intensity &amp;gt; 0 Various bugfixes  New examples:</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.3</title>
+      <link>https://www.bornagainproject.org/post/release-1.3.0/</link>
+      <pubDate>Fri, 31 Jul 2015 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.3.0/</guid>
+      <description>BornAgain 1.3 has been released  This time we have been working on a deep refactoring of the machinery related to the positioning and rotation of particles. As a result Particle, CoreShellParticle and ParticleComposition can be rotated and translated inside layers in a similar way. We wrote a few tutorials explaining the latest changes.
+Summary of changes in the code:
+ New functional test machinery to test all three domains simultaneously (C++, Pyton and GUI), covering more test cases in a more consistent way.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain release 1.2 with physics-centered manual</title>
+      <link>https://www.bornagainproject.org/post/release-1.2.0/</link>
+      <pubDate>Wed, 10 Jun 2015 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.2.0/</guid>
+      <description>BornAgain 1.2 has been released  The main change this time is the recast user manual, available at link.
+The manual now fully concentrates on the theoretical background of BornAgain, on the physical models and their implementation whereas the more mundane questions of software usage are exclusively covered by the online documentation.
+The manual is still incomplete. Additional chapters will be published along with the next couple of software releases.</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.1</title>
+      <link>https://www.bornagainproject.org/post/release-1.1.0/</link>
+      <pubDate>Wed, 22 Apr 2015 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.1.0/</guid>
+      <description>BornAgain 1.1 has been released  BornAgain 1.1 is now available for download.
+Most of the efforts in this sprint have been devoted to porting more features from the core library to the GUI.
+Summary of changes in the code:
+ New form factor: truncated cube New features in Graphical User Interface:  Beam divergence, detector resolution function ParticleComposition (particles composed from other particles) ParticleDistribution (particles with size distribution) Export of GUI simulation into a Python script   API changes:</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 1.0</title>
+      <link>https://www.bornagainproject.org/post/release-1.0.0/</link>
+      <pubDate>Fri, 30 Jan 2015 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-1.0.0/</guid>
+      <description>BornAgain 1.0 has been released  BornAgain 1.0 is now available for download.
+Summary of changes in the code:
+ Graphical User Interface officially included into the Release Refactoring and extension in the collection of user Python examples R,T coefficients exposed to Python within new SpecularSimulation class Minor changes in PythonAPI (particles with size distribution, LatticeBasis construction, InterferenceFunction1DParacrystal)  New website www.bornagainproject.org is online
+More details on our issue tracker.</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 0.9.9</title>
+      <link>https://www.bornagainproject.org/post/release-0.9.9/</link>
+      <pubDate>Wed, 29 Oct 2014 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-0.9.9/</guid>
+      <description>BornAgain 0.9.9 has been released  Summary of changes in the code:
+ GUI: QuickSimulationView improvements GUI: added exception catching GUI: added limits for properties Support for multiple layout objects per layer First implementation of Python script generation Minor refactoring in user API: lattice interference functions and elimination of confusing simulation parameters User manual: new appendix with python examples Bugfixes  More details on our issue tracker.</description>
+    </item>
+    
+    <item>
+      <title>New release of BornAgain: version 0.9.8</title>
+      <link>https://www.bornagainproject.org/post/release-0.9.8/</link>
+      <pubDate>Thu, 28 Aug 2014 08:30:10 +0200</pubDate>
+      
+      <guid>https://www.bornagainproject.org/post/release-0.9.8/</guid>
+      <description>BornAgain 0.9.8 has been released  Summary of changes in the code:
+ Implemented rotation of particles in GUI, real time simulation window. Few bugfixes, minor refactoring in UserAPI.  Further GUI development toward first beta scheduled for October, 2014.
+More details on our issue tracker.</description>
+    </item>
+    
+  </channel>
+</rss>

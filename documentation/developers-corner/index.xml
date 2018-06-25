@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Developer&#39;s corner on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/developers-corner/</link>
+    <description>Recent content in Developer&#39;s corner on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/developers-corner/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Contribute to documentation</title>
+      <link>https://www.bornagainproject.org/documentation/developers-corner/contribute-to-documentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/developers-corner/contribute-to-documentation/</guid>
+      <description>Contribute to documentation Here we explain how to make change in the documentation and make it available online.
+General information Our web site repository contains two branches. Master branch contains markdown content of the site, gh-pages branch contains static html of the site. Hugo static site generator is used to produce html content from markdown pages.
+GitHub is configured to host content of gh-pages branch at this address.
+Users are modifying site content by providing pull requests to master branch.</description>
+    </item>
+    
+  </channel>
+</rss>

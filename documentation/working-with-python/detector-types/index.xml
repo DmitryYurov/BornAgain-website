@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Detector types on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/working-with-python/detector-types/</link>
+    <description>Recent content in Detector types on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spherical detector</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/detector-types/spherical-detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/detector-types/spherical-detector/</guid>
+      <description>Spherical detector This shape of detector represents a portion of a sphere, defined by the range of $\phi$ and $\alpha$ angles as shown in the plot below. The sphere has its center located at the origin of the sample coordinate system.
+  
+  A GISAS or off-specular simulation creates a spherical detector by default. To set its parameters the method setDetectorParameters should be used
+setDetectorParameters(n_phi, phi_min, phi_max, n_alpha, alpha_min, alpha_max) &amp;#34;&amp;#34;&amp;#34; Sets detector parameters using angle ranges n_phi : number of phi-axis bins phi_min : low edge of first phi-bin phi_max : upper edge of last phi-bin n_alpha : number of alpha-axis bins alpha_min : low edge of first alpha-bin alpha_max : upper edge of last alpha-bin &amp;#34;&amp;#34;&amp;#34; All angles are expressed in radians.</description>
+    </item>
+    
+    <item>
+      <title>Rectangular detector</title>
+      <link>https://www.bornagainproject.org/documentation/working-with-python/detector-types/rectangular-detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/working-with-python/detector-types/rectangular-detector/</guid>
+      <description>Rectangular detector A RectangularDetector object in BornAgain is used to represent a two dimensional neutron/x-ray detector. The following sections provide details on this type of detector:
+ General description Rectangular detector definition Positioning the rectangular detector The detector is perpendicular to the sample plane The detector is perpendicular to the direct beam The detector is perpendicular to the reflected beam Additional convenience methods  General description A RectangularDetector has a plane rectangular shape, a total given width and height and a given amount of pixels.</description>
+    </item>
+    
+  </channel>
+</rss>

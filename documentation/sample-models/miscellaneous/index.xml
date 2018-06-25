@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Miscellaneous on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/sample-models/miscellaneous/</link>
+    <description>Recent content in Miscellaneous on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Accessing simulation results</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/miscellaneous/accessing-simulation-results/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/miscellaneous/accessing-simulation-results/</guid>
+      <description>Accessing simulation results This is an extended example for the further treatment of simulation results: accessing the results, plotting, cropping, slicing and exporting. This serves as a supporting example to the Accessing simulation results  tutorial.
+ The standard &amp;ldquo;Cylinders in DWBA&amp;rdquo; sample (see this example) is used for running the simulation. The simulation results are retrieved as a Histogram2D object and then processed in various functions to achieve a resulting image.</description>
+    </item>
+    
+    <item>
+      <title>Plotting with axes in different units</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/miscellaneous/axes-in-different-units/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/miscellaneous/axes-in-different-units/</guid>
+      <description>Plotting with axes in different units In this example we demonstrate how to plot intensity data with detector axes expressed in different units. It serves as a supporting example to the Accessing simulation results  tutorial.
+ The standard &amp;ldquo;Cylinders in DWBA&amp;rdquo; sample (see this example) is used to setup the simulation. When the simulation is completed, the Simulation::result() method is used to get a SimulationResult object. Depending on an additional parameter IDetector2D.</description>
+    </item>
+    
+  </channel>
+</rss>

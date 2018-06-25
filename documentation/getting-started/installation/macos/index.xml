@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installation on MacOS on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/getting-started/installation/macos/</link>
+    <description>Recent content in Installation on MacOS on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/getting-started/installation/macos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Advanced tips</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/macos/advanced-tips/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/macos/advanced-tips/</guid>
+      <description>MacOS advanced tips If your prefer to install the BornAgain python libraries not to the site-packages folder of your Python interpreter, but to some custom folder, you can do this in a following way.
+ Run the bornagain_install_python.py script from application bundle:  $ python /Applications/BornAgain.app/Contents/libexec/BornAgain-1.12/bornagain_python_install.py   Choose the option &amp;lsquo;[0]&amp;rsquo; - Generate bundle with BornAgain libraries, do not install it. You will get a message:  ... BornAgain Python bundle is successfully created in temporary directory &#39;/var/folders/zt/0l4f_l_d46v5rkx668jqx0b4000lw7/T/bornagain_bundle&#39; .</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Introduction to fitting -- BornAgain</title>
+
+
+<link href="https://www.bornagainproject.org/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/theme.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/mathjax-style.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/vs.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/css/baguetteBox.min.css" rel="stylesheet">
+<link href="https://www.bornagainproject.org/css/gallery-grid.css" rel="stylesheet">
+
+<link href="https://www.bornagainproject.org/assets/css/bornagain.css" rel="stylesheet">
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel='stylesheet'  type='text/css'> 
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    var TEX = MathJax.InputJax.TeX;
+    var PREFILTER = TEX.prefilterMath;
+    TEX.Augment({
+      prefilterMath: function (math,displaymode,script) {
+        if (!displaymode) {math = "\\small{"+math+"}"}
+        return PREFILTER.call(TEX,math,displaymode,script);
+      }
+    });
+  });
+  </script>
+
+</head>
+
+
+  <body>
+    <header class="hero overlay"><div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-primary">
+    <a class="navbar-brand" href="https://www.bornagainproject.org">
+        <img src="https://www.bornagainproject.org/assets/img/bornagain-logo.png" class="d-inline-block align-top" alt="">
+        BornAgain
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/">Home</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/gallery/">Gallery</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/download/">Download</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/post/">News</a></li>
+        
+          <li class="nav-item active"> <a class="nav-link" href="https://www.bornagainproject.org/documentation/">Documentation</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/contact/">Contact</a></li>
+        
+          <li class="nav-item "> <a class="nav-link" href="https://www.bornagainproject.org/about/">About</a></li>
+          
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/scgmlz/BornAgain" target="_blank" rel="noopener" aria-label="GitHub">
+              <span class="fa fa-github fa-2x"></span>
+            </a>
+          </li>        
+        
+      </ul>
+    </div>
+  </nav>
+</div>
+  
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12"> <br></div>
+        </div>
+      </div>
+    </header>
+
+    
+  <div class="breadcrumb">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+
+
+
+
+
+
+ <a href='https://www.bornagainproject.org/'>Home</a> > <a href='https://www.bornagainproject.org/documentation/'>Documentation</a> > <a href='https://www.bornagainproject.org/documentation/working-with-python/'>Working with Python scripts</a> > Introduction to fitting
+
+ 
+
+ 
+
+ 
+
+   
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+    
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      
+      
+  
+  
+
+<h2 id="introduction-to-fitting">Introduction to fitting</h2>
+
+<p>In addition to the simulation of grazing incidence X-ray and neutron scattering by multilayered samples,
+BornAgain also offers the option to fit the numerical model to reference data by modifying a
+selection of sample parameters from the numerical model.</p>
+
+<ul>
+<li><a href="https://www.bornagainproject.org/documentation/working-with-python/introduction-to-fitting/#implementation-in-bornagain">Implementation in BornAgain</a></li>
+<li><a href="https://www.bornagainproject.org/documentation/working-with-python/introduction-to-fitting/#stages-to-run-fitting-procedure">Stages to run fitting procedure</a></li>
+<li><a href="https://www.bornagainproject.org/documentation/working-with-python/introduction-to-fitting/#how-to-get-the-right-answer-from-fitting">How to get the right answer from fitting</a></li>
+</ul>
+
+<h3 id="implementation-in-bornagain">Implementation in BornAgain</h3>
+
+<p>Fitting in BornAgain deals with estimating the optimum parameters in the numerical model by minimizing the difference between numerical and reference data. The features include</p>
+
+<ul>
+<li>a variety of multidimensional minimization algorithms and strategies,</li>
+<li>the choice over possible fitting parameters, their properties and correlations,</li>
+<li>the full control on objective function calculations, including applications of different normalizations and assignments of different masks and weights to different areas of reference data,</li>
+<li>the possibility to fit simultaneously an arbitrary number of data sets.</li>
+</ul>
+
+<figure class="center">
+ 	  <a href="./bornagain-fitting-workflow.png">
+ 	  	<img src="./bornagain-fitting-workflow.png" >
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<p>Figure shows the general work flow of a typical fitting procedure.
+Before running the fitting the user is required to prepare some data and
+to configure the fitting kernel of BornAgain. The required stages are</p>
+
+<ul>
+<li>preparing the sample and the simulation description (multilayer, beam, detector parameters),</li>
+<li>choosing the fitting parameters,</li>
+<li>loading the reference data,</li>
+<li>defining the minimization settings.</li>
+</ul>
+
+<p>The class <code>FitSuite</code> contains the main functionalities to be used for the fit and serves as the main interface between the user
+and the fitting work flow. The latter involves iterations during which</p>
+
+<ul>
+<li>the minimizer makes an assumption about the optimal sample parameters,</li>
+<li>these parameters are propagated to the sample,</li>
+<li>assigned simulation is performed for the given state of the sample,</li>
+<li>the simulated data (intensities) is propagated to the $\chi^2$ module,</li>
+<li>the $\chi^2$ module calculates $\chi^2$ using the simulated and reference data,</li>
+<li>value of $\chi^2$ is propagated to the minimizer, which makes new assumptions about optimal sample parameters.</li>
+</ul>
+
+<p>The iteration process is going on under the control of the selected minimization algorithm, without any intervention from the user. It stops
+if one of the following is true:</p>
+
+<ul>
+<li>the maximum number of iteration steps has been reached;</li>
+<li>the function&rsquo;s minimum has been reached within the tolerance window;</li>
+<li>the minimizer cannot improve $\chi^2$ estimate.</li>
+</ul>
+
+<p>After the control is returned, fitting results can be retrieved.
+They include the best $\chi^2$ value found, the corresponding optimal sample parameters and the intensity map simulated with this set of parameters.</p>
+
+<h3 id="stages-to-run-fitting-procedure">Stages to run fitting procedure</h3>
+
+<h4 id="preparing-the-sample-and-the-simulation-description">Preparing the sample and the simulation description</h4>
+
+<p>This step is similar for any simulation using BornAgain (see <a href="https://www.bornagainproject.org/documentation/working-with-python/basic-simulation-tutorial/">Basic simulation tutorial</a>).
+It consists in first characterizing the geometry of the system: the particles (shapes, sizes, refractive indices),
+the different layers (thickness, order, refractive index, a possible roughness of the interface),
+the interference between the particles and theway they are distributed in the layers
+(buried particles or particles sitting on top of a layer).
+Then we specify the parameters of the input beam and of the output detector.</p>
+
+<h4 id="choice-of-parameters-to-be-fitted">Choice of parameters to be fitted</h4>
+
+<p>Every parameter used in the construction of the sample can be used as a fitting parameter.
+For example, the particles&rsquo; heights, radii or the layer&rsquo;s roughness or thickness could be selected using the parameter pool mechanism.
+This mechanism is explained in detail in <a href="https://www.bornagainproject.org/documentation/working-with-python/working-with-sample-parameters/">Working with sample parameters</a>
+tutorial and it is therefore recommended to read it before proceeding any further.</p>
+
+<p>The user specifies selected sample parameters as fit parameters using <code>FitSuite</code> and its <code>addFitParameter</code> method:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">fit_suite</span> <span class="o">=</span> <span class="n">FitSuite</span><span class="p">()</span>
+<span class="n">fit_suite</span><span class="o">.</span><span class="n">addFitParameter</span><span class="p">(</span><span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">initial_value</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">limits</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">step</span><span class="o">&gt;</span><span class="p">)</span></code></pre></div>
+
+<p>where <code>&lt;name&gt;</code> corresponds to the parameter name in the sample&rsquo;s parameter pool.
+By using wildcards in the parameter name, a group of sample parameters, corresponding to the given pattern,
+can be associated with a single fitting parameter and fitted simultaneously to get a common optimal value.</p>
+
+<p>The second parameter <code>&lt;initial_value&gt;</code> corresponds to the initial value of the fitting parameter.
+The third parameter <code>&lt;AttLimits&gt;</code> corresponds to the boundaries imposed on parameter value. It can be</p>
+
+<ul>
+<li><code>limitless()</code> by default,</li>
+<li><code>fixed()</code>,</li>
+<li><code>lowerLimited(&lt;min_value&gt;)</code>,</li>
+<li><code>upperLimited(&lt;max_value&gt;)</code>,</li>
+<li><code>limited(&lt;min_value&gt;, &lt;max_value&gt;)</code>.</li>
+</ul>
+
+<p>where <code>&lt;min_value&gt;</code> and <code>&lt;max_value&gt;</code> are double values corresponding to the lower and higher boundary, respectively.</p>
+
+<p>The last parameter <code>&lt;step&gt;</code>, responsible for the initial iteration steps size, is optional.
+The majority of minimizers make they own assumption about step size and only genetic and simulated annealing minimizers respect this value.</p>
+
+<h4 id="associating-reference-and-simulated-data">Associating reference and simulated data</h4>
+
+<p>The minimization procedure deals with a pair of reference data (normally associated with experimental data) and the theoretical model (presented by the sample and the simulation descriptions).</p>
+
+<p>We assume that the experimental data are a two-dimensional intensity matrix as function
+of the output scattering angles $\alpha_f$ and $\varphi_f$. The user is required to provide the data in the form of an ASCII file containing
+an axes binning description and the intensity data itself. Examples how to convert the experimental data to the intensity matrix
+from MARIA (MLZ) ascii and tiff format (used at GALAXI or in DESY) can be found in the <code>Examples</code> folder of the BornAgain distribution.</p>
+
+<p>To associate the simulation and the reference data to the fitting engine, method <code>addSimulationAndRealData</code> has to be used as shown</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">fit_suite</span> <span class="o">=</span> <span class="n">FitSuite</span><span class="p">()</span>
+<span class="n">fit_suite</span><span class="o">.</span><span class="n">addSimulationAndRealData</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">simulation</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">reference</span><span class="o">&gt;</span><span class="p">)</span></code></pre></div>
+
+<p>Here <code>&lt;simulation&gt;</code> corresponds to a BornAgain simulation object with the sample, beam and detector fully defined,
+<code>&lt;reference&gt;</code> corresponds to the experimental data object obtained from the ASCII file.</p>
+
+<p>It is possible to call this given method more than once to submit more than one pair of <code>&lt;simulation&gt;</code>, <code>&lt;reference&gt;</code> to the fitting procedure. In this way, simultaneous fits of
+some combined data sets are performed.</p>
+
+<h4 id="minimizer-settings">Minimizer settings</h4>
+
+<p>BornAgain contains a variety of minimization engines from <code>ROOT</code> and <code>GSL</code> libraries.
+They are listed in the table below. By default, <code>Minuit2</code> minimizer with default settings will be used and no additional configuration needs to be done.
+The remainder of this section explains some of the expert settings, which can be applied to get better fit results.</p>
+
+<p>The default minimization algorithm can be changed using <code>setMinimizer</code> method as shown below</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">fit_suite</span> <span class="o">=</span> <span class="n">FitSuite</span><span class="p">()</span>
+<span class="n">fit_suite</span><span class="o">.</span><span class="n">setMinimizer</span><span class="p">(</span><span class="o">&lt;</span><span class="n">minimizer_name</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">algorithm_name</span><span class="o">&gt;</span><span class="p">)</span></code></pre></div>
+
+<p>where <code>&lt;minimizer_name&gt;</code> and <code>&lt;algorithm_name&gt;</code> can be chosen from the first and second column of the table, respectively.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Minimizer name</th>
+<th align="left">Algorithm</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="http://seal.web.cern.ch/seal/documents/minuit/mnusersguide.pdf">Minuit2</a></td>
+<td align="left">Migrad</td>
+<td align="left">According to the <a href="http://seal.web.cern.ch/seal/documents/minuit/mntutorial.pdf">tutorial</a>, best minimizer for nearly all functions, variable-metric method with inexact line search, a stable metric updating scheme, and checks for positive-definiteness.</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left">Simplex</td>
+<td align="left">Simplex method of Nelder and Mead usually slower than <code>Migrad</code>, rather robust with respect to gross fluctuations in the function value, gives no reliable information about parameter errors.</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left">Combined</td>
+<td align="left">Minimizes with <code>Migrad</code>, but switches to <code>Simplex</code> if <code>Migrad</code> fails to converge.</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left">Scan</td>
+<td align="left">Not intended to minimize, just scans the function, one parameter at a time, retains the best value after each scan.</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left">Fumili</td>
+<td align="left">Optimized method for least square and log likelihood minimizations.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="https://www.gnu.org/software/gsl/doc/html/multimin.html">GSLMultiMin</a></td>
+<td align="left">ConjugateFR</td>
+<td align="left">Fletcher-Reeves conjugate gradient algorithm.</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left">ConjugatePR</td>
+<td align="left">Polak-Ribiere conjugate gradient algorithm.</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left">BFGS</td>
+<td align="left">Broyden-Fletcher-Goldfarb-Shanno algorithm</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left">BFGS2</td>
+<td align="left">Improved version of <code>BFGS</code>.</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left">SteepestDescent</td>
+<td align="left">Follows the downhill gradient of the function at each step.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="https://www.gnu.org/software/gsl/doc/html/nls.html?highlight=levenberg%20marquardt%20algorithm#levenberg-marquardt">GSLLMA</a></td>
+<td align="left"></td>
+<td align="left">Levenberg-Marquardt Algorithm</td>
+</tr>
+
+<tr>
+<td align="left"><a href="https://www.gnu.org/software/gsl/doc/html/siman.html?highlight=simulated%20annealing%20algorithm">GSLSimAn</a></td>
+<td align="left"></td>
+<td align="left">Simulated Annealing Algorithm</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://tmva.sourceforge.net/docu/TMVAUsersGuide.pdf#page=55">Genetic</a></td>
+<td align="left"></td>
+<td align="left">Genetic Algorithm</td>
+</tr>
+</tbody>
+</table>
+
+<p>There are several options common to every minimization algorithm, which can be changed before starting the minimization.
+They are handled by MinimizerOptions class:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">fit_suite</span><span class="o">.</span><span class="n">getMinimizer</span><span class="p">()</span><span class="o">.</span><span class="n">getOptions</span><span class="p">()</span><span class="o">.</span><span class="n">setMaxFunctionCalls</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span></code></pre></div>
+
+<p>In the above code snippet, <code>setMaxFunctionCalls</code> sets the maximum number of times the minimizer is allowed to call the simulation to 10.</p>
+
+<p>There are also expert-level options common for all minimizers as well as a number of options to tune individual minimization algorithms. They will be explained in due course.</p>
+
+<h4 id="running-the-fitting-and-retrieving-the-results">Running the fitting and retrieving the results</h4>
+
+<p>After the initial configuration of FitSuite has been performed, the fitting can be started using the command</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">fit_suite</span><span class="o">.</span><span class="n">runFit</span><span class="p">()</span></code></pre></div>
+
+<p>Depending on the complexity of the sample and the number of free sample parameters the fitting process can take from tens to thousands of iterations. The results of the fit can
+be printed on the screen using the command</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">fit_suite</span><span class="o">.</span><span class="n">printResults</span><span class="p">()</span></code></pre></div>
+
+<p><a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-cylinders-and-prisms/">This example</a> gives more details on accessing the fitting results.</p>
+
+<h3 id="how-to-get-the-right-answer-from-fitting">How to get the right answer from fitting</h3>
+
+<p>One of the main difficulties in fitting the data with the model is the presence of multiple local minima in the objective function. Many problems can cause the fit to fail, for example:</p>
+
+<ul>
+<li>an unreliable physical model</li>
+<li>an unappropriate choice of objective function</li>
+<li>multiple local minima</li>
+<li>an unphysical behavior of the objective function, unphysical regions in the parameters space</li>
+<li>an unreliable parameter error calculation in the presence of limits on the parameter value</li>
+<li>an exponential behavior of the objective function and the corresponding numerical inaccuracies, excessive numerical roundoff in the calculation of its value and derivatives</li>
+<li>large correlations between parameters</li>
+<li>very different scales of parameters involved in the calculation</li>
+<li>not positive definite error matrix even at minimum</li>
+</ul>
+
+<p>The given list, of course, is not only related to BornAgain fitting. It remains applicable to any fitting program and any kind of theoretical model.
+Below we give some recommendations which might help the user to achieve reliable fit results.</p>
+
+<ul>
+<li>Initially choose a small number of free fitting parameters</li>
+<li>Eliminate redundant parameters</li>
+<li>Provide a good initial guess for the fit parameters</li>
+<li>Start from the default minimizer settings and perform some fine tuning after some experience has been acquired</li>
+<li>Repeat the fit using different starting values for the parameters or their limits</li>
+<li>Repeat the fit, fixing and varying different groups of parameter</li>
+</ul>
+
+
+      <div class="container next-prev">
+<nav>
+  <ul class="pagination pagination-sm justify-content-end"><li class="page-item ">
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/working-with-sample-parameters/" class="page-link"><i class="fa fa-chevron-left fa-1g "></i>
+      </a>
+    </li>  
+
+    <li class="page-item ">
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/basic-fitting-tutorial/" class="page-link"><i class="fa fa-chevron-right fa-1g "></i>
+      </a>
+    </li></ul>
+</nav>
+</div>
+
+    </div>
+    <div class="col-md-4">
+    <ul class="doctree">
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/"><span>Documentation</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/"><span>Introduction</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/functionality/"><span>Functionality overview</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/introduction/architecture/"><span>Architectural overview</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/"><span>Getting started</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/"><span>Installation instructions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/windows/"><span>Installation on Windows</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/macos/"><span>Installation on MacOS</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/macos/advanced-tips/"><span>Advanced tips</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-short/"><span>Installation on Linux (short version)</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/"><span>Installation on Linux (detailed version)</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/third-party/"><span>Install the third party software</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/get-source/"><span>Get the source</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/build-and-install/"><span>Build and install BornAgain</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/first-simulation/"><span>Run a first simulation</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-started/quick-start/"><span>Quick Start</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/"><span>Using Graphical User Interface</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/gui-overview/"><span>BornAgain GUI overview</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/running-gui/gui-fitting/"><span>Fitting in the GUI</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/"><span>Working with Python scripts</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/setup-pycharm-project/"><span>Setup of a PyCharm project</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/basic-simulation-tutorial/"><span>Basic simulation tutorial</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/material-types/"><span>Material types</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/"><span>Detector types</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/spherical-detector/"><span>Spherical detector</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/detector-types/rectangular-detector/"><span>Rectangular detector</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/accessing-simulation-results/"><span>Accessing simulation results</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-positioning/"><span>Particle positioning</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-rotation/"><span>Particle rotation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/particle-composition/"><span>Particle composition</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/"><span>Interference functions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/lattice1d/"><span>Interference function of one-dimensional lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/lattice2d/"><span>Interference function of two-dimensional lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/para_radial/"><span>Interference function of radial paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/interference/para2d/"><span>Interference function of 2D paracrystal</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/magnetic-particles/"><span>Magnetic particles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/working-with-sample-parameters/"><span>Working with sample parameters</span> </a>
+    </li>
+    <li class="dd-item active">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/introduction-to-fitting/"><span>Introduction to fitting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/basic-fitting-tutorial/"><span>Basic fitting tutorial</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/working-with-python/importing-experimental-data/"><span>Importing experimental data</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/"><span>Sample model reference</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/"><span>Embedded particles</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-ba/"><span>Cylinders in Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-dwba/"><span>Cylinders in Distorted Wave Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution/"><span>Cylinders with size distribution</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/size-distribution2/"><span>Two types of cylinders with size distribution</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/rotated-pyramids/"><span>Rotated Pyramids</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/cylinders-and-prisms/"><span>Cylinders and Prisms</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/embedded-particles/all-formfactors/"><span>All available form factors</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/"><span>Layered structures</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/buried-particles/"><span>Buried particles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/correlated-roughness/"><span>Correlated roughness</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/"><span>Interference functions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-lattice/"><span>Interference 1D lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-square-lattice/"><span>Interference 2D square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/intereference-2d-rotated-square-lattice/"><span>Interference 2D rotated square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-centered-square-lattice/"><span>Interference 2D centered square lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/spheres-at-hex-lattice/"><span>Spheres on Hexagonal Lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/cosine-ripples-at-rect-lattice/"><span>Cosine ripples on rectangular lattice</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-2d-paracrystal/"><span>Interference 2D Paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/interference-1d-radial-paracrystal/"><span>Interference 1D radial paracrystal</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-da/"><span>Size-distribution model: decoupling approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-lma/"><span>Size-distribution model: local monodisperse approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/interference-functions/approximation-ssca/"><span>Size-distribution model: size-spacing coupling approximation</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/"><span>Complex shapes</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/core-shell-nanoparticles/"><span>Core shell nanoparticles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/hexagonal-lattice-with-basis/"><span>Hexagonal lattices with basis</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/large-particles-formfactor/"><span>Large particle formfactor</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/complex-shapes/custom-formfactor/"><span>Custom formfactor</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/"><span>Beam and detector</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/beam-divergence/"><span>Beam divergence</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/detector-resolution/"><span>Detector resolution function</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/offspecular-simulation/"><span>Off-Specular</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/rectangular-detector/"><span>Rectangular detector</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/beam-and-detector/basic-specular-simulation/"><span>Specular scattering</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/"><span>Fitting</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/sample-parameters-intro/"><span>Working with sample parameters</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-cylinders-and-prisms/"><span>Fit cylinders and prisms</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-with-masks/"><span>Fitting with masks</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-along-slices/"><span>Fitting along slices</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/simultaneous-fit-of-two-datasets/"><span>Simultaneous fit of two datasets</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/fitting/fit-galaxi-data/"><span>Real life fit example: Experiment at GALAXI</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/"><span>Miscellaneous</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/accessing-simulation-results/"><span>Accessing simulation results</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/sample-models/miscellaneous/axes-in-different-units/"><span>Plotting with axes in different units</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/"><span>Getting help</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/troubleshooting/"><span>Troubleshooting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/getting-help/frequently-asked-questions/"><span>Frequently asked questions</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/developers-corner/"><span>Developer&#39;s corner</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://www.bornagainproject.org/documentation/developers-corner/contribute-to-documentation/"><span>Contribute to documentation</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+    </div>
+  </div>
+</div>    <hr>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                  <ul class="list-inline text-center">
+                    
+                      <li class="list-inline-item social">
+                        <a href="mailto:contact@bornagainproject.org">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                      </li>
+                    
+                    
+                    <li class="list-inline-item social">
+                      <a href="https://github.com/scgmlz/BornAgain">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <p class="copyright text-muted"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://www.bornagainproject.org/js/bootstrap.min.js"></script>
+    
+    <script src="https://www.bornagainproject.org/js/baguetteBox.min.js"></script>
+    <script>
+      baguetteBox.run('.galleryscg');
+    </script>    
+    
+    <script src="https://www.bornagainproject.org/js/theme.js"></script>
+    <script src="https://www.bornagainproject.org/assets/js/bornagain.js"></script>
+    
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-120020802-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
+

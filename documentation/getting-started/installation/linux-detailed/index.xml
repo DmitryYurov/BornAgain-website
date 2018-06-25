@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installation on Linux (detailed version) on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/</link>
+    <description>Recent content in Installation on Linux (detailed version) on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install the third party software</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/third-party/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/third-party/</guid>
+      <description>Install the third party software Required software:
+ Compiler with C++-14 support (i.e. gcc&amp;gt;= 4.9) cmake (&amp;gt;= 3.1) boost library (&amp;gt;= 1.48) fftw3 library (&amp;gt;= 3.3.1) gsl (GNU scientific library, &amp;gt;= 1.15) libtiff library (&amp;gt;=4.0.2) python3, python3-devel, python3-numpy, python3-matplotlib Qt5 (&amp;gt;=5.4)  All required packages can be easily installed on most Linux distributions using the system&amp;rsquo;s package manager. Below are a few examples for several selected operating systems. Please note, that other distributions (Fedora, Mint, etc) may have different commands for invoking the package manager and slightly different names of packages (like boost instead of libboost etc).</description>
+    </item>
+    
+    <item>
+      <title>Get the source</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/get-source/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/get-source/</guid>
+      <description>Get the source Source tarball Download the BornAgain source tarball and unpack it:
+$ cd &amp;lt;some_directory&amp;gt; $ tar xfz BornAgain-1.11.1.tar.gz Github You can also get access to the source code by cloning our public Git repository:
+$ cd &amp;lt;some_directory&amp;gt; $ git clone --recursive https://github.com/scgmlz/BornAgain.git Why Git? Our Git repository holds two main branches called master and develop. We consider the master branch to be the main branch where the source code of HEAD always reflects the latest stable release.</description>
+    </item>
+    
+    <item>
+      <title>Build and install BornAgain</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/build-and-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/build-and-install/</guid>
+      <description>Build and install BornAgain BornAgain comes with configuration files for the cross-platform build system CMake. Using CMake, it takes the following commands to build and install BornAgain:
+$ mkdir &amp;lt;build_dir&amp;gt; $ cd &amp;lt;build_dir&amp;gt; $ cmake [&amp;lt;options&amp;gt;] &amp;lt;source_dir&amp;gt; $ make -j4 $ ctest -j4 $ sudo make install These steps shall now be explained in more detail.
+Dedicated build directory $ mkdir &amp;lt;build_dir&amp;gt; $ cd &amp;lt;build_dir&amp;gt; The build process must take place in a dedicated directory .</description>
+    </item>
+    
+    <item>
+      <title>Run a first simulation</title>
+      <link>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/first-simulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/getting-started/installation/linux-detailed/first-simulation/</guid>
+      <description>Run a first simulation This section explains how to run a first simulation.
+ Post installation steps Running the first Python simulation Running the BornAgain GUI  Post installation steps After the installation is complete, the location of the BornAgain libraries needs to be included into the LD_LIBRARY_PATH (or DYLD_LIBRARY_PATH for MacOS) and PYTHONPATH environment variables. This can be done by running the BornAgain setup script in a terminal:</description>
+    </item>
+    
+  </channel>
+</rss>

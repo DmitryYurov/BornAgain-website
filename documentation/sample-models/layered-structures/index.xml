@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Layered structures on BornAgain</title>
+    <link>https://www.bornagainproject.org/documentation/sample-models/layered-structures/</link>
+    <description>Recent content in Layered structures on BornAgain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.bornagainproject.org/documentation/sample-models/layered-structures/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Buried particles</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/layered-structures/buried-particles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/layered-structures/buried-particles/</guid>
+      <description>Buried particles Scattering from a sample containing spherical embedded particles.
+ From top to bottom, the sample is composed of the air layer, an intermediate material layer, and the substrate. The particles are spheres with radius $10.2$ nm. They are placed vertically in the middle of the intermediate layer. The depth to place the spheres is measured between the top of the layer and the bottom of the particles. There is no interference between the scattered waves.</description>
+    </item>
+    
+    <item>
+      <title>Correlated roughness</title>
+      <link>https://www.bornagainproject.org/documentation/sample-models/layered-structures/correlated-roughness/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.bornagainproject.org/documentation/sample-models/layered-structures/correlated-roughness/</guid>
+      <description>Correlated roughness Scattering from a multilayered sample with correlated roughness.
+ The sample is composed of a substrate on which is sitting a stack of layers. These layers consist in a repetition of 5 times two different superimposed layers (from bottom to top):  layer A: $2.5$ nm thick with a real refractive index $n = 5 \cdot 10^{-6}$. layer B: $5$ nm thick with a real refractive index $n = 10 \cdot 10^{-6}$.</description>
+    </item>
+    
+  </channel>
+</rss>
